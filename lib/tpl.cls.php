@@ -133,6 +133,7 @@ class tpl
         $this->compileSql($content);
         $this->compileIf($content);
         $this->compileInclude($content);
+        $this->compileVar($content);
         $this->compileArray($content);
         $this->compileDate($content);
         $this->compileRealSubstring($content);
@@ -140,6 +141,7 @@ class tpl
         $this->compileRealVar($content);
         $this->compileEnter($content);
         $this->compileConst($content);
+        $content = $this->_compileTvar($content);
         return $content;
     }
 
@@ -159,8 +161,18 @@ class tpl
     public function compileRealVar(&$content)
     {
         $limit = '/{x2;realhtml:([^}]+)}/su';
-        $replace = "<?php echo html_entity_decode(\\\$this->ev->stripSlashes(\$this->_compileArray('\${1}'))); ?>";
-        $content = preg_replace($limit, $replace, $content);
+        $replace = "<?php echo html_entity_decode(\$this->ev->stripSlashes(\$this->_compileArray(\${1}))); ?>";
+        preg_match_all($limit, $content, $matches);
+        //$content = preg_replace($limit,$replace,$content);
+        $replace = [];
+        foreach ($matches[0] as $kM => $strM) {
+            $replace[$kM] = '<?php echo html_entity_decode($this->ev->stripSlashes('.$this->_compileArray($matches[1][$kM]).')); ?>';
+//            var_dump($strM,$replace[$kM]);
+            $content = str_replace($strM,$replace[$kM],$content);
+        }
+//        var_dump($replace,$content);
+        unset($matches);
+//        $content = preg_replace($limit, $replace, $content);
     }
 
     public function compileVar(&$content)
@@ -196,7 +208,7 @@ class tpl
     public function compileConst(&$content)
     {
         $limit = '/{x2;c:(\w+)}/';
-        $replace = "<?php echo \${1}; ?>";
+        $replace = "<?php echo $1; ?>";
         $content = preg_replace($limit, $replace, $content);
     }
 
@@ -204,7 +216,19 @@ class tpl
     {
         $limit = '/{x2;([\$|v][\$|:|\[|\w|\]|\s|\']+)}/';
         $replace = "<?php echo \${1}; ?>";
-        $content = preg_replace($limit, $replace, $content);
+        preg_match_all($limit,$content,$matches);
+//        var_dump($matches);
+        $replace = [];
+        foreach ($matches[0] as $kM => $strM) {
+            $replace[$kM] = '<?php echo '. $this->_compileArray($matches[1][$kM]) . $matches[2][$kM].';?>';
+//            echo '<pre>';
+//            var_dump($strM,$replace[$kM]);
+//            echo '</pre>';
+            $content = str_replace($strM,$replace[$kM],$content);
+        }
+        unset($matches);
+
+//        $content = preg_replace($limit, $replace, $content);
     }
 
     public function _compileArray($str)
