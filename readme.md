@@ -6,4 +6,8 @@ phpems for  php 7.0版本
 
 #contribute
 
-欢迎大家fork 欢迎大家 pull request
+欢迎大家fork 欢迎大家 pull request  
+
+github url https://github.com/hainuo/phpems47
+
+coding url https://coding.net/u/hainuo/p/phpems47/git
