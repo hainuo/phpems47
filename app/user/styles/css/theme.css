@@ -1,0 +1,232 @@
+body {
+background: none repeat scroll 0 0 #F2F2F2;
+font: 14px "Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;
+line-height:2em;
+color:#828282;}
+
+a{
+color:#828282;}
+
+input, button, select, textarea {
+font-family: "Microsoft YaHei","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+li{line-height:2em;}
+
+dl{margin-bottom:0px;}
+
+dt{line-height:2.4em;}
+
+dd{margin-left:0px;line-height:2.8em;}
+
+.container-fluid{max-width:1200px;padding:0px;margin:auto;}
+
+.topLine{
+min-height:24px;
+background-color:#f2f2f2!important;
+border-bottom: 1px solid #D9D9D9;
+font-size:12px;}
+
+#userNav{
+font-size:14px;
+margin-top:30px;}
+
+#menuNav{
+margin-top:20px;
+font-size:1.1em;}
+
+#menuNav ul li.mainmenu{
+min-width:100px;
+text-align:center;}
+
+#menuNav a,#menuNav .active a{
+color:#828282;
+font-weight:600;
+box-shadow:none;
+border-radius: 4px;
+border:none;
+border-color:#e5e5e5;}
+
+#menuNav a:hover{
+color:#005580;
+background-color:#e5e5e5;}
+
+H5.title{
+font-size:1.2em;
+text-indent:1em;
+line-height:2em;
+border-bottom:1px solid #DDDDDD;
+margin-bottom:15px;}
+
+.signBorder{
+background-color:#F89406!important;}
+
+.red {
+    color: #B50000;
+}
+
+.main_left0 {
+    display: none;
+}
+
+.font_12 {
+    font-size: 12px;
+}
+
+.nav-tabs .active {
+    font-size:14px;
+    font-weight:800;
+}
+
+.thumbnail img{
+max-width:90%;
+padding-top:15px;
+padding-bottom:15px;}
+
+.topform-search{
+padding-top:25px;
+margin-right:10px;}
+
+.top {
+background: none repeat scroll 0 0 #ECECEC;
+border-bottom: 1px solid #D9D9D9;
+height: 75px;
+padding-top: 5px;
+padding-bottom:15px;}
+
+.logcontent,.examcontent,.footcontent{
+margin: 0 auto;
+margin-top: 60px;
+/*width:980px;*/}
+
+.examcontent{margin-top:20px;}
+
+.toolcontent{
+position:fixed;bottom:0px;margin-bottom:0px;width:100%;border-top: 1px solid #DADADA;background-color:#F9F9F9}
+
+.footcontent{
+margin-top:10px;border:0px;
+background: none repeat scroll 0 0 #F9F9F9;}
+
+.logbox,.exambox{
+height: auto;
+overflow:hidden;
+padding:0px 10px;
+background: none repeat scroll 0 0 #F9F9F9;
+border-radius: 4px;
+/*border:1px solid #dadada;*/}
+
+.logform,.examform{
+padding:15px 5px 15px 5px;
+overflow: hidden;}
+
+.logcontrol{
+padding-top:60px;}
+
+.logcontrol input{padding:7px;font-weight:bold;}
+
+.logcontrol .control-label{font-size:14px; font-weight:bold;}
+
+.logcontrol .controls span{margin-left:20px;}
+
+.logbtn{
+font:16px/40px 700;
+height: 40px;
+width: 130px;
+margin-right:15px;}
+
+.logfooter {
+margin-top: 45px;
+text-align: center;}
+
+.questionindex{
+width:2em;
+line-height:2em;
+text-align:center;
+margin-bottom:10px;}
+
+.media.well:hover{
+border-color:#3A87AD;}
+
+.media-body .radio,.media-body .checkbox{
+font-size:1em;
+font-weight:800;
+margin:auto 15px;}
+
+.media-body .radio input,.media-body .checkbox input{
+width:1.2em;height:1.2em;margin-top:0px;}
+
+.boardscore{
+background:url('../img/theme/board.png');
+margin:auto;
+width:296px;
+height:193px;}
+
+.boardscore h1{padding-top:60px;
+color:#FFFFFF;}
+
+.decidediv{
+position:relative!important;}
+
+.decidediv .right,.decidediv .wrong{
+width:200px;
+height:200px;
+right:60px;
+top:50px;
+position:absolute;
+z-index:99;}
+
+.decidediv .right{background:url('../img/theme/right.png');}
+.decidediv .wrong{background:url('../img/theme/wrong.png');}
+
+.scoreArea{
+right:80px;
+top:90px;
+position:absolute;
+z-index:99;
+font-size:120px;
+color:#FF0000;
+font-family:"MV Boli";}
+
+.noborder{border:0px!important;margin-bottom:0px !important;}
+
+.well.media-body,.well .nav-tabs{border:0px!important;margin-bottom:0px !important;}
+
+.banner { position: relative; overflow: auto; }
+
+.banner ul,.banner ol{margin:0px;}
+
+.banner li { list-style: none; }
+
+.banner ul li { float: left; }
+
+.banner .dots {
+bottom: 12px;
+left: 90%;
+position: absolute;
+right: 0;}
+
+.banner .dots li {
+border: 1px solid #F5810A;
+border-radius: 6px;
+cursor: pointer;
+display: inline-block;
+height: 8px;
+margin: 0 4px;
+opacity: 0.4;
+text-indent: -999em;
+background: none repeat scroll 0 0 #FFFFFF;
+width: 8px;
+float:left;}
+
+.banner .dots li.active {
+background: none repeat scroll 0 0 #FEE368;
+opacity: 1;}
+
+.thumbnail{
+position:relative}
+
+.thumbnail .badge{
+position: absolute;
+right: 10px;
+top: 10px;}

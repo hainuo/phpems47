@@ -1,0 +1,52 @@
+body {
+font: 14px "Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;
+line-height:2em;}
+a{color: #484848;}
+#content{
+padding-top:10px;
+FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#f9f9f9,endColorStr=#FFFFFF);
+background:-moz-linear-gradient(top,#f9f9f9,#FFFFFF);
+background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#f9f9f9), to(#FFFFFF));}
+.container-fluid{max-width:1200px;background-color:#FFFFFF;padding:0px 10px;margin:auto;}
+.navbar .nav > li {width:105px;height:45px;text-align:center;margin-left:5px;margin-right:5px;}
+.navbar .nav > li > a{text-shadow:0px 0px 0px #FFFFFF;font-weight:600;padding:5px 10px;line-height:35px;color:#0184A9;}
+.navbar .nav > li > a:focus,.navbar .nav > li > a:hover ,.navbar .nav li.dropdown.open > .dropdown-toggle, .navbar .nav li.dropdown.active > .dropdown-toggle, .navbar .nav li.dropdown.open.active > .dropdown-toggle{
+/*background:url(../img/nav_09.jpg);
+color:#FFFFFF;*/
+color:#005580;}
+.banner { position: relative; overflow: auto; }
+.banner ul,.banner ol{margin:0px;}
+.banner li { list-style: none; }
+.banner ul li { float: left; }
+.banner .dots {
+bottom: 12px;
+left: 90%;
+position: absolute;
+right: 0;}
+.banner .dots li {
+border: 1px solid #F5810A;
+border-radius: 6px;
+cursor: pointer;
+display: inline-block;
+height: 8px;
+margin: 0 4px;
+opacity: 0.4;
+text-indent: -999em;
+background: none repeat scroll 0 0 #FFFFFF;
+width: 8px;}
+.banner .dots li.active {
+background: none repeat scroll 0 0 #F5810A;
+opacity: 1;}
+.banner ul li{height:220px;}
+.nav-tabs > .active > a, .nav-tabs > .active > a:hover, .nav-tabs > .active > a:focus{/*background-color:#0049A3;color:#FFFFFF;*/}
+ul.lists li,ul.mlists li{list-style-image:url('../img/dian_14.jpg')}
+ul.lists li{padding-right:2em;}
+ul.mlists{margin-left:5px;}
+ul.mlists li{border-bottom:1px dashed #999999;list-style-position:inside;}
+ul.mlists li a{font-weight:100;line-height:3em;padding-bottom:8px;font-size:1.1em;}
+ul li a{line-height:1.8em;color:#484848;}
+.marginblock{margin-bottom:20px;}
+.describe{color:#999999;text-indent:2em;font-size:13px;padding-top:10px;}
+.contentdescribe{color:#999999;font-size:13px;padding-top:10px;}
+.content{color:#484848;font-size:13px;padding-top:10px;}
+.content p{text-indent:2em;}

@@ -1,0 +1,2204 @@
+#flashContent {
+    width:100%;
+    height:100%;
+}
+
+#header {
+    height:30px;
+    background:#444 url(/assets/grapher/img/button_bg.png) repeat-x top left;
+    line-height:30px;
+    padding-left:10px;
+    font-size:15px;
+    color:#eee;
+    text-shadow: 0px -1px 0px #333;
+}
+
+.section_buttons a {
+    cursor:default;
+    float:left;
+    color:black;
+    color:#888;
+    text-decoration:none;
+    border:1px solid #eaeaea;
+    text-align:center;
+    font-size:17px;
+    min-height:26px;
+    width:25px;
+    line-height:25px;
+    font-family:Times, serif;
+    border-left:0px;
+    border-top:0px;
+}
+
+.section_buttons .bottom_key {
+    border-bottom:0px;
+}
+
+.section_buttons .right_key {
+    border-right:0px;
+}
+
+#function_keys a.narrow_fn {
+    width:39px !important;
+}
+
+.section_buttons a/*.enabled_btn*/ {
+    cursor:pointer;
+    color:black;
+    border-color:#aaa;
+
+background: rgb(255,255,255); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(234,234,234,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(234,234,234,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(234,234,234,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(234,234,234,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(234,234,234,1) 100%); /* IE10+ */
+background: linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(234,234,234,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#dddddd',GradientType=0 ); /* IE6-9 */
+
+
+
+}
+
+.section_buttons a:active {
+    background:#ddd !important;
+    filter:none !important;
+}
+
+
+#keyboard #keyboard_content .section_buttons a.shifton{
+    display:none;
+}
+
+.section_title {
+    clear:left;
+    font-size:160%;
+    font-weight:normal;
+    padding:7px 0px 0px 10px;
+    color:#9ab;
+    margin-bottom:3px;
+}
+
+/* undo & redo */
+
+#undo_redo {
+    float:right;
+}
+
+#undo_redo a {
+    outline:none;
+    display:block;
+    width:54px;
+    height:35px;
+    float:left;
+    text-align:center;
+    border:0px;
+    text-decoration:none;
+    outline:none;
+    outline:none;
+
+    text-shadow:none;
+    outline:none;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    background:#111 url(/assets/grapher/img/button_bg.png) top left repeat-x;
+    /*border:1px solid #fff;*/
+    color:#eee;
+    font-size:80%;
+    padding-top:-20px !important;
+    margin-right:3px;
+    border: 1px solid #333;
+    cursor:pointer;
+}
+
+#undo_redo a img {
+    position:relative;
+    outline:none;
+    border:none;
+    top:3px;
+}
+
+#undo_redo a:hover {
+    border:1px solid black;
+}
+
+#undo_redo a:active {
+    background:black !important;
+}
+
+#undo_redo a.btn_depressed {
+    color:black !important;
+    background:white !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .6) inset !important;
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, .6) inset !important;
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .6) inset !important;
+}
+
+#undo_redo a.disabled, #undo_redo a.disabled:hover, #undo_redo a.disabled:active {
+/*    opacity:.6;
+    -moz-opacity:.6;
+    -webkit-opacity:.6;
+    filter: alpha(opacity=60);
+    background:transparent;
+    cursor:default;
+    left:0px;
+    color:#888;*/
+}
+
+#calc {
+    position:absolute;
+    top:-500px;
+    left:400px;
+}
+
+.hidden {
+    display:none;
+}
+
+.example_title {
+    font-weight:bold;
+    padding-left:5px;
+    color:#888;
+}
+
+img.ex {
+    border:1px dotted #aaa;
+    position:relative;
+}
+
+.qtip {
+    font-size:80%;
+}
+
+.qtip b {
+    display:block;
+    margin-bottom:5px;
+}
+
+.qtip i {
+    display:block;
+    margin-top:5px;
+    font-size:80%;
+}
+
+.section_title a {
+    display:none;
+}
+
+.settings_content {
+    padding:3px;
+}
+
+.settings_content label {
+    padding:1px;
+    color:black;
+    cursor:pointer;
+}
+
+.settings_content label:hover {
+    color:black;
+}
+
+.settings_content label.active {
+    cursor:pointer;
+    color:black;
+}
+
+.domain_label {
+    float:left;
+    width:150px;
+    cursor:pointer;
+}
+
+.domain_label span {
+    background:#666;
+    border-radius:5px;
+    -moz-border-radius:5px;
+    color:white;
+    line-height:10px;
+    padding:5px;
+    padding-right:0px;
+    background:#444 url(/assets/grapher/img/button_bg.png) top left repeat-x;
+}
+
+.settings_content .input {
+    position:relative;
+    top:-1px;
+    border:1px solid #666;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    padding:5px;
+    line-height:10px;
+    width:83px;
+    font-size:80%;
+    color:black;
+    margin-top:3px;
+    margin-bottom:5px;
+    color:#666;
+}
+
+.settings_content .input:focus {
+    color:black;
+    -moz-box-shadow: 0px 0px 2px #05f;
+    -webkit-box-shadow: 0px 0px 2px #05f;
+    box-shadow: 0px 0px 2px #05f;
+}
+
+#starting_cover {
+    z-index:1000;
+    background:#444;
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+    opacity:.8;
+    -moz-opacity:.8;
+    -webkit-opacity:.8;
+    margin-top:30px;
+    margin-bottom:-30px;
+    display:none;
+}
+
+.start_demo {
+    cursor:pointer;
+    line-height:1em;
+    display:block;
+    text-align:left;
+    margin:2px 0px;
+    color:black;
+    border-radius:5px;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    font-size:100%;
+    text-decoration:none;
+    border:1px solid #ccc;
+    display:block;
+    float:left;
+    width:150px;
+    height:25px;
+    margin-right:5px;
+    background:white;
+    text-align:center;
+    padding-top:125px;
+    font-size:10px;
+    background:white no-repeat center center;
+}
+
+.start_demo span {
+    background:#ddd;
+    opacity:.9;
+    -webkit-opacity:.9;
+    -moz-opacity:.9;
+    color:black;
+    border-radius:5px;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    padding:4px 8px;
+
+}
+
+.start_demo:hover {
+    border:1px solid #aaa;
+    -moz-box-shadow: 0px 0px 2px #aaa;
+    -webkit-box-shadow: 0px 0px 2px #aaa;
+    box-shadow: 0px 0px 2px #aaa;
+}
+
+.start_demo img {
+    cursor:pointer;
+    float:left;
+    position:relative;
+    left:-4px;
+}
+
+/* for the modals
+
+.modal {
+    width:400px;
+    height:200px;
+    position:absolute;
+    z-index:10000;
+    left:50%;
+    top:50%;
+    margin-left:-200px;
+    margin-top:-100px;
+    display:none;
+    padding:10px;
+    font-size:90%;
+}
+
+a.modal_close
+{
+    position:absolute;
+    top:-12px;
+    right:-15px;
+}
+
+.modal h3 {
+    padding:0px;
+    margin:0px;
+    color:#888;
+    font-size:125%;
+    margin-bottom:10px;
+    margin-top:5px;
+}
+
+.modal input {
+    border-radius:5px;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border:1px solid #aaa;
+    background:white;
+    padding:8px;
+    width:380px;
+    outline:none;
+    margin-top:10px;
+}
+*/
+.br10 {
+    border-radius:10px;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+}
+
+.shadow5 {
+    -moz-box-shadow: 0px 1px 5px #888;
+    -webkit-box-shadow: 0px 1px 5px #888;
+    box-shadow: 0px 1px 5px #888;
+}
+
+.gradient1 {
+    background: #eee; /* for non-css3 browsers */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#dddddd'); /* for IE */
+    background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ddd)); /* for webkit browsers */
+    background: -moz-linear-gradient(top,  #fff,  #ddd); /* for firefox 3.6+ */
+}
+
+/* keyboard */
+#keyboard {
+    padding:0px !important;
+    position:absolute;
+    bottom:0px;
+    left:0px;
+     width:356px;
+     z-index:9999;
+     /*display:none;*/
+     border-bottom:0px solid; /*
+    -moz-box-shadow: -3px 1px 5px #444;
+    -webkit-box-shadow: -3px 1px 5px #444;
+    box-shadow: -3px 1px 5px #444; */
+}
+#keyboard_interior {
+    background:#626262; /* url(/assets/grapher/img/button_bg.png) repeat-x top left;*/
+}
+#keyboard.disabled {
+     opacity:.65;
+     -moz-opacity:.65;
+     -webkit-opacity:.65;
+    filter: alpha(opacity=65);
+
+}
+
+
+#hide_keypad {
+    float:right;
+    width:110px;
+    height:25px;
+    line-height:23px;
+    background:#555 url(/assets/grapher/img/button_bg.png) repeat-x top left;
+    font-size:80%;
+    color:white;
+    border-top-left-radius: 5px;
+    border-top-right-radius:5px;
+    text-align:center;
+    padding-top:2px;
+    cursor:pointer;
+/*    -moz-box-shadow: 0px 1px 5px #888;
+    -webkit-box-shadow: 0px 1px 5px #888;
+    box-shadow: 0px 1px 5px #888; */
+}
+#hide_keypad span {
+    background:url(/assets/grapher/img/uisprites.png) -10px -527px no-repeat;
+    width:16px;
+    height:16px;
+    margin-right:5px;
+    margin-top:4px;
+    border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    float:right;
+    display:block;
+}
+
+#hide_keypad.show_keypad span {
+    background:url(/assets/grapher/img/maximize_keyboard.png) no-repeat center center;
+}
+
+#hide_keypad span:hover {
+    background-color:black;
+
+}
+
+
+
+.big_key {
+    height:28px;
+    padding:6px 9px !important;
+    font-size:16px !important;
+}
+
+/*
+.sup {
+    padding-top:6px !important;
+    padding-bottom:10px !important;
+    padding-bottom
+}
+*/
+
+
+.op {
+/*    margin-left:10px !important; */
+}
+
+#hide_hide_shadow {
+    position:absolute;
+    top:0px;
+    right:0px;
+    background:white;
+    width:200px;
+    height:6px;
+}
+
+#keyboard_content {
+    height:165px;
+}
+
+#secondary_keys {
+    float:right;
+    width:177px;
+    margin-top:0px;
+}
+
+#function_keys a {
+    padding-left:2px !important;
+    padding-right:2px !important;
+    /* line-height:1em !important;
+    min-height:1em !important; */
+    display:block;
+    float:left;
+    width:53px !important;
+    font-size:15px !important;
+    /* height:24px !important;
+    line-height:24px !important; */
+}
+
+#function_keys #functions_lhs a {
+    width:54px !important;
+}
+
+#function_keys #functions_lhs a.narrow_fn {
+    width:40px !important;
+}
+
+
+.keypad {
+    padding:4px 2px;
+}
+
+.keypad_title {
+    color:white;
+    text-decoration:none;
+    font-size:90%;
+    margin-bottom:5px;
+    position:relative; top:-2px;
+    cursor:pointer;
+    padding:1px 21px 1px 5px;
+    border:3px solid transparent;
+    border-radius:3px;
+}
+.selected_title {
+    background:white url(/assets/grapher/img/minimize_keyboard.png) no-repeat right center !important;
+    color:black !important;
+    border:3px solid white;
+}
+.keypad_hidden .keypad_title {
+    background:transparent url(/assets/grapher/img/maximize_keyboard.png) no-repeat right center !important;
+}
+
+a.sup sup, a.sub sub {
+    font-size:70%;
+}
+
+#big_keys {
+  float:left;
+  width:177px;
+  padding-left:2px;
+  margin-top:0px;
+}
+
+
+.alternate {
+    float:right;
+    margin:-20px;
+    color:#888;
+    position:relative;
+    font-size:12px;
+    top:30px;
+    left:-15px;
+}
+
+.shifton_btn {
+    background:#666 !important;
+    filter:none !important;
+    color:white !important;
+}
+
+.keyboard_disabled .shifton_btn {
+    background:#ddd !important;
+    filter:none !important;
+}
+
+.zoom_action_btn {
+    clear:both;
+    display:block;
+    width:150px;
+    padding:1px 5px 3px;
+    border:1px solid #aaa;
+    border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    margin-top:5px;
+}
+
+.zoom_action_btn img {
+    border:0px;
+    outline:0px;
+    text-decoration:none;
+}
+
+.bottom_scrollbar {
+    border-bottom:1px solid #aaa;
+}
+
+.keyboard_disabled .big_key, .keyboard_disabled .big_key:active {
+    background:#f6f6f6;
+    color:#aaa;
+    cursor:default;
+}
+
+
+.keyboard_disabled .big_key .alternate {
+    color:#ccc;
+    background:transparent;
+    cursor:default;
+}
+
+.disabled, .disabled:active {
+    color:#aaa;
+    background:#ddd url(/assets/grapher/img/button_bg.png) repeat-x top left;
+    cursor:default;
+}
+
+.scale_disabled {
+    cursor:default;
+    background:#999;
+    color:white !important;
+}
+
+#zoom_btns {
+    position:absolute;
+    top:38px;
+
+
+    background: rgb(255,255,255); /* Old browsers */
+    background: -moz-linear-gradient(left,  rgba(255,255,255,1) 0%, rgba(234,234,234,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(234,234,234,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(234,234,234,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(234,234,234,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(234,234,234,1) 100%); /* IE10+ */
+    background: linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(234,234,234,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#dddddd',GradientType=1 ); /* IE6-9 */
+
+
+
+    right:8px;
+    height:105px;
+    border:1px solid #888;
+    width:35px;
+    z-index:9997;
+    box-shadow:0 1px 3px #888;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    opacity:.7;
+}
+
+#zoom_btns:hover {
+    opacity:1;
+}
+
+#zoom_btns a{
+    height:35px;
+    color:#666;
+    display:block;
+    cursor:pointer;
+    text-align:center;
+    line-height:35px;
+    text-decoration:none;
+
+}
+#zoom_btns a:hover {
+    color:black;
+}
+
+#zoom_btns a:active {
+    background:#eee;
+}
+
+#sidebar {
+    position: absolute;
+    top: 30px;
+    left: 0px;
+    width: 356px;
+    height: 100%;
+    box-shadow: 0 1px 5px #444;
+    -moz-box-shadow: 0 1px 5px #444;
+    background: white !important;
+    border-right: 1px solid #aaa;
+}
+
+.sidebar_content {
+    font-size:80%;
+    color:#222;
+    position:absolute;
+    z-index:10000;
+    width:356px;
+    height:100px;
+    top:81px;
+    left:0px;
+    overflow:auto;
+    background:white;
+    display:none;
+}
+
+#btn_equations:hover span, #btn_equations.open_btn span {
+    background-position:0px 0px;
+}
+#graphs_btn span {
+    background-position:-24px -24px;
+}
+#graphs_btn:hover span, #graphs_btn.open_btn span {
+    background-position:0px -24px;
+}
+#share_btn span {
+    background-position:-24px -48px;
+}
+#share_btn:hover span, #share_btn.open_btn span {
+    background-position:0px -48px;
+}
+#examples_btn span {
+    background-position:-24px -72px;
+}
+#examples_btn:hover span, #examples_btn.open_btn span {
+    background-position:0px -72px;
+}
+#help_btn span {
+    background-position:-24px -96px;
+}
+#help_btn:hover span, #help_btn.open_btn span {
+    background-position:0px -96px;
+}
+#settings_btn span {
+    background-position:-24px -120px;
+}
+#settings_btn:hover span, #settings_btn.open_btn span {
+    background-position:0px -120px;
+}
+.sidebar_btn {
+    border: 1px solid #AAAAAA;
+    border-width:0px 1px 1px 0px;
+    display: block;
+    float: left;
+    font-size: 65%;
+    height: 48px;
+    text-align: center;
+    text-decoration: none;
+    width: 70px;
+    margin:0px;
+    position:relative;
+    overflow:hidden;
+    cursor:pointer;
+
+    background: rgb(255,255,255); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(234,234,234,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(234,234,234,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(234,234,234,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(234,234,234,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(234,234,234,1) 100%); /* IE10+ */
+    background: linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(234,234,234,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#dddddd',GradientType=0 ); /* IE6-9 */
+
+
+    color:black;
+    border-color:#aaa;
+    color:#444;
+}
+
+.sidebar_btn:hover {
+    color:#444;
+}
+
+.sidebar_btn:active {
+    background:#ddd;
+}
+
+.faq_q {
+    font-weight:bold;
+    color:#666;
+}
+
+.faq_a {
+    padding:5px 10px;
+    color:#999;
+    font-size:90%;
+}
+
+/* gmail style buttons */
+
+.open_btn, .open_btn:active {
+    border-bottom:1px solid white;
+    background:white !important;
+    filter:none !important;
+    cursor:default;
+    background:white;
+    color:#444;
+}
+
+.gm_btn {
+    border:1px solid #aaa !important;
+    background:#ddd url(/assets/grapher/img/bg-button.gif) repeat-x top left !important;
+    outline:none !important;
+    cursor:pointer !important;
+    padding:4px 10px !important;
+    font-size:11px !important;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.gm_btn:hover {
+    border-color:#666 !important;
+}
+
+.gm_btn:active {
+      background-position:bottom left !important;
+}
+
+/* An unclickable version */
+.gm_btn_fake {
+  border:1px solid #aaa !important;
+  /*background:#ddd url(/assets/grapher/img/bg-button.gif) repeat-x top left !important;*/
+  outline:none !important;
+  padding:4px 10px !important;
+  font-size:11px !important;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+
+a.gm_btn {
+  text-decoration:none;
+  color:#000;
+}
+
+a.gm_btn img {
+  position:relative;
+  top:5px;
+  left:-3px;
+  line-height:2em;
+  border-width:0px;
+}
+
+.starting_cover li {
+ padding-top:0px; padding-bottom:0px;
+ margin-top:0px;
+ margin-bottom:0px;
+}
+
+#transient_keys a {
+    background:red;
+    padding:0px !important;
+    width:25px !important;
+    border:1px solid #aaa;
+    float:left;
+    line-height:25px !important;
+    padding:10px !important;
+}
+
+#sidebar div.img{
+    margin: 7px auto 0px;
+    background-repeat: no-repeat;
+}
+
+#keyboard div.img{
+    background-repeat: no-repeat;
+    margin: 3px auto 0px;
+}
+
+#unsupported_browser_modal ul.browsers {
+    margin: 6px 0 12px 0;
+}
+
+#unsupported_browser_modal ul.browsers li {
+    padding-bottom: 2px;
+}
+
+#unsupported_browser_modal ul.browsers a {
+    padding-right: 20px;
+    background: url(/assets/grapher/img/external_gray.png) no-repeat right bottom;
+
+    color: inherit;
+    text-decoration: none;
+}
+
+#projector_mode, #projector_mode:hover {
+    color:black;
+    border:1px solid #aaa !important;
+}
+
+.depressed, .depressed:hover {
+    color:black !important;
+    background: white url(/assets/grapher/img/tick.png) no-repeat 5px 4px !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .6) inset !important;
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, .6) inset !important;
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .6) inset !important;
+    border:1px solid #aaa !important;
+}
+
+.depressed:active {
+    background:white !important;
+}
+
+
+/* Handle delay loading of symbola through webfonts library */
+.mathquill-editable, .mathquill-rendered-math, .mathquill-rendered-math var.un-italicized {
+  font-family: "Times New Roman", serif !important;
+}
+
+.wf-active .mathquill-editable, .wf-active .mathquill-rendered-math, .wf-active .mathquill-rendered-math var.un-italicized {
+  font-family: Symbola, "Times New Roman", serif !important;
+}
+
+#btn_clear.disabled {
+    display:none;
+}/*.colorpicker{
+	display: inline-block;
+	z-index: 11001;
+	position: relative;
+	cursor: pointer;
+}
+
+.colorpicker_disabler{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0px;
+	top: 0px;
+
+	background-color: rgba(0,0,0,0);
+	z-index: 11000;
+}
+
+.colorpicker .circle{
+	display: inline-block;
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	width: 7px;
+	height: 7px;
+	background: url(/assets/grapher/img/color_circle.png);
+	cursor: pointer;
+}*/
+/* vim: ft=css
+ */
+
+/*** demo backgrounds ***/
+.start_demo.parabola {
+  background-image: url(/assets/grapher/img/thumbs/parabola.png);
+}
+
+.start_demo.piecewise {
+  background-image: url(/assets/grapher/img/thumbs/piecewise.png);
+}
+
+.start_demo.polar {
+  background-image: url(/assets/grapher/img/thumbs/polar.png);
+}
+
+.start_demo.heart {
+  background-image: url(/assets/grapher/img/thumbs/heart.png);
+}
+
+.start_demo.sincos {
+  background-image: url(/assets/grapher/img/thumbs/sincos.png);
+}
+
+.start_demo.hyperbola {
+  background-image: url(/assets/grapher/img/thumbs/hyperbola.png);
+}
+
+.start_demo.batman {
+  background-image: url(/assets/grapher/img/thumbs/batman.png);
+}
+
+.start_demo.taylor {
+  background-image: url(/assets/grapher/img/thumbs/taylor.png);
+}
+
+.start_demo.cycloid {
+  background-image: url(/assets/grapher/img/thumbs/cycloid.png);
+}
+
+.start_demo.choose {
+  background-image: url(/assets/grapher/img/thumbs/choose.png);
+}
+
+.expressionpanel{
+	display: inline-block;
+	margin: 0px;
+	padding: 0px 2px;
+	overflow: auto;
+
+	/*z-index: 9998;
+	position: absolute;*/
+
+/*	border-right: 2px #777 solid;
+	border-bottom: 2px #777 solid;
+	border-bottom-right-radius: 6px;
+
+	-moz-box-shadow: 1px 1px 4px #aaa;
+	-webkit-box-shadow: 1px 1px 4px #aaa;
+	box-shadow: 1px 1px 4px #aaa;
+*/
+}
+
+.expressionitem{
+	border-bottom: 1px #ddd solid;
+	color:black;
+	overflow:hidden;
+}
+
+.expressionitem.shell{
+	min-height: 69px;
+	background:url(/assets/img/ajax-loader.gif) no-repeat center center;
+
+}
+.selected {
+	color:black;
+	border-bottom-color:#aaa;
+}
+
+.expressionitem .bottom .slider{
+	top: -13px;
+	left: 10px;
+}
+.expressionitem.click_select, .expressionitem .click_select, .expressionitem * .click_select{
+	cursor:text;
+}
+
+.expressionitem.selected{
+	background-color: #FFF;
+}
+
+
+.expressionitem .top{
+	padding: 3px;
+	height:8px;
+}
+
+/*.expressionitem .top .color{
+	display:none;
+	width: 58px;
+	height: 14px;
+	margin-right: 3px;
+
+	background-color: #000;
+
+	cursor:pointer;
+	float: right;
+	background-image: url('/assets/grapher/img/color_display.png');
+}*/
+
+/* menus */
+
+.expressionitem .menus{
+	font-size: 12px;
+	background-color: #ddd;
+	display:none;
+
+	position: relative;
+}
+
+
+.expressionitem .menus .menu{
+	border-top: 0px;
+	padding: 5px 5px 3px;
+	margin-top: 8px;
+}
+
+.color_choices .color{
+	display:inline-block;
+	width: 25px;
+	height: 25px;
+	margin-left: 3px;
+	cursor: pointer;
+}
+
+.color_choices label {
+	float:right;
+	position:relative;
+	top:7px;
+	right:5px;
+	font-size:120%;
+	color:#222;
+	cursor:pointer;
+}
+
+.color_choices .color{
+	border: 3px #ddd solid;
+}
+.color_choices .color.current{
+	border: 3px white solid;
+	border-radius:3px;
+}
+
+.expressionitem .menus .slider_menu, .expressionitem .menus .error_menu{
+	display:none;
+}
+.slider_menu input {
+	width:40px;
+	border:1px solid #aaa;
+	margin-right:8px;
+	border-radius:3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	padding:4px;
+}
+
+.expressionitem.show_slider div.menus .slider_menu, .expressionitem.error div.menus .error_menu{
+	display: inherit;
+}
+.expressionitem .menus .graph_menu{
+	display:inherit !important;
+}
+.expressionitem.show_slider .menus .graph_menu, .expressionitem.error .menus .graph_menu,
+.expressionitem.show_calculation .menus .graph_menu, .expressionitem.show_assignment .menus .graph_menu{
+	display:none !important;
+}
+
+.expressionitem .bottom{
+	height: 17px;
+	position:relative;
+	top:-5px;
+}
+.expressionitem.menu_open .bottom{
+	display:none;
+}
+
+.expressionitem .bottom .evaluation{
+	font-family: arial, sans-serif;
+	font-size: 12px;
+	float: right;
+	padding-right: 4px;
+	padding-left: 5px;
+	position: relative;
+	top: 3px;
+
+	display:none;
+}
+
+.expressionitem .middle{
+	/*min-height: 30px;*/
+}
+
+.expressionitem .top{
+	position: relative;
+}
+.expressionitem .top .close{
+	width: 16px;
+	height: 16px;
+	padding:4px;
+	cursor:pointer;
+	float: right;
+	background: url('/assets/grapher/img/uisprites.png') -10px -271px no-repeat;
+	border:0px solid transparent;
+	border-radius:3px;
+	-moz-border-radius:3px;
+	margin-left:-30px;
+
+}
+
+.expressionitem .top .close:hover{
+	background: url('/assets/grapher/img/uisprites.png') -10px -295px no-repeat;
+	/*background-color:#fdd;*/
+}
+.expressionitem .top .close:active {
+	background-color:#999;
+}
+
+.expressionitem .top .colorpicker{
+	position: absolute;
+	top: 20px;
+	right: 3px;
+}
+
+.expressionlist{
+	/*
+	background-color: #dce4ea;
+	*/
+	/*cursor:pointer;*/
+	/*overflow-x: hidden;*/
+
+	/*
+	border-bottom-right-radius: 6px;
+	*/
+	/*overflow-y: scroll;*/
+	/*height: 100%;*/
+}
+
+.expressionlist .clickmessage{
+	height: 48px;
+	line-height: 48px;
+	font-size: 13px;
+	color: #666;
+	text-align: center;
+	/*cursor: pointer;*/
+
+	/*border-right: 1px #BBB solid;*/
+	/*border-bottom: 1px #BBB solid;*/
+	/*border-bottom-right-radius: 4px;*/
+}
+.clickmessage .btn {
+	cursor:pointer;
+	display:block;
+	height:48px;
+	line-height:48px;
+}
+
+/* ICONS STRUCURE */
+
+.expressionitem.menu_open .eqicon{
+	border-color: #ddd;
+	background:#ddd;
+}
+
+.eqicon .outline{
+    border-radius: 3px;
+    border: 1px solid transparent;
+    padding: 2px;
+    	background-color: #FFF;
+}
+.expressionitem.selected .eqicon .outline{
+    border-radius: 3px;
+    border: 1px solid #aaa;
+    padding: 2px;
+}
+.expressionitem.menu_open .eqicon .outline{
+    border-radius: 3px;
+    border: 1px solid #c5c5c5;
+    padding: 2px;
+}
+
+
+.eqicon .gap_fill{
+	background: #ddd;
+	position: absolute;
+	left: -3px;
+	width: 40px;
+	height: 500px;
+	display:none;
+}
+.expressionitem.menu_open .eqicon .gap_fill{
+	display: inline-block;
+}
+
+
+/**   ICON STATES  **/
+.expressionitem.waiting .thumb{
+	background-image: url('/assets/grapher/img/waiting.png');
+}
+.expressionitem.busy .thumb{
+	background-image: url('/assets/grapher/img/busy.gif');
+}
+.expressionitem.error .thumb{
+	background-image: url('/assets/grapher/img/checkbox_error.png');
+}
+.expressionitem.show_slider .thumb{
+	background-image: url('/assets/grapher/img/wrench24.png');
+}
+.expressionitem.show_calculation .thumb, .expressionitem.show_assignment .thumb{
+	background-image: url('/assets/grapher/img/equals.png');
+}
+.expressionitem.waiting canvas, .expressionitem.busy canvas, .expressionitem.error canvas, .expressionitem.show_slider canvas,
+.expressionitem.show_assignment canvas, .expressionitem.show_calculation canvas{
+	display:none;
+}
+
+
+
+.eqicon{
+	display: inline-block;
+	position: relative;
+	margin-right: 7px;
+	border: 3px solid transparent;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+
+}
+
+.graphable .eqicon, .show_slider .eqicon, .error .eqicon {
+	cursor: pointer;
+}
+
+
+.eqicon .thumb{
+	height: 26px;
+	width: 28px;
+	background: no-repeat center center;
+}
+
+
+.expressionitem.menu_open .eqicon .arrow{
+/*	background-image: url(/assets/grapher/img/caret_down.png); */
+}
+
+.graphable .eqicon .arrow, .show_slider .eqicon .arrow, .error .eqicon .arrow {
+	position: absolute;
+	display: inline-block;
+	height: 3px;
+	width: 6px;
+	bottom: 5px;
+	right: 5px;
+	background: no-repeat;
+	background-image: url(/assets/grapher/img/caret_down.png);
+}
+.error_menu {
+	color:#444;
+}
+
+.graphable.unchecked .icon {
+}
+.graphable.checked .outline {
+/*	background:#faf !important; */
+}
+
+.color_choices label {
+	color:#999 !important;
+}
+
+.graphable .color_choices label {
+	color:#222 !important;
+}
+.is_graphed {
+	/*
+	background:url(/assets/grapher/img/cancel_gray.png) center center no-repeat !important; */
+	position:absolute;
+	display:inline-block;
+	top:10px;
+	left:11px;
+	width:12px; height:12px;
+	opacity:.3;
+	-moz-opacity:.3;
+	-webkit-opacity:.3;
+}
+
+.graphable .is_graphed {
+	background:transparent !important;
+	opacity:.8;
+	-moz-opacity:.8;
+	-webkit-opacity:.8;
+}
+.graphable.unchecked .is_graphed {
+	background:url(/assets/grapher/img/cancel.png) center center no-repeat !important;
+}
+
+
+.create_sliders{
+	font-size: 12px;
+}
+
+/* contains the message */
+.create_sliders .msg{
+    color: #444;
+    font-size: 11px;
+    margin-left: 50px;
+    margin-right: 5px;
+    float: left;
+    height: 16px;
+    line-height: 16px;
+}
+
+/* contains all the buttons */
+.create_sliders .btns{
+
+}
+
+.slider_btn_container {
+    margin-right: 10px;
+    position: relative;
+    height: 16px;
+    float: left;
+    width: 34px;
+}
+
+.slider_decoration {
+    position: absolute;
+    width: 34px;
+    height: 5px;
+    top: 6px;
+    background-color: #c2d5e3;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    margin: auto;
+}
+
+.slider_btn {
+    position: absolute;
+    left: 8px;
+    cursor: pointer;
+
+    border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    height: 16px;
+    width: 16px;
+
+    background: rgb(255,255,255); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(234,234,234,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(234,234,234,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(234,234,234,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(234,234,234,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(234,234,234,1) 100%); /* IE10+ */
+    background: linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(234,234,234,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#dddddd',GradientType=0 ); /* IE6-9 */
+    border: 1px solid #bbb;
+    font-size: 12px;
+    line-height: 16px;
+    padding: 0px;
+    text-align: center;
+}
+
+.slider_btn:hover {
+/*	background: url(/assets/grapher/img/slider_over.png) center center no-repeat; */
+   border:1px solid #888;
+}
+
+.active_slider_btn{
+	background:#ccc;
+	border:1px solid #888;
+/*	background: url(/assets/grapher/img/slider_down.png) center center no-repeat; */
+}
+
+.slider_btn_container.all {
+    width: 46px;
+}
+
+.slider_btn_container.all .slider_decoration {
+    width: 46px;
+}
+
+.slider_btn_container.all .slider_btn {
+    width:28px;
+}
+.grapher{
+	display: inline-block;
+	vertical-align: top;
+
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+
+	padding: 8px;
+}
+
+.mathquill-editable.hasCursor, .mathquill-editable .hasCursor {
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+.mathquill-rendered-math .binary-operator {
+  padding: 0 .1em !important;
+}
+
+.mathquill-editable textarea {
+    resize: none;
+}
+
+.tracept{
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: inline-block;
+	font-size: 12px;
+}
+
+.tracept .pt{
+	display: inline-block;
+	position: absolute;
+	left: -4px;
+	top: -4px;
+	border: 4px solid #000;
+	border-radius: 4px;
+	width: 0px;
+	height: 0px;
+}
+
+.tracept .label{
+	position: absolute;
+	padding: 5px 7px;
+	bottom: 12px;
+	left: 10px;
+	border: 1px solid #888;
+	box-shadow:0 1px 3px #888;
+	-moz-shadow:0 1px 3px #888;
+	-webkit-box-shadow:0 1px 3px #888;
+	border-radius: 5px;
+	background-color: white;
+	opacity:.9;
+	-moz-opacity:.9;
+	-webkit-opacity:.9;
+}
+.tracept .label.flip{
+	bottom: 4px;
+	right: 4px;
+}
+
+.tracelayer.bg_image{
+	background: url(/assets/grapher/img/spacer.gif);
+}
+
+.tracelayer.bg_trans{
+	background: rgba(0,0,0,0);
+}
+
+.tracept.min .label, .tracept.max .label, .tracept.zero .label, .tracept.intercept .label {
+	background:red;
+}
+
+.tracept.min .label, .tracept.max .label {
+	background:white url(/assets/grapher/img/min.png) right no-repeat !important;
+	padding-right:25px;
+}
+.tracept.intercept .label, .tracept.zero .label {
+	background:white url(/assets/grapher/img/intersect.png) right no-repeat !important;
+	padding-right:25px;
+}
+
+
+.tracept.intercept .label {
+	background:blue;
+}
+
+.tracept.min .pt, .tracept.max .pt{
+	left: -2px;
+	top: -2px;
+	border: 2px solid #000;
+	border-radius: 2px;
+}
+/*
+.tracept.jump .pt{
+	left: -9px;
+	top: -9px;
+	border: 9px solid #000;
+	border-radius: 9px;
+}
+*/
+
+
+.tracept.zero .pt, .tracept.intercept .pt, .tracept.min .pt, .tracept.max .pt, .tracept.jump .pt {
+	left: -5px;
+	top: -5px;
+	border-width: 2px !important;
+	padding:3px !important;
+	background:black !important;
+	border-radius: 6px;
+}
+
+.tracept.hole .pt{
+	left: -5px;
+	top: -5px;
+	border-width: 2px !important;
+	padding:3px !important;
+	background:white !important;
+	border-radius: 6px;
+}
+
+.processinglayer{
+	width: 100%;
+	height: 100%;
+	background: rgba(255,255,255,.15) url(/assets/grapher/img/compute-progress.gif) center center no-repeat;
+	display:none;
+}
+
+.processing .processinglayer{
+	display:inline-block;
+}
+/*
+ * LaTeX Math in pure HTML and CSS -- No images whatsoever
+ * v0.xa
+ * by Jay and Han
+ * Lesser GPL Licensed: http: //www.gnu.org/licenses/lgpl.html
+ *
+ * This file is automatically included by mathquill.js
+ *
+ */
+
+/* JWM: we don't want this at desmos because we delay-load these fonts
+	ATA: we need
+@font-face {
+  font-family: Symbola;
+  src: url(font/Symbola.eot);
+  src: local("Symbola Regular"), local("Symbola"),
+    url(font/Symbola.ttf) format("truetype"),
+    url(font/Symbola.otf) format("opentype"),
+    url(font/Symbola.svg#Symbola) format("svg");
+}
+*/
+
+.mathquill-editable,
+.mathquill-rendered-math,
+.mathquill-rendered-math .cursor,
+.mathquill-rendered-math .underline,
+.mathquill-rendered-math .overline,
+.mathquill-rendered-math .font,
+.mathquill-rendered-math sup,
+.mathquill-rendered-math sub,
+.mathquill-rendered-math .sup,
+.mathquill-rendered-math .sub,
+.mathquill-rendered-math .fraction,
+.mathquill-rendered-math .large-operator,
+.mathquill-rendered-math .sqrt-prefix,
+.mathquill-rendered-math .sqrt-stem,
+.mathquill-rendered-math .paren,
+.mathquill-rendered-math .array,
+.mathquill-rendered-math .block {
+  display: -moz-inline-box;
+  display: inline-block;
+  padding-top: .075em;
+}
+.mathquill-rendered-math .fraction, .mathquill-rendered-math .large-operator, x:-moz-any-link { /* Firefox 2 (and older?) only */
+  display: -moz-groupbox; /* because display:inline-block is FUBAR in Gecko < 1.9.0 */
+}
+.mathquill-rendered-math .fraction, .mathquill-rendered-math .large-operator, x:-moz-any-link, x:default { /* Firefox 3+ (Gecko 1.9.0+) */
+  display: inline-block;
+}
+.mathquill-editable, .mathquill-embedded-latex .mathquill-editable {
+  border: 1px solid gray;
+  padding: 2px;
+}
+.mathquill-embedded-latex .mathquill-editable {
+  margin: 1px;
+}
+.mathquill-textbox {
+  overflow-x: auto;
+  overflow-y: hidden; /*so IE8 won't show a vertical scrollbar*/
+}
+
+.mathquill-editable .textarea, .mathquill-rendered-math .textarea {
+  position: relative;
+  user-select: text;
+  -moz-user-select: text;
+  -webkit-user-select: text;
+}
+.mathquill-editable .textarea textarea, .mathquill-rendered-math .textarea textarea, .mathquill-rendered-math .selectable {
+  position: absolute;
+  clip: rect(1em 1em 1em 1em); /* the only way to hide the textarea *and the blinking insertion point* in IE */
+  user-select: text;
+  -moz-user-select: text;
+  -webkit-user-select: text;
+  width:1px; /* added by eli because this was still showing up in chrome */
+  height:1px;
+  overflow:hidden;
+}
+
+.mathquill-editable .cursor {
+  border-left: 1px solid black;
+  margin-right: -1px;
+  position: relative;
+  z-index: 1;
+}
+.mathquill-editable .cursor.blink {
+  visibility: hidden;
+}
+.mathquill-editable.empty:after, .mathquill-textbox:after, .mathquill-rendered-math .empty:after {
+  visibility: hidden;
+  content: 'c';
+}
+/*separated from above because unrecognized pseudoclasses invalidate the entire selector*/
+.mathquill-editable .cursor:only-child:after,
+.mathquill-editable .textarea+.cursor:last-child:after {
+  visibility: hidden;
+  content: 'c';
+}
+
+.mathquill-rendered-math .matrixed {
+  background: white;
+}
+
+.mathquill-editable .selection,
+.mathquill-rendered-math .selection,
+.mathquill-editable .selection .mathquill-rendered-math,
+.mathquill-rendered-math .selection .underline,
+.mathquill-rendered-math .selection .overline,
+.mathquill-rendered-math .selection .font,
+.mathquill-rendered-math .selection sup,
+.mathquill-rendered-math .selection sub,
+.mathquill-rendered-math .selection .sup,
+.mathquill-rendered-math .selection .sub,
+.mathquill-rendered-math .selection .fraction,
+.mathquill-rendered-math .selection .large-operator,
+.mathquill-rendered-math .selection .sqrt-prefix,
+.mathquill-rendered-math .selection .sqrt-stem,
+.mathquill-rendered-math .selection .paren,
+.mathquill-rendered-math .selection .array,
+.mathquill-editable .selection .matrixed,
+.mathquill-rendered-math .selection .matrixed,
+.mathquill-rendered-math .selection .block {
+  background: #B4D5FE;
+  background: Highlight;
+  color: HighlightText;
+  border-color: HighlightText;
+}
+.mathquill-editable .selection.blur,
+.mathquill-rendered-math .selection.blur,
+.mathquill-editable .selection.blur .mathquill-rendered-math,
+.mathquill-rendered-math .selection.blur .underline,
+.mathquill-rendered-math .selection.blur .overline,
+.mathquill-rendered-math .selection.blur .font,
+.mathquill-rendered-math .selection.blur sup,
+.mathquill-rendered-math .selection.blur sub,
+.mathquill-rendered-math .selection.blur .sup,
+.mathquill-rendered-math .selection.blur .sub,
+.mathquill-rendered-math .selection.blur .fraction,
+.mathquill-rendered-math .selection.blur .large-operator,
+.mathquill-rendered-math .selection.blur .sqrt-prefix,
+.mathquill-rendered-math .selection.blur .sqrt-stem,
+.mathquill-rendered-math .selection.blur .paren,
+.mathquill-rendered-math .selection.blur .array,
+.mathquill-editable .selection.blur .matrixed,
+.mathquill-rendered-math .selection.blur .matrixed,
+.mathquill-rendered-math .selection.blur .block {
+  background: #D4D4D4;
+  color: black;
+  border-color: black;
+}
+.mathquill-editable .selection .selection.blur,
+.mathquill-rendered-math .selection .selection.blur,
+.mathquill-editable .selection .selection.blur .mathquill-rendered-math,
+.mathquill-rendered-math .selection .selection.blur .underline,
+.mathquill-rendered-math .selection .selection.blur .overline,
+.mathquill-rendered-math .selection .selection.blur .font,
+.mathquill-rendered-math .selection .selection.blur sup,
+.mathquill-rendered-math .selection .selection.blur sub,
+.mathquill-rendered-math .selection .selection.blur .sup,
+.mathquill-rendered-math .selection .selection.blur .sub,
+.mathquill-rendered-math .selection .selection.blur .fraction,
+.mathquill-rendered-math .selection .selection.blur .large-operator,
+.mathquill-rendered-math .selection .selection.blur .sqrt-prefix,
+.mathquill-rendered-math .selection .selection.blur .sqrt-stem,
+.mathquill-rendered-math .selection .selection.blur .paren,
+.mathquill-rendered-math .selection .selection.blur .array,
+.mathquill-editable .selection .selection.blur .matrixed,
+.mathquill-rendered-math .selection .selection.blur .matrixed,
+.mathquill-rendered-math .selection .selection.blur .block {
+  background: #ABF;
+}
+.mathquill-editable .selection.blur .selection.blur,
+.mathquill-rendered-math .selection.blur .selection.blur,
+.mathquill-editable .selection.blur .selection.blur .mathquill-rendered-math,
+.mathquill-rendered-math .selection.blur .selection.blur .underline,
+.mathquill-rendered-math .selection.blur .selection.blur .overline,
+.mathquill-rendered-math .selection.blur .selection.blur .font,
+.mathquill-rendered-math .selection.blur .selection.blur sup,
+.mathquill-rendered-math .selection.blur .selection.blur sub,
+.mathquill-rendered-math .selection.blur .selection.blur .sup,
+.mathquill-rendered-math .selection.blur .selection.blur .sub,
+.mathquill-rendered-math .selection.blur .selection.blur .fraction,
+.mathquill-rendered-math .selection.blur .selection.blur .large-operator,
+.mathquill-rendered-math .selection.blur .selection.blur .sqrt-prefix,
+.mathquill-rendered-math .selection.blur .selection.blur .sqrt-stem,
+.mathquill-rendered-math .selection.blur .selection.blur .paren,
+.mathquill-rendered-math .selection.blur .selection.blur .array,
+.mathquill-editable .selection.blur .selection.blur .matrixed,
+.mathquill-rendered-math .selection.blur .selection.blur .matrixed,
+.mathquill-rendered-math .selection.blur .selection.blur .block {
+  background: #AAA;
+  background: rgba(0, 0, 0, .15);
+}
+
+.mathquill-editable, .mathquill-rendered-math {
+  cursor: text;
+  font-family: Symbola, "Times New Roman", serif;
+}
+.mathquill-rendered-math {
+  font-variant: normal;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 130%;
+  line-height: 1;
+}
+.mathquill-rendered-math var, .mathquill-rendered-math .text, .mathquill-rendered-math .nonSymbola {
+  font-family: "Times New Roman", Symbola, serif;
+}
+.mathquill-rendered-math * {
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
+  padding: 0;
+  border-color: black;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  white-space: pre-wrap;
+}
+.mathquill-editable.hasCursor,
+.mathquill-rendered-math .latex-command-input.hasCursor {
+  border-color: ActiveBorder;
+}
+.mathquill-editable.hasCursor, .mathquill-editable .hasCursor {
+  -webkit-box-shadow: #68B4DF 0 0 3px 2px;
+  -moz-box-shadow: #68B4DF 0 0 3px 2px;
+  box-shadow: #68B4DF 0 0 3px 2px;
+}
+
+.mathquill-rendered-math .empty {
+  background: #ccc;
+}
+.mathquill-rendered-math.empty {
+  background: transparent;
+}
+
+.mathquill-rendered-math .text {
+  font-size: 87%;
+}
+
+.mathquill-rendered-math .font {
+  font: 1em "Times New Roman", Symbola, serif;
+}
+.mathquill-rendered-math .font * {
+  font-family: inherit;
+  font-style: inherit;
+}
+
+.mathquill-rendered-math b,
+.mathquill-rendered-math b.font {
+  font-weight: bolder;
+}
+.mathquill-rendered-math var,
+.mathquill-rendered-math i,
+.mathquill-rendered-math i.font {
+  font-style: italic;
+}
+.mathquill-rendered-math var.florin { /* florin looks so much better than italic f */
+  margin: 0 -.0em;	/*ԭֵ margin: 0 -.1em;*/
+}
+
+.mathquill-rendered-math big {
+  font-size: 125%;
+}
+
+.mathquill-rendered-math .roman {
+  font-style: normal;
+}
+
+.mathquill-rendered-math .sans-serif {
+  font-family: sans-serif, Symbola, serif;
+}
+
+.mathquill-rendered-math .monospace {
+  font-family: monospace, Symbola, serif;
+}
+
+.mathquill-rendered-math .overline {
+  border-top: 1px solid black;
+  margin-top: 1px;
+}
+.mathquill-rendered-math .underline {
+  border-bottom: 1px solid black;
+  margin-bottom: 1px;
+}
+
+.mathquill-rendered-math sup, .mathquill-rendered-math sub {
+  position: relative;
+  font-size: 90%;
+}
+.mathquill-rendered-math sup {
+  vertical-align: .5em;
+}
+.mathquill-rendered-math .sup {
+  vertical-align: bottom;
+}
+.mathquill-rendered-math sub {
+  vertical-align: -.4em;
+}
+.mathquill-rendered-math .sub {
+  vertical-align: top;
+}
+.mathquill-rendered-math sup.nthroot {
+  margin-right: -.1em;
+  /*margin-right: -.6em;*/
+  margin-left: .2em;
+  min-width: .5em;
+}
+.mathquill-rendered-math sup.int, .mathquill-rendered-math sub.int,
+.mathquill-rendered-math sup.nthroot {
+  font-size: 80%;
+}
+.mathquill-rendered-math sup.int, .mathquill-rendered-math sup.nthroot {
+  vertical-align: .8em;
+}
+.mathquill-rendered-math sub.int {
+  vertical-align: -.6em;
+}
+
+.mathquill-rendered-math .binary-operator {
+  padding: 0 .2em;
+}
+.mathquill-rendered-math .unary-operator {
+  padding-left: .2em;
+}
+.mathquill-rendered-math sup .binary-operator,
+.mathquill-rendered-math sub .binary-operator {
+  padding: 0 .1em;
+}
+.mathquill-rendered-math sup .unary-operator,
+.mathquill-rendered-math sub .unary-operator {
+  padding-left: .1em;
+}
+
+.mathquill-rendered-math .fraction {
+  font-size: 90%;
+  text-align: center;
+  vertical-align: -.5em;
+  padding: 0 .1em;
+}
+.mathquill-rendered-math .numerator, .mathquill-rendered-math .denominator {
+  display: block;
+  padding-top: .075em;
+}
+.mathquill-rendered-math .numerator {
+  padding-left: .1em;
+  padding-right: .1em;
+}
+.mathquill-rendered-math .denominator {
+  border-top: 1px solid;
+  float: right; /* take out of normal flow to manipulate baseline */
+  width: 100%;
+}
+
+.mathquill-rendered-math sup .fraction, .mathquill-rendered-math sub .fraction {
+  font-size: 70%;
+  vertical-align: -.4em;
+}
+.mathquill-rendered-math sup .numerator, .mathquill-rendered-math sub .numerator {
+  padding-bottom: 0;
+}
+.mathquill-rendered-math sup .denominator, .mathquill-rendered-math sub .denominator {
+  padding-top: 0;
+}
+
+.mathquill-rendered-math .large-operator {
+  text-align: center;
+}
+.mathquill-rendered-math .large-operator .from, .mathquill-rendered-math .large-operator .to  {
+  display: block;
+}
+.mathquill-rendered-math big {
+  display: inline-block;
+}
+.mathquill-rendered-math .large-operator .from, .mathquill-rendered-math .large-operator .to  {
+  font-size: 80%;
+}
+.mathquill-rendered-math .large-operator .from {
+  margin-top: -.1em;
+  float: right; /* take out of normal flow to manipulate baseline */
+  width: 100%;
+}
+
+.mathquill-rendered-math .latex-command-input {
+  color: inherit;
+  font-family: "Courier New", monospace;
+  border: 1px solid gray;
+  padding-right: 1px;
+  margin-right: 1px;
+  margin-left: 2px;
+}
+.mathquill-rendered-math .latex-command-input.empty {
+  background: transparent;
+}
+
+.mathquill-rendered-math .sqrt-prefix {
+  padding-top: 0;
+  position: relative;
+  top: .1em;
+  vertical-align: top;
+  -webkit-transform-origin: top;
+  -moz-transform-origin: top;
+  -ms-transform-origin: top;
+  -o-transform-origin: top;
+  transform-origin: top;
+}
+.mathquill-rendered-math .sqrt-stem {
+  border-top: 1px solid;
+  margin-top: 1px;
+  padding-left: .15em;
+  padding-right: .2em;
+  margin-right: .1em;
+}
+
+.mathquill-rendered-math .paren {
+  padding: 0 .1em;
+  vertical-align: bottom;
+  -webkit-transform-origin: bottom center;
+  -moz-transform-origin: bottom center;
+  -ms-transform-origin: bottom center;
+  -o-transform-origin: bottom center;
+  transform-origin: bottom center;
+}
+
+.mathquill-rendered-math .array {
+  vertical-align: middle;
+  text-align: center;
+}
+
+.mathquill-rendered-math .array > span {
+  display: block;
+}
+
+.mathquill-rendered-math var.un-italicized {
+  font-family: Symbola, "Times New Roman", serif;
+  font-style: normal;
+}
+.mathquill-rendered-math var.un-italicized.last {
+  padding-right: .2em;
+}
+
+/*.mathquill-rendered-math .not {
+  margin-right: -.75em;
+}*/
+.slider{
+	display: inline-block;
+	position: relative;
+	white-space: nowrap;
+}
+.slider * {
+	display: inline-block;
+	position: absolute;
+}
+.slider * span.sup{
+ 	position: relative;
+    bottom: 0.5em;
+    font-size: 0.8em;
+}
+.slider * span.sub{
+ 	position: relative;
+    top: 0.3em;
+    font-size: 0.8em;
+}
+.slider .thumb{
+	top: 7px;
+	cursor: pointer;
+	z-index:125;
+}
+.slider .thumb .graphic{
+	position: absolute;
+	top: -5px;
+	left: -7px;
+	background:#888;
+	border-radius:4px;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	height: 12px;
+	width: 12px;
+
+	background: rgb(255,255,255); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(234,234,234,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(234,234,234,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(234,234,234,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(234,234,234,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(234,234,234,1) 100%); /* IE10+ */
+background: linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(234,234,234,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#dddddd',GradientType=0 ); /* IE6-9 */
+   border:1px solid #bbb;
+
+}
+
+.slider .thumb.over .graphic{
+/*	background: url(/assets/grapher/img/slider_over.png) center center no-repeat; */
+   border:1px solid #888;
+}
+
+.slider .thumb.down .graphic{
+	background:#ddd;
+	border:1px solid #888;
+/*	background: url(/assets/grapher/img/slider_down.png) center center no-repeat; */
+}
+
+
+.slider .zeroMarker{
+	top: 8px;
+	cursor: pointer;
+	z-index:120;
+}
+
+.slider .zeroMarker .graphic{
+	position: absolute;
+	top: -1px;
+	left: -1px;
+	background-color: #666;
+	height: 3px;
+	width: 3px;
+}
+
+/*
+This is the old track behavior which felt way too small. The active area is doubled. Mousedown anywhere on the track drags the slider to that position and then lets you drag the slider, so this seems to solve the iPad problem.
+
+.slider .track{
+	cursor: pointer;
+	height: 15px;
+}
+*/
+
+.slider .track{
+	cursor: pointer;
+	height: 22px;
+	margin-top:-10px;
+	padding-top:10px;
+}
+
+
+
+.slider .track .ticks{
+	top: 2px;
+	bottom: 0px;
+	width: 100%;
+	position: absolute;
+}
+
+.slider .track .ticks .tick{
+	width: 3px;
+	height:3px;
+	background-color:#fff;
+
+/*	height: 100%;
+	background-color: #C2D5E3; */
+	position: absolute;
+	top: 0;
+	margin-left:-1.5px;
+	top:15px;
+	z-index:100;
+}
+
+.slider .track .graphic{
+	height: 5px;
+	background-color: #c2d5e3;
+	border-radius:3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	margin-top: 6px;
+	margin-bottom: 6px;
+	width: 100%;
+}
+
+.slider .minLabel, .slider .minEditable{
+	text-align: right;
+}
+.slider .minLabel, .slider .maxLabel, .slider .textLabel, .slider .minEditable, .slider .maxEditable{
+	font-family: arial, sans-serif;
+	font-size: 12px;
+	cursor:pointer;
+	color:#666;
+}
+
+.slider .minLabel, .slider .maxLabel{
+	width: 32px;
+}
+
+.slider .minLabel, .slider .maxLabel, .slider .textLabel{
+	top: 2px;
+}
+
+.slider .minEditable, .slider .maxEditable{
+	border: 1px solid #000;
+	background: #FFF;
+	height: 11px;
+	outline: none;
+	visibility: hidden;
+	padding: 1px;
+}
+
+/* some styling overrides */
+
+.slider .textLabel {
+	display:none;
+}
+#tutorial_container {
+    position:absolute;
+    top:38px;
+    left:365px;
+    z-index:10000;
+    background:white;
+    padding:8px 20px;
+    border-radius:5px;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border:1px solid #888;
+    opacity:.9;
+    font-size:90%;
+
+    color:black;
+    text-decoration:none;
+    box-shadow:0 1px 3px #888;
+    width:500px;
+
+    display:none;
+}
+
+#tutorial_container #tutorial_title {
+    border-bottom:1px solid #ddd;
+    padding-top:5px;
+    padding-bottom:5px;
+    margin-bottom:15px;
+    font-size:200%;
+}
+
+#tutorial_step {
+    font-size:140%;
+}
+
+#tutorial_hint {
+    color:#555;
+    font-size:90%;
+    margin:10px 0px;
+    line-height:1.25em;
+    line-height:1.1em;
+    font-weight:bold;
+}
+#tutorial_hint ul {
+    font-weight:normal;
+    margin-top:5px;
+    padding-top:0px;
+}
+
+#tutorial_next_step {
+    float:right;
+    font-weight:bold;
+    font-size:140%;
+    color:green;
+    cursor:pointer;
+}
