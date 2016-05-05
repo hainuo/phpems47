@@ -236,7 +236,7 @@ class tpl
         $replace = [];
         foreach ($matches[0] as $kM => $strM) {
             $replace[$kM] = '<?php echo $this->G->make(\'strings\')->subString(strip_tags(html_entity_decode($this->ev->stripSlashes(' . $this->_compileArray($matches[1][$kM]) . '))),'.$matches[2][$kM].'); ?>';
-            var_dump($strM,$replace[$kM]);
+//            var_dump($strM,$replace[$kM]);
             $content = str_replace($strM,$replace[$kM],$content);
         }
         unset($matches);
@@ -247,8 +247,7 @@ class tpl
     public function compileEval(&$content)
     {
         $limit = '/{x2;eval:([^}]+)}/';
-        $replace = " <?php \${
-                1}; ?>";
+        $replace = " <?php \${1}; ?>";
             $content = preg_replace($limit,$replace,$content);
             }
 
