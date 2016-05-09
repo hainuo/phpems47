@@ -45,7 +45,7 @@
 								<option value="0">不限</option>
 								<option value="1"{x2;if:$search['examtype'] == 1} selected{x2;endif}>随机抽题</option>
 								<option value="2"{x2;if:$search['examtype'] == 2} selected{x2;endif}>手动抽题</option>
-								<option value="2"{x2;if:$search['examtype'] == 3} selected{x2;endif}>即时组卷</option>
+								<option value="3"{x2;if:$search['examtype'] == 3} selected{x2;endif}>即时组卷</option>
 							</select>
 						</td>
 						<td>

@@ -13,6 +13,7 @@ local.properties
 .settings/
 .loadpath
 .recommenders
+/files/attach/images/
 
 # Eclipse Core
 .project
