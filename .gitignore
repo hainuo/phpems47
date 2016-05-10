@@ -5,6 +5,7 @@ bin/
 tmp/
 *.tmp
 *.bak
+/data/
 /data/compile
 /data/html
 *.swp
