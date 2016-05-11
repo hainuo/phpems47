@@ -24,7 +24,7 @@
       			-->
       			<li{x2;if:$method == 'exercise'} class="on"{x2;endif}><a href="?exam-app-exercise">强化训练</a></li>
                 <li{x2;if:$method == 'exampaper'} class="on"{x2;endif}><a href="?exam-app-exampaper">随机考试</a></li>
-                <li{x2;if:$method == 'exam'} class="on"{x2;endif}><a href="?exam-app-exam">正式考试</a></li>
+                <li{x2;if:$method == 'exam'} class="on"{x2;endif}><a href="?exam-app-exam">考前押题</a></li>
                 <li{x2;if:$method == 'record'} class="on"{x2;endif}><a href="?exam-app-record">我的错题</a></li>
                 <li{x2;if:$method == 'favor'} class="on"{x2;endif}><a href="?exam-app-favor">我的收藏</a></li>
                 <li{x2;if:$method == 'history'} class="on"{x2;endif}><a href="?exam-app-history">答题记录</a></li>

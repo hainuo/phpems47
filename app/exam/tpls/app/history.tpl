@@ -24,7 +24,7 @@
 						<a href="index.php?exam-app-history&ehtype=1">模拟考试</a>
 					</li>
 					<li{x2;if:$ehtype == 2} class="active"{x2;endif}>
-						<a href="index.php?exam-app-history&ehtype=2">正式考试</a>
+						<a href="index.php?exam-app-history&ehtype=2">考前押题</a>
 					</li>
 				</ul>
 				{x2;if:$ehtype == 0}
@@ -33,7 +33,7 @@
 				<p>您一共完成了<b class="text-warning">{x2;$exams['number']}</b>次考试， 平均分为：<b class="text-warning">{x2;$avgscore}</b>分 继续努力吧！</p>
 				{x2;elseif:$ehtype == 2}
 				<p>您一共完成了<b class="text-warning">{x2;$exams['number']}</b>次考试， 平均分为：<b class="text-warning">{x2;$avgscore}</b>分 继续努力吧！</p>
-				<p><b class="text-warning">注意：</b>正式考试的重做试卷将作为模拟考试记录！</p>
+				<p><b class="text-warning">注意：</b>考前押题的重做试卷将作为模拟考试记录！</p>
 				{x2;endif}
 				<table class="table table-bordered table-hover">
 					<tr class="info">

@@ -266,7 +266,7 @@ class favor_exam
 	//添加一个考试记录
 	public function addExamHistory($sessionid,$status = 1)
 	{
-		file_put_contents('aa.txt',print_r($status,true));
+//		file_put_contents('aa.txt',print_r($status,true));
 		$exam = $this->exam->getExamSessionBySessionid($sessionid);
 		if(!$exam)return false;
 		$user = $this->session->getSessionUser();
@@ -290,7 +290,7 @@ class favor_exam
 					'ehdecide' => intval($exam['examsessionsetting']['examdecide']),
 					'ehstatus' => $status
 		);
-		file_put_contents('aab.txt',print_r($args,true));
+//		file_put_contents('aab.txt',print_r($args,true));
 		/**
 		try
 		{

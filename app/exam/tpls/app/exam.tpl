@@ -13,12 +13,12 @@
 						<a href="index.php?exam-app-basics">{x2;$data['currentbasic']['basic']}</a> <span class="divider">/</span>
 					</li>
 					<li class="active">
-						正式考试
+						考前押题
 					</li>
 				</ul>
 				<ul class="nav nav-tabs">
 					<li class="active">
-						<a href="#" data-toggle="tab">正式考试</a>
+						<a href="#" data-toggle="tab">考前押题</a>
 					</li>
 				</ul>
 				<div class="alert alert-info">

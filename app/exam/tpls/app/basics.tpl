@@ -57,7 +57,7 @@
 							<img src="app/core/styles/images/icons/Watches.png"/>
 							<div class="caption">
 								<p class="text-center">
-									<a class="btn btn-primary" href="index.php?exam-app-exam">正式考试</a>
+									<a class="btn btn-primary" href="index.php?exam-app-exam">考前押题</a>
 								</p>
 							</div>
 						</div>

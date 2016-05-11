@@ -75,18 +75,18 @@
 					<label for="basicexam_auto" class="control-label">考场模式：</label>
 					<div class="controls">
 						<label class="radio inline">
-				          		<input type="radio" class="input-text" name="args[basicexam][model]" value="0"{x2;if:$basic['basicexam']['model'] == 0} checked{x2;endif}/> 全功能模式（练习和正式考试均开放）
+				          		<input type="radio" class="input-text" name="args[basicexam][model]" value="0"{x2;if:$basic['basicexam']['model'] == 0} checked{x2;endif}/> 全功能模式（练习和考前押题均开放）
 			          	</label>
 			          	<label class="radio inline">
 			          		<input type="radio" class="input-text" name="args[basicexam][model]" value="1"{x2;if:$basic['basicexam']['model'] == 1} checked{x2;endif}/> 练习模式（仅练习功能开放）
 			          	</label>
 			          	<label class="radio inline">
-			          		<input type="radio" class="input-text" name="args[basicexam][model]" value="2"{x2;if:$basic['basicexam']['model'] == 2} checked{x2;endif}/> 考试模式（仅正式考试开放）
+			          		<input type="radio" class="input-text" name="args[basicexam][model]" value="2"{x2;if:$basic['basicexam']['model'] == 2} checked{x2;endif}/> 考试模式（仅考前押题开放）
 			          	</label>
 					</div>
 				</div>
 				<div class="control-group">
-					<label for="basicexam_auto" class="control-label">正式考试试题排序：</label>
+					<label for="basicexam_auto" class="control-label">考前押题试题排序：</label>
 					<div class="controls">
 						<label class="radio inline">
 				          	<input type="radio" class="input-text" name="args[basicexam][changesequence]" value="0"{x2;if:$basic['basicexam']['changesequence'] == 0} checked{x2;endif}/> 不打乱试题排序
@@ -114,14 +114,14 @@
 					</div>
 				</div>
 				<div class="control-group">
-					<label for="basicexam_self" class="control-label">绑定正式考试试卷：</label>
+					<label for="basicexam_self" class="control-label">绑定考前押题试卷：</label>
 					<div class="controls">
 						<textarea id="basicexam_self" name="args[basicexam][self]" needle="needle" msg="您必须填写至少一个试卷">{x2;$basic['basicexam']['self']}</textarea>
 						<span class="help-block">请在试卷管理处查看试卷ID，将数字ID填写在这里，多个请用英文逗号（,）隔开。留空或填0时将无法进行该项考试。</span>
 					</div>
 				</div>
 				<div class="control-group">
-					<label for="basicexam_selftemplate" class="control-label">正式考试试卷模板：</label>
+					<label for="basicexam_selftemplate" class="control-label">考前押题试卷模板：</label>
 					<div class="controls">
 						<select id="basicexam_selftemplate" name="args[basicexam][selftemplate]">
 			            	{x2;tree:$tpls['pp'],tpl,tid}
@@ -131,14 +131,14 @@
 					</div>
 				</div>
 				<div class="control-group">
-					<label class="control-label">正式考试开启时间：</label>
+					<label class="control-label">考前押题开启时间：</label>
 					<div class="controls">
 						<input name="args[basicexam][opentime][start]" type="text" value="{x2;if:$basic['basicexam']['opentime']['start']}{x2;date:$basic['basicexam']['opentime']['start'],'Y-m-d H:i:s'}{x2;else}0{x2;endif}" needle="needle" msg="您必须输入一个开启时间起点" /> - <input name="args[basicexam][opentime][end]" type="text" value="{x2;if:$basic['basicexam']['opentime']['end']}{x2;date:$basic['basicexam']['opentime']['end'],'Y-m-d H:i:s'}{x2;else}0{x2;endif}" needle="needle" msg="您必须输入一个开启时间终点" />
 						<span class="help-block">开始结束时间均需填写，格式为2014-05-01 08:00:00，不限制开启时间请任意一项填写0。如果设置的结束时间减去5分钟比考生交卷时间要早，则系统按照结束时间减去5分钟收卷。</span>
 					</div>
 				</div>
 				<div class="control-group">
-					<label class="control-label">正式考试抽卷规则：</label>
+					<label class="control-label">考前押题抽卷规则：</label>
 					<div class="controls">
 						<label class="radio inline">
 			          		<input type="radio" class="input-text" name="args[basicexam][selectrule]" value="1"{x2;if:$basic['basicexam']['selectrule']} checked{x2;endif}/> 系统随机抽卷
@@ -150,7 +150,7 @@
 					</div>
 				</div>
 				<div class="control-group">
-					<label class="control-label">正式考试限考次数：</label>
+					<label class="control-label">考前押题限考次数：</label>
 					<div class="controls">
 						<input name="args[basicexam][examnumber]" type="text" value="{x2;if:$basic['basicexam']['examnumber']}{x2;$basic['basicexam']['examnumber']}{x2;else}0{x2;endif}" needle="needle" msg="您必须输入考试次数" />
 						<span class="help-block">不限制次数请填写0，当您选择抽卷规则为系统随机抽卷时，限考次数为所有试卷限考次数，当您选择抽卷规则为用户自选时，限考次数为每套试卷限考次数。即如果设置限考次数为x，当随机抽卷时，用户一共可以考试x次；手选试卷时，用户每套试卷可考试x次。</span>

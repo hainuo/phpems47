@@ -13,7 +13,7 @@
 						<a href="index.php?exam-app-basics">{x2;$data['currentbasic']['basic']}</a> <span class="divider">/</span>
 					</li>
 					<li>
-						<a href="index.php?exam-app-exam">正式考试</a> <span class="divider">/</span>
+						<a href="index.php?exam-app-exam">考前押题</a> <span class="divider">/</span>
 					</li>
 					<li class="active">
 						成绩单
