@@ -574,9 +574,11 @@ class app
                     $basicid = $this->ev->get('basicid');
                     $basic = $this->basic->getBasicById($basicid);
                     $subjects = $this->basic->getSubjectList();
+                    $types = $this->basic->getTypeList();
                     $areas = $this->area->getAreaList();
-                    $this->tpl->assign('areas', $areas);
                     $this->tpl->assign('subjects', $subjects);
+                    $this->tpl->assign('areas', $areas);
+                    $this->tpl->assign('types', $types);
                     $this->tpl->assign('basic', $basic);
                     $this->tpl->display('basic_modify');
                 }
@@ -751,9 +753,10 @@ class app
                     $this->G->R($message);
                 } else {
                     $subjects = $this->basic->getSubjectList();
-                    $types =$this->basic->getTypeList();
+                    $types = $this->basic->getTypeList();
                     $areas = $this->area->getAreaList();
                     $this->tpl->assign('areas', $areas);
+                    $this->tpl->assign('types', $types);
                     $this->tpl->assign('subjects', $subjects);
                     $this->tpl->display('basic_add');
                 }
@@ -814,13 +817,16 @@ class app
             //删除分类
             case 'deltype':
                 $typeid = $this->ev->get('typeid');
-                $basic = $this->basic->getBasicByArgs([["AND", "typeid = :typeid", 'typeid', $typeid]]);
-                if (!empty($basic))
+                $basic = $this->basic->getBasicByArgs([["AND", "basictypeid = :typeid", 'typeid', $typeid]]);
+                if (!empty($basic)) {
+                    if(!isset($basic['basicid'])){
+                        $basic=$basic[0];
+                    }
                     $message = [
                         'statusCode' => 300,
-                        "message"    => "操作失败，请删除该分类下有考场,无法删除",
+                        "message"    => "操作失败，请删除该分类下有考场 <" . $basic['basic'] . "> id为<" . $basic['basicid'] . ">,无法删除",
                     ];
-                else {
+                } else {
                     $this->basic->delType($typeid);
                     $message = [
                         'statusCode'   => 200,
@@ -831,10 +837,12 @@ class app
                 }
                 $this->G->R($message);
                 break;
+            //考场列表
             default:
                 $page = $this->ev->get('page');
                 $page = $page > 1 ? $page : 1;
                 $subjects = $this->basic->getSubjectList();
+                $types = $this->basic->getTypeList();
                 if (!$search)
                     $args = 1;
                 else
@@ -857,6 +865,7 @@ class app
                 $this->tpl->assign('areas', $areas);
                 $this->tpl->assign('subjects', $subjects);
                 $this->tpl->assign('basics', $basics);
+                $this->tpl->assign('types', $types);
                 $this->tpl->display('basic');
                 break;
         }
