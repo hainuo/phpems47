@@ -751,13 +751,86 @@ class app
                     $this->G->R($message);
                 } else {
                     $subjects = $this->basic->getSubjectList();
+                    $types =$this->basic->getTypeList();
                     $areas = $this->area->getAreaList();
                     $this->tpl->assign('areas', $areas);
                     $this->tpl->assign('subjects', $subjects);
                     $this->tpl->display('basic_add');
                 }
                 break;
+            //科目列表
+            case 'type':
+                $types = $this->basic->getTypeList();
+                $this->tpl->assign('types', $types);
+                $this->tpl->display('basic_type');
+                break;
 
+            //添加分类
+            case 'addtype':
+                if ($this->ev->get('inserttype')) {
+                    $args = $this->ev->get('args');
+                    $data = $this->basic->getTypeByName($args['type']);
+                    if ($data) {
+                        $message = [
+                            'statusCode' => 300,
+                            "message"    => "操作失败，该科目已经存在",
+                        ];
+                        $this->G->R($message);
+                    }
+                    $this->basic->addType($args);
+                    $message = [
+                        'statusCode'   => 200,
+                        "message"      => "操作成功",
+                        "callbackType" => "forward",
+                        "forwardUrl"   => "index.php?exam-master-basic-type",
+                    ];
+                    $this->G->R($message);
+                } else {
+                    $types = $this->basic->getTypeList();
+                    $this->tpl->assign('types', $types);
+                    $this->tpl->display('basic_addtype');
+                }
+                break;
+            //修改分类
+            case 'modifytype':
+                if ($this->ev->get('modifytype')) {
+                    $args = $this->ev->get('args');
+                    $typeid = $this->ev->get('typeid');
+                    $this->basic->modifyType($typeid, $args);
+                    $message = [
+                        'statusCode'   => 200,
+                        "message"      => "操作成功",
+                        "callbackType" => "forward",
+                        "forwardUrl"   => "index.php?exam-master-basic-type",
+                    ];
+                    $this->G->R($message);
+                } else {
+                    $typeid = $this->ev->get('typeid');
+                    $type = $this->basic->getTypeById($typeid);
+                    $this->tpl->assign('type', $type);
+                    $this->tpl->display('basic_modifytype');
+                }
+                break;
+            //删除分类
+            case 'deltype':
+                $typeid = $this->ev->get('typeid');
+                $basic = $this->basic->getBasicByArgs([["AND", "typeid = :typeid", 'typeid', $typeid]]);
+                if (!empty($basic))
+                    $message = [
+                        'statusCode' => 300,
+                        "message"    => "操作失败，请删除该分类下有考场,无法删除",
+                    ];
+                else {
+                    $this->basic->delType($typeid);
+                    $message = [
+                        'statusCode'   => 200,
+                        "message"      => "操作成功",
+                        "callbackType" => "forward",
+                        "forwardUrl"   => "index.php?exam-master-basic-type",
+                    ];
+                }
+                $this->G->R($message);
+                break;
             default:
                 $page = $this->ev->get('page');
                 $page = $page > 1 ? $page : 1;

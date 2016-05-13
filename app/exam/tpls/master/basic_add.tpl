@@ -31,6 +31,17 @@
 					</div>
 				</div>
 				<div class="control-group">
+					<label for="basicsubjectid" class="control-label">考试科目</label>
+					<div class="controls">
+						<select id="basictypeid" name="args[basictypeid]" needle="needle" msg="您必须选择考场分类">
+		        		<option value="">选择考场分类</option>
+				  		{x2;tree:$types,type,sid}
+				  		<option value="{x2;v:type['typeid']}"{x2;if:v:type['typeid'] == $basic['basictypeid']} selected{x2;endif}>{x2;v:type['type']}</option>
+				  		{x2;endtree}
+				  		</select>
+					</div>
+				</div>
+				<div class="control-group">
 					<label class="control-label">考场状态</label>
 					<div class="controls">
 						<label class="radio inline">
