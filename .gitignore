@@ -109,3 +109,6 @@ dw_php_codehinting.config
 *.mno
 
 # Created by .ignore support plugin (hsz.mobi)
+银行从业2016网页备份/个人理财/专项智能练习
+composer.lock
+vendor

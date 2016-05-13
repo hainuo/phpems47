@@ -1,0 +1,5 @@
+{
+    "require": {
+        "bupt1987/html-parser": "dev-master"
+    }
+}

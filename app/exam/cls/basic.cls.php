@@ -96,6 +96,16 @@ class basic_exam
 		return $this->db->fetch($sql);
 	}
 
+	//获取分类列表
+	//参数：无
+	//返回值：分类列表数组
+	public function getTypeList($args = 1)
+	{
+		$data = array(false,'type',$args);
+		$sql = $this->pdosql->makeSelect($data);
+		return $this->db->fetchAll($sql,'typeid');
+	}
+	
 	//获取科目列表
 	//参数：无
 	//返回值：科目列表数组
@@ -115,6 +125,15 @@ class basic_exam
 		$sql = $this->pdosql->makeSelect($data);
 		return $this->db->fetch($sql,'subjectsetting');
 	}
+	//根据分类名称查询
+	//参数：分类名称字符串
+	//返回值：分类信息数组
+	public function getTypeByName($type)
+	{
+		$data = array(false,'type',array(array("AND","type = :type",'type',$type)));
+		$sql = $this->pdosql->makeSelect($data);
+		return $this->db->fetch($sql);
+	}
 
 	//根据科目ID查询科目信息
 	//参数：科目ID整数
@@ -125,7 +144,15 @@ class basic_exam
 		$sql = $this->pdosql->makeSelect($data);
 		return $this->db->fetch($sql,'subjectsetting');
 	}
-
+    //根据分类ID查询科目信息
+    //参数：分类ID整数
+    //返回值：分类信息数组
+    public function getTypeById($typeid)
+    {
+        $data = array(false,'type',array(array("AND","typeid = :typeid",'typeid',$typeid)));
+        $sql = $this->pdosql->makeSelect($data);
+        return $this->db->fetch($sql,'subjectsetting');
+    }
 	//修改科目信息
 	//参数：科目ID，修改的信息数组
 	//返回值：true
@@ -136,18 +163,36 @@ class basic_exam
 		$this->db->exec($sql);
 		return true;
 	}
-
-	//增加科目
-	//参数：科目ID，修改的信息数组
-	//返回值：true
-	public function addSubject($args)
-	{
-		$data = array('subject',$args);
-		$sql = $this->pdosql->makeInsert($data);
-		$this->db->exec($sql);
-		return $this->db->lastInsertId();
-	}
-
+    //修改分类信息
+    //参数：分类ID，修改的信息数组
+    //返回值：true
+    public function modifyType($typeid,$args)
+    {
+        $data = array('type',$args,array(array("AND","typeid = :typeid",'typeid',$typeid)));
+        $sql = $this->pdosql->makeUpdate($data);
+        $this->db->exec($sql);
+        return true;
+    }
+    //增加科目
+    //参数：科目ID，修改的信息数组
+    //返回值：true
+    public function addSubject($args)
+    {
+        $data = array('subject',$args);
+        $sql = $this->pdosql->makeInsert($data);
+        $this->db->exec($sql);
+        return $this->db->lastInsertId();
+    }
+    //增加分类
+    //参数：分类ID，修改的信息数组
+    //返回值：true
+    public function addType($args)
+    {
+        $data = array('type',$args);
+        $sql = $this->pdosql->makeInsert($data);
+        $this->db->exec($sql);
+        return $this->db->lastInsertId();
+    }
 	//删除科目
 	//参数：科目ID
 	//返回值：受影响的记录数
@@ -158,7 +203,16 @@ class basic_exam
 		return $this->db->exec($sql);
 		//return $this->db->affectedRows();
 	}
-
+    //删除分类
+    //参数：分类ID
+    //返回值：受影响的记录数
+    public function delType($id)
+    {
+        $data = array('type',array(array("AND","typeid = :typeid",'typeid',$id)));
+        $sql = $this->pdosql->makeDelete($data);
+        return $this->db->exec($sql);
+        //return $this->db->affectedRows();
+    }
 	//设置地区配置信息
 	//参数：科目ID，配置信息数组
 	//返回值：受影响的记录数

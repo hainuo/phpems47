@@ -107,7 +107,8 @@
 		                <tr>
 		                    <th><input type="checkbox" class="checkall"/></th>
 		                    <th>考场ID</th>
-					        <th>考场名称</th>
+							<th>考场名称</th>
+							<th>考场分类</th>
 					        <th>考场地区</th>
 					        <th>考试科目</th>
 					        <th>开通人数</th>
@@ -126,6 +127,9 @@
 							</td>
 							<td>
 								{x2;v:basic['basic']}
+							</td>
+							<td>
+								{x2;$types[v:basic['basictypeid']]['type']}
 							</td>
 							<td>
 								{x2;$areas[v:basic['basicareaid']]['area']}

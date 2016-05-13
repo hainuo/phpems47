@@ -6,5 +6,6 @@ require "lib/init.cls.php";
 
 $ginkgo = new ginkgo();
 $ginkgo->run();
+// dump($ginkgo->app);
 //echo $t2[0]- $t1[0];
 ?>

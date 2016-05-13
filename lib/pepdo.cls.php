@@ -45,15 +45,21 @@
     	$this->linkid->rollback();
     }
 
+	 /**
+	  * @param $sql   sql语句
+	  * @param $index   数组索引列
+	  * @param $unserialize   数组需要反序列化的字段 只允许一个
+	  * @return array|bool
+	  */
     public function fetchAll($sql,$index,$unserialize)
     {
     	if(!is_array($sql))return false;
     	if(!$this->linkid)$this->connect();
     	$query = $this->linkid->prepare($sql['sql']);
     	$rs = $query->execute($sql['v']);
-    	$fp = fopen('data/error.log','a');
-		fputs($fp,print_r($sql,true).print_r($query->errorInfo(),true));
-		fclose($fp);
+//    	$fp = fopen('data/error.log','a');
+//		fputs($fp,print_r($sql,true).print_r($query->errorInfo(),true));
+//		fclose($fp);
 		if ($rs) {
 			$query->setFetchMode(PDO::FETCH_ASSOC);
 			//return $query->fetchAll();
@@ -91,9 +97,9 @@
     	$query = $this->linkid->prepare($sql['sql']);
     	$rs = $query->execute($sql['v']);
     	//以下3行为调试代码，不需要可删除，其他勿删
-    	$fp = fopen('data/error.log','a');
-		fputs($fp,print_r($sql,true).print_r($query->errorInfo(),true));
-		fclose($fp);
+//    	$fp = fopen('data/error.log','a');
+//		fputs($fp,print_r($sql,true).print_r($query->errorInfo(),true));
+//		fclose($fp);
 		//以上3行为调试代码，不需要可删除，其他勿删
     	if ($rs) {
 			$query->setFetchMode(PDO::FETCH_ASSOC);
@@ -135,9 +141,11 @@
     	else
     	$query = $this->linkid->prepare($sql['sql']);
     	$rs = $query->execute($sql['v']);
-    	$fp = fopen('data/error.log','a');
-		fputs($fp,print_r($sql,true).print_r($query->errorInfo(),true));
-		fclose($fp);
+	    if ($query->errorInfo()) {
+		    $fp = fopen('data/error.log', 'a');
+		    fputs($fp, print_r($sql, true) . print_r($query->errorInfo(), true));
+		    fclose($fp);
+	    }
 		$this->affectedRows = $rs;
     	return $rs;
     }
