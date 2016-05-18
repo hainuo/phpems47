@@ -109,7 +109,20 @@ class pdosql
 	}
 
 	//生成select sql
-	//$args = array('*',array('user','user_group'),array(array('AND','user.usergroupid = user_group.groupid'),array('AND','userid >= :userid','userid',$userid),array('OR','usergroupid >= :usergroupid','usergroupid',$usergroupid)));
+	//$args = array('*',
+	//          array('user','user_group'),
+	//          array(array('AND',
+	//                      'user.usergroupid = user_group.groupid'),
+	//                array('AND',
+	//                      'userid >= :userid',
+	//                      'userid',
+	//                      $userid),
+	//                array('OR',
+	//                      'usergroupid >= :usergroupid',
+	//                      'usergroupid',
+	//                      $usergroupid)
+	//                 )
+	//          );
 	//$data = $this->makeSelect($args,$dbh);
 	public function makeSelect($args,$tablepre = NULL)
 	{

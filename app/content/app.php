@@ -45,9 +45,18 @@ class app
 		$students['td'] = $favor->getBestStudentsToday();
 		$students['tm'] = $favor->getBestStudentsThisMonth();
 		$basics = array();
+		$types= $basic->getTypeList();
 		$basics['hot'] = $basic->getBestBasics();
+
+        foreach ($types as $type){
+
+            $typesBasics[$type['typeid']]['basic']=$basic->getBasicsByArgs(array(array("AND","basictypeid=:ids",'ids',$type['typeid'])));
+            $typesBasics[$type['typeid']]['info']=$type;
+        }
+
 		$basics['new'] = $basic->getBasicList(1,6);
-		$this->tpl->assign('basics',$basics);
+        $this->tpl->assign('basics',$basics);
+        $this->tpl->assign('typeBasics',$typesBasics);
  		$this->tpl->assign('students',$students);
 		$this->tpl->assign('contents',$contents);
 		$this->tpl->display('index');

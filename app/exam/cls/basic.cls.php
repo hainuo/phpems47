@@ -41,7 +41,7 @@ class basic_exam
 		$rs['number'] = $number;
 		return $rs;
 	}
-
+    
 	public function getOpenBasicsByUserid($userid)
 	{
 		$data = array(false,array('openbasics','basic'),array(array("AND","openbasics.obuserid = :userid",'userid',$userid),array("AND","basic.basicclosed = 0"),array("AND","openbasics.obbasicid = basic.basicid"),array("AND","openbasics.obendtime > :obendtime",'obendtime',TIME)),false,"openbasics.obendtime DESC,obid DESC",false);

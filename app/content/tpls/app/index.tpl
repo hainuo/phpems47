@@ -59,6 +59,35 @@
 <div class="row-fluid">
 	<div class="container-fluid examcontent">
 		<div class="exambox" id="datacontent">
+			{x2;tree:$typeBasics,type,typeid}
+			<div class="examform">
+				<h5 class="title" did="{x2;v:typeid}">{x2;v:type['info']['type']}</h5>
+				<ul class="thumbnails">
+					{x2;tree:v:type['basic'],hot,hid}
+					<li class="span2">
+						<div class="thumbnail">
+							<img alt="300x200" src="{x2;v:hot['basicthumb']}"/>
+							<div class="caption">
+								<p class="text-center">
+									<a class="ajax btn btn-primary" href="index.php?exam-app-index-setCurrentBasic&basicid={x2;v:hot['basicid']}" title="{x2;v:hot['basic']}">{x2;v:hot['basic']}</a>
+								</p>
+							</div>
+						</div>
+					</li>
+					{x2;if:v:hid % 6 == 0}
+				</ul>
+				<ul class="thumbnails">
+					{x2;endif}
+					{x2;endtree}
+				</ul>
+			</div>
+			{x2;endtree}
+		</div>
+	</div>
+</div>
+<div class="row-fluid">
+	<div class="container-fluid examcontent">
+		<div class="exambox" id="datacontent">
 			<div class="examform">
 				<h5 class="title">热门考场</h5>
 				<ul class="thumbnails">
