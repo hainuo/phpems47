@@ -576,6 +576,7 @@ class app
                     $allnumber = floatval(count($sessionvars['examsessionscorelist']));
                     $args['examsessionscore'] = floatval(($sessionvars['examsessionscore'] * 100) / $allnumber);
                     $args['examsessionstatus'] = 2;
+                    $args['examsessiontype'] = 0;
                     $this->exam->modifyExamSession($args);
                     $ehid = $this->favor->addExamHistory();
                     if ($this->ev->get('direct')) {
@@ -1139,6 +1140,7 @@ class app
                     }
                     $args['examsessionuseranswer'] = $question;
                     $args['examsessionscorelist'] = $scorelist;
+                    $args['examsessiontype'] = 1;//设置为模拟考试
                     if (!$needhand) {
                         $args['examsessionstatus'] = 2;
                         $this->exam->modifyExamSession($args);
@@ -1468,7 +1470,7 @@ class app
                     $eh = $this->favor->getExamHistoryById($ehid);
                     $sessionvars = array(
                         'examsession'           => $eh['ehexam'],
-                        'examsessiontype'       => $eh['ehtype'] == 2 ? 1 : $eh['ehtype'],
+                        'examsessiontype'       => $eh['ehtype'] == 2 ? 2 : $eh['ehtype'],
                         'examsessionsetting'    => $eh['ehsetting'],
                         'examsessionbasic'      => $eh['ehbasicid'],
                         'examsessionquestion'   => $eh['ehquestion'],
@@ -1612,6 +1614,7 @@ class app
                     $args['examsessionuseranswer'] = $question;
                     $args['examsessiontimelist'] = $time;
                     $args['examsessionscorelist'] = $scorelist;
+                    $args['examsessiontype'] = 2;
                     if (!$needhand) {
                         $args['examsessionstatus'] = 2;
                         $args['examsessionscore'] = array_sum($scorelist);
