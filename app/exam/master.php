@@ -2136,11 +2136,20 @@ class app
                 $exam = $this->exam->getExamSettingById($examid);
                 $questypes = $this->basic->getQuestypeList();
                 $data = [];
-                foreach ($exam['examquestions'] as $tp) {
+//                dump(json_encode($exam['examquestions']));
+                foreach ($exam['examquestions']['questions'] as $tp) {
                     foreach ($tp as $p)
-                        $data[] = [iconv("UTF-8", "GBK//IGNORE", $questypes[$p['questiontype']]['questchar']), iconv("UTF-8", "GBK//IGNORE", html_entity_decode($p['question'])), iconv("UTF-8", "GBK//IGNORE", html_entity_decode($p['questionselect'])), iconv("UTF-8", "GBK//IGNORE", $p['questionselectnumber']), iconv("UTF-8", "GBK//IGNORE", html_entity_decode($p['questionanswer'])), iconv("UTF-8", "GBK//IGNORE", html_entity_decode($p['questiondescribe']))];
+                        $data[] = [
+                            iconv("UTF-8", "GBK//IGNORE", $questypes[$p['questiontype']]['questchar']),
+                            iconv("UTF-8", "GBK//IGNORE", html_entity_decode($p['question'])),
+                            iconv("UTF-8", "GBK//IGNORE", html_entity_decode($p['questionselect'])),
+                            iconv("UTF-8", "GBK//IGNORE", $p['questionselectnumber']),
+                            iconv("UTF-8", "GBK//IGNORE", html_entity_decode($p['questionanswer'])),
+                            iconv("UTF-8", "GBK//IGNORE", html_entity_decode($p['questiondescribe']))
+                        ];
                 }
                 $fname = 'data/exams/' . TIME . '-' . $examid . '-score.csv';
+
                 if ($this->files->outCsv($fname, $data))
                     $message = [
                         'statusCode'   => 200,
