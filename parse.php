@@ -2,6 +2,9 @@
 ini_set("auto_detect_line_endings", true);
 require 'vendor/autoload.php';
 
+//首先循环目录 读出所有的html
+$dir = '/Users/fengliu/Downloads/公司信贷专项智能练习';
+
 class files
 {
 
@@ -308,8 +311,6 @@ class files
     }
 }
 
-//首先循环目录 读出所有的html
-$dir = '/Users/fengliu/Downloads/银行从业2016网页20160512缺少的试题';
 
 function myscandir($pathname, $data = [])
 {
@@ -347,9 +348,9 @@ function dump($arg)
 
 function parsHtml($htmlfile, $item = 0)
 {
-   dump('开始处理文件'.$htmlfile);
+    dump('开始处理文件' . $htmlfile);
     global $dir;
-//    var_dump($htmlfile);
+    //var_dump($htmlfile);
     //处理所属知识点
     if (strpos($htmlfile, '章节预测题'))
         $knowledge = false;
@@ -414,9 +415,10 @@ function parsHtml($htmlfile, $item = 0)
             dump($filename);
             continue;//跳过 如果有错题就跳过
         }
-        if ($type==3 && $answer == 0) {//判断题 B为错误A为正确
+        if ($type == 3 && $answer == 0) {//判断题 B为错误A为正确
             $answer = 'B';
-        } elseif（$type==3） {
+        }
+        if($type == 3 && $answer==1) {
             $answer = 'A';
         }
 //        不需要进行多项处理
@@ -442,8 +444,8 @@ function parsHtml($htmlfile, $item = 0)
             'answer'  => $answer,
             'anlyze'  => $anlyze,
         ];
-//        dump($questions[$key]);
-//        exit;
+//       dump($questions[$key]);
+//       exit;
     }
 
 //    var_dump($filename);exit;
@@ -458,7 +460,7 @@ foreach ($datas as $key => $data) {
     $data = parsHtml($data, $key);
     $file = new files();
     $content = '';
-    $filename = $data['filename'];
+    $filename = 'xxxx/'.$data['filename'];
     unset($data['filename']);
     $file->writeFile($filename, $content);
 
@@ -483,7 +485,7 @@ foreach ($datas as $key => $data) {
 //    $content .= '\n';
         fputcsv($filehandler, $content);
     }
-    dump('文件写入完成'.$filename);
+    dump('文件写入完成' . $filename);
     fclose($filehandler);
     dump($key);
 }
