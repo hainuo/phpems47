@@ -62,9 +62,11 @@
 		                            <li class="text-success">{x2;realhtml:v:question['questionanswer']}</li>
 		                        	<li class="text-info">您的答案：</li>
 		                            <li class="text-success">{x2;if:is_array($sessionvars['examsessionuseranswer'][v:question['questionid']])}{x2;eval: echo implode('',$sessionvars['examsessionuseranswer'][v:question['questionid']])}{x2;else}{x2;realhtml:$sessionvars['examsessionuseranswer'][v:question['questionid']]}{x2;endif}</li>
+									{x2;if:!empty(v:question['questionknowsid'])}
 		                        	<li><span class="text-info">所在章：</span>{x2;tree:v:question['questionknowsid'],knowsid,kid}&nbsp;&nbsp;{x2;$globalsections[$globalknows[v:knowsid['knowsid']]['knowssectionid']]['section']}&nbsp;{x2;endtree}</li>
 		                        	<li class="text-success"><span class="text-info">知识点：</span>{x2;tree:v:question['questionknowsid'],knowsid,kid}&nbsp;&nbsp;{x2;$globalknows[v:knowsid['knowsid']]['knows']}&nbsp;{x2;endtree}</li>
-		                        	<li class="text-info">答案解析：</li>
+		                        	{x2;endif}
+									<li class="text-info">答案解析：</li>
 		                        	<li class="text-success">{x2;realhtml:v:question['questiondescribe']}</li>
 		                        </ul>
 		                    </div>

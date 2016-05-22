@@ -53,9 +53,9 @@
 									<div class="caption">
 										<p class="text-center">
 											{x2;if:$data['currentbasic']['basicexam']['examnumber'] > 0 && $number['child'][v:exam['examid']] >= $data['currentbasic']['basicexam']['examnumber']}
-											<a class="btn" href="javascript:;" title="考试次数已经用完">{x2;substring:v:exam['exam'],28}</a>
+											<a class="btn" href="javascript:;" title="考试次数已经用完">{x2;substring:v:exam['exam'],80}</a>
 											{x2;else}
-											<a class="ajax btn btn-primary" href="index.php?exam-app-exam-selectquestions&examid={x2;v:exam['examid']}" title="{x2;v:exam['exam']}" action-before="clearStorage">{x2;substring:v:exam['exam'],28}</a>
+											<a class="ajax btn btn-primary" href="index.php?exam-app-exam-selectquestions&examid={x2;v:exam['examid']}" title="{x2;v:exam['exam']}" action-before="clearStorage">{x2;substring:v:exam['exam'],80}</a>
 											{x2;endif}
 										</p>
 									</div>
@@ -90,9 +90,9 @@
 							<div class="caption">
 								<p class="text-center">
 									{x2;if:$data['currentbasic']['basicexam']['examnumber'] > 0 && $number['child'][v:exam['examid']] >= $data['currentbasic']['basicexam']['examnumber']}
-									<a class="btn" href="javascript:;" title="考试次数已经用完">{x2;substring:v:exam['exam'],28}</a>
+									<a class="btn" href="javascript:;" title="考试次数已经用完">{x2;substring:v:exam['exam'],80}</a>
 									{x2;else}
-									<a class="ajax btn btn-primary" href="index.php?exam-app-exam-selectquestions&examid={x2;v:exam['examid']}" title="{x2;v:exam['exam']}" action-before="clearStorage">{x2;substring:v:exam['exam'],28}</a>
+									<a class="ajax btn btn-primary" href="index.php?exam-app-exam-selectquestions&examid={x2;v:exam['examid']}" title="{x2;v:exam['exam']}" action-before="clearStorage">{x2;substring:v:exam['exam'],80}</a>
 									{x2;endif}
 								</p>
 							</div>
