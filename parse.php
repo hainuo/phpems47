@@ -3,7 +3,7 @@ ini_set("auto_detect_line_endings", true);
 require 'vendor/autoload.php';
 
 //首先循环目录 读出所有的html
-$dir = '/Users/fengliu/Downloads/公司信贷专项智能练习';
+$dir = '/Users/fengliu/Downloads/基金从业2016网页备份';
 
 class files
 {
