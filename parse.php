@@ -3,7 +3,7 @@ ini_set("auto_detect_line_endings", true);
 require 'vendor/autoload.php';
 
 //首先循环目录 读出所有的html
-$dir = '/Users/fengliu/Downloads/基金从业2016网页备份';
+$dir = '/Users/fengliu/Downloads/shiti';
 
 class files
 {
@@ -341,10 +341,15 @@ function myscandir2($path)
 
 function dump($arg)
 {
-    echo '<pre>';
-    var_dump($arg);
-    echo '</pre>';
+    // echo '<pre>';
+    // var_dump($arg);
+    // echo '</pre>';
+
+    $file = new files();
+    $out = './xxxx/log.txt';
+    $file->appendFile($out, var_export($arg));
 }
+
 
 function parsHtml($htmlfile, $item = 0)
 {
@@ -418,7 +423,7 @@ function parsHtml($htmlfile, $item = 0)
         if ($type == 3 && $answer == 0) {//判断题 B为错误A为正确
             $answer = 'B';
         }
-        if($type == 3 && $answer==1) {
+        if ($type == 3 && $answer == 1) {
             $answer = 'A';
         }
 //        不需要进行多项处理
@@ -460,7 +465,7 @@ foreach ($datas as $key => $data) {
     $data = parsHtml($data, $key);
     $file = new files();
     $content = '';
-    $filename = 'xxxx/'.$data['filename'];
+    $filename = 'xxxx/' . $data['filename'];
     unset($data['filename']);
     $file->writeFile($filename, $content);
 
