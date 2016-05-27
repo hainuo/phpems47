@@ -800,7 +800,7 @@ class app
 			exit;
 			break;
 
-			//批量删除模拟考试历史记录
+			//批量删除历年真题及模拟历史记录
 			case 'batdelexam':
 			$exam = $this->ev->get('exam');
 			foreach($exam as $p)

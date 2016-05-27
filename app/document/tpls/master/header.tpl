@@ -8,7 +8,7 @@
 <meta name="description" content="无纸化模拟考试系统">
 <meta name="keywords" content="无纸化模拟考试系统">
 <meta name="apple-mobile-web-app-capable" content="yes" />
-<title>PHPEMS无纸化模拟考试系统</title>
+<title>金考必过无纸化模拟考试系统</title>
 <!-- Le styles -->
 <link href="app/core/styles/css/bootstrap-combined.min.css" rel="stylesheet">
 <link href="app/core/styles/css/layoutit.css" rel="stylesheet">

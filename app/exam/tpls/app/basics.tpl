@@ -25,7 +25,7 @@
 							<img src="app/core/styles/images/icons/colors.png"/>
 							<div class="caption">
 								<p class="text-center">
-									<a class="btn btn-primary" href="index.php?exam-app-lesson">课后练习</a>
+									<a class="btn btn-primary" href="index.php?exam-app-lesson">章节练习</a>
 								</p>
 							</div>
 						</div>
@@ -45,7 +45,7 @@
 							<img src="app/core/styles/images/icons/Clipboard.png"/>
 							<div class="caption">
 								<p class="text-center">
-									<a class="btn btn-primary" href="index.php?exam-app-exampaper">模拟考试</a>
+									<a class="btn btn-primary" href="index.php?exam-app-exampaper">历年真题及模拟</a>
 								</p>
 							</div>
 						</div>

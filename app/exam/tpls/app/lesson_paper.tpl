@@ -13,7 +13,7 @@
 						<a href="index.php?exam-app-basics">{x2;$data['currentbasic']['basic']}</a> <span class="divider">/</span>
 					</li>
 					<li>
-						<a href="index.php?exam-app-lesson">课后练习</a> <span class="divider">/</span>
+						<a href="index.php?exam-app-lesson">章节练习</a> <span class="divider">/</span>
 					</li>
 					<li class="active">
 						{x2;$knows['knows']}（{x2;$questype['questype']}）

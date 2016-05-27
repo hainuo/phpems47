@@ -21,7 +21,7 @@
 						<a href="index.php?exam-app-record">强化训练</a>
 					</li>
 					<li{x2;if:$ehtype == 1} class="active"{x2;endif}>
-						<a href="index.php?exam-app-record&ehtype=1">模拟考试</a>
+						<a href="index.php?exam-app-record&ehtype=1">历年真题及模拟</a>
 					</li>
 					<li{x2;if:$ehtype == 2} class="active"{x2;endif}>
 						<a href="index.php?exam-app-record&ehtype=2">考前押题</a>

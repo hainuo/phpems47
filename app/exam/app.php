@@ -890,7 +890,7 @@ class app
         }
     }
 
-    //模拟考试
+    //历年真题及模拟
     public function exampaper()
     {
         $action = $this->ev->url(3);
@@ -1140,7 +1140,7 @@ class app
                     }
                     $args['examsessionuseranswer'] = $question;
                     $args['examsessionscorelist'] = $scorelist;
-                    $args['examsessiontype'] = 1;//设置为模拟考试
+                    $args['examsessiontype'] = 1;//设置为历年真题及模拟
                     if (!$needhand) {
                         $args['examsessionstatus'] = 2;
                         $this->exam->modifyExamSession($args);
@@ -2008,7 +2008,7 @@ class app
                 exit;
                 break;
 
-            //批量删除模拟考试历史记录
+            //批量删除历年真题及模拟历史记录
             case 'batdelexam':
                 $exam = $this->ev->get('exam');
                 foreach ($exam as $p)

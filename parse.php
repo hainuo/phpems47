@@ -347,6 +347,7 @@ function dump($arg)
 
     $file = new files();
     $out = './xxxx/log.txt';
+    $file->writeFile($out,'');
     $file->appendFile($out, var_export($arg));
 }
 
@@ -403,22 +404,28 @@ function parsHtml($htmlfile, $item = 0)
         if (empty($answer)) {
             var_dump($e->getPlainText());
             dump($filename);
-            continue;
-        }
-        $answer = $answer[0]->getAttr('href');
-        if (empty($answer)) {
-            var_dump($e->getPlainText());
-            dump($filename);
-            continue;
-        }
-        preg_match('/\'([A-Z0-9]+)\'/', $answer, $matches);
+//            continue;
+        } else
+            $answer = '未获取到答案';
+
+        if (is_array($answer)) {
+
+            $answer = $answer[0]->getAttr('href');
+//        if (empty($answer)) {
+//            var_dump($e->getPlainText());
+//            dump($filename);
+//            continue;
+//        }
+            preg_match('/\'([A-Z0-9]+)\'/', $answer, $matches);
 //        dump($matches);
-        if (!empty($matches)) {
-            $answer = $matches[1];
-        } else {
-            dump($e->getPlainText());
-            dump($filename);
-            continue;//跳过 如果有错题就跳过
+            if (!empty($matches)) {
+                $answer = $matches[1];
+            } else {
+                dump($e->getPlainText());
+                dump($filename);
+//                continue;//跳过 如果有错题就跳过
+                $answer = '未获取到答案';
+            }
         }
         if ($type == 3 && $answer == 0) {//判断题 B为错误A为正确
             $answer = 'B';

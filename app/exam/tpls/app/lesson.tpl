@@ -13,12 +13,12 @@
 						<a href="index.php?exam-app-basics">{x2;$data['currentbasic']['basic']}</a> <span class="divider">/</span>
 					</li>
 					<li class="active">
-						课后练习
+						章节练习
 					</li>
 				</ul>
 				<ul class="nav nav-tabs">
 					<li class="active">
-						<a href="#" data-toggle="tab">课后练习</a>
+						<a href="#" data-toggle="tab">章节练习</a>
 					</li>
 				</ul>
 				{x2;if:$record}

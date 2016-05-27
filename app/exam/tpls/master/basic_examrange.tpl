@@ -97,14 +97,14 @@
 					</div>
 				</div>
 				<div class="control-group">
-					<label for="basicexam_auto" class="control-label">绑定模拟考试试卷：</label>
+					<label for="basicexam_auto" class="control-label">绑定历年真题及模拟试卷：</label>
 					<div class="controls">
 						<input type="text" id="basicexam_auto" name="args[basicexam][auto]" needle="needle" msg="您必须填写至少一个试卷" value="{x2;$basic['basicexam']['auto']}" /> <a class="selfmodal btn" href="javascript:;" data-target="#modal" url="index.php?exam-master-exams-selectexams&search[subjectid]={x2;$basic['basicsubjectid']}&exams={basicexam_auto}&useframe=1&target=basicexam_auto" valuefrom="basicexam_auto">选卷</a>
 						<span class="help-block">请在试卷管理处查看试卷ID，将数字ID填写在这里，多个请用英文逗号（,）隔开。留空或填0时将无法进行该项考试。</span>
 					</div>
 				</div>
 				<div class="control-group">
-					<label for="basicexam_autotemplate" class="control-label">模拟考试模板：</label>
+					<label for="basicexam_autotemplate" class="control-label">历年真题及模拟模板：</label>
 					<div class="controls">
 						<select id="basicexam_autotemplate" name="args[basicexam][autotemplate]">
 							{x2;tree:$tpls['ep'],tpl,tid}
