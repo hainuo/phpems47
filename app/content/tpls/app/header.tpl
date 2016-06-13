@@ -7,7 +7,7 @@
 <meta name="description" content="金考必过在线试题系统">
 <meta name="keywords" content="金考必过在线试题系统">
 <meta name="apple-mobile-web-app-capable" content="yes" />
-<title>PHPEMS金考必过在线试题系统</title>
+<title>金考必过在线试题系统</title>
 <link href="app/core/styles/css/bootstrap.css" rel="stylesheet">
 <link href="app/core/styles/css/bootstrap-responsive.css" rel="stylesheet">
 <link href="app/core/styles/css/plugin.css" rel="stylesheet">
