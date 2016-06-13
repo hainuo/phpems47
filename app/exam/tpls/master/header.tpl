@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="title" content="无纸化模拟考试系统">
-<meta name="description" content="无纸化模拟考试系统">
-<meta name="keywords" content="无纸化模拟考试系统">
+<meta name="title" content="金考必过在线试题系统">
+<meta name="description" content="金考必过在线试题系统">
+<meta name="keywords" content="金考必过在线试题系统">
 <meta name="apple-mobile-web-app-capable" content="yes" />
-<title>金考必过无纸化模拟考试系统</title>
+<title>金考必过金考必过在线试题系统</title>
 <!-- Le styles -->
 <link href="app/core/styles/css/bootstrap-combined.min.css" rel="stylesheet">
 <link href="app/core/styles/css/layoutit.css" rel="stylesheet">

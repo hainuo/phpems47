@@ -3,11 +3,11 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="title" content="无纸化模拟考试系统">
-<meta name="description" content="无纸化模拟考试系统">
-<meta name="keywords" content="无纸化模拟考试系统">
+<meta name="title" content="金考必过在线试题系统">
+<meta name="description" content="金考必过在线试题系统">
+<meta name="keywords" content="金考必过在线试题系统">
 <meta name="apple-mobile-web-app-capable" content="yes" />
-<title>PHPEMS无纸化模拟考试系统</title>
+<title>PHPEMS金考必过在线试题系统</title>
 <link href="app/core/styles/css/bootstrap.css" rel="stylesheet">
 <link href="app/core/styles/css/moplugin.css" rel="stylesheet">
 <link href="app/user/styles/css/phone.css" rel="stylesheet" type="text/css" />
