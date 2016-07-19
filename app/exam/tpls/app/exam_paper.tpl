@@ -37,7 +37,7 @@
                     <ul class="breadcrumb">
                         <li>
                             <h5>{x2;v:oid}
-                                、{x2;$questype[v:quest]['questype']}{x2;$sessionvars['examsessionsetting']['examsetting']['questype'][v:quest]['describe']}</h5>
+                                {x2;$questype[v:quest]['questype']}{x2;$sessionvars['examsessionsetting']['examsetting']['questype'][v:quest]['describe']}</h5>
                         </li>
                     </ul>
                     {x2;eval: v:tid = 0}
