@@ -3,7 +3,7 @@ ini_set("auto_detect_line_endings", true);
 require 'vendor/autoload.php';
 
 //首先循环目录 读出所有的html
-$dir = '/Users/fengliu/Downloads/shiti';
+$dir = '/Users/fengliu/Downloads/更新整理题目';
 
 class files
 {
@@ -21,15 +21,20 @@ class files
     public function listDir($target)
     {
         $target = rtrim($target, '/');
-        if (!is_dir($target)) return false;
+        if (!is_dir($target)) {
+            return false;
+        }
+
         $handle = dir($target);
         $elem = [];
         while (false !== ($entry = $handle->read())) {
             if (($entry != '.') && ($entry != '..')) {
-                if (is_file($target . '/' . $entry))
+                if (is_file($target . '/' . $entry)) {
                     $elem['file'][] = ['name' => $entry, 'path' => $target . '/' . $entry, 'modify' => filemtime($target . '/' . $entry), 'size' => filesize($target . '/' . $entry)];
-                elseif (is_dir($target . '/' . $entry))
+                } elseif (is_dir($target . '/' . $entry)) {
                     $elem['dir'][] = ['name' => $entry, 'path' => $target . '/' . $entry, 'modify' => filemtime($target . '/' . $entry)];
+                }
+
             }
         }
         return $elem;
@@ -38,15 +43,27 @@ class files
     //复制文件夹
     public function copyDir($source, $destination, $child)
     {
-        if (!is_dir($destination)) mkdir($destination, 0777);
+        if (!is_dir($destination)) {
+            mkdir($destination, 0777);
+        }
+
         $handle = dir($source);
         while ($entry = $handle->read()) {
             if (($entry != '.') && ($entry != '..')) {
                 if (is_dir($source . '/' . $entry)) {
-                    if ($child) xCopy($source . '/' . $entry, $destination . '/' . $entry, $child);
+                    if ($child) {
+                        xCopy($source . '/' . $entry, $destination . '/' . $entry, $child);
+                    }
+
                 } else {
-                    if (file_exists($destination . '/' . $entry)) unlink($destination . '/' . $entry);
-                    if (!copy($source . '/' . $entry, $destination . '/' . $entry)) return false;
+                    if (file_exists($destination . '/' . $entry)) {
+                        unlink($destination . '/' . $entry);
+                    }
+
+                    if (!copy($source . '/' . $entry, $destination . '/' . $entry)) {
+                        return false;
+                    }
+
                 }
             }
         }
@@ -75,8 +92,10 @@ class files
     public function writeFile($out, $content = '')
     {
         $t = dirname($out);
-        if (!is_dir($t))
+        if (!is_dir($t)) {
             $this->mdir($t);
+        }
+
         $fp = fopen($out, 'w');
         flock($fp, LOCK_EX);
         $wp = fwrite($fp, $content);
@@ -87,7 +106,10 @@ class files
     //删除文件
     public function delFile($file)
     {
-        if (file_exists($file)) unlink($file);
+        if (file_exists($file)) {
+            unlink($file);
+        }
+
     }
 
     //读取文件
@@ -97,7 +119,10 @@ class files
             $content = file_get_contents($file);
         } else {
             $ay = file($file);
-            if (!$ay) return false;
+            if (!$ay) {
+                return false;
+            }
+
             foreach ($ay as $tmp) {
                 $content .= $tmp;
             }
@@ -109,7 +134,10 @@ class files
     public function appendFile($file, $content = '', $seek = -1)
     {
         $fp = fopen($file, 'a');
-        if ($seek >= 0) fseek($fp, $seek);
+        if ($seek >= 0) {
+            fseek($fp, $seek);
+        }
+
         flock($fp, LOCK_EX);
         fwrite($fp, $content);
         flock($fp, LOCK_UN);
@@ -119,11 +147,23 @@ class files
     //上传文件
     public function uploadFile($file, $updir, $sExtension = null, $name = null)
     {
-        if (!$sExtension) $sExtension = $this->getFileExtName($file['name']);
-        if (!$name) $name = time() . rand(1000, 9999);
-        if (!file_exists($updir)) $this->mdir($updir);
+        if (!$sExtension) {
+            $sExtension = $this->getFileExtName($file['name']);
+        }
+
+        if (!$name) {
+            $name = time() . rand(1000, 9999);
+        }
+
+        if (!file_exists($updir)) {
+            $this->mdir($updir);
+        }
+
         $url = $updir . $name . '.' . $sExtension;
-        if (file_exists($url)) unlink($url);
+        if (file_exists($url)) {
+            unlink($url);
+        }
+
         move_uploaded_file($file['tmp_name'], $url);
         if (file_exists($url)) {
             $oldumask = umask(0);
@@ -142,8 +182,10 @@ class files
         if (strpos($ext, '?') >= 0) {
             $ext = explode('?', $ext);
             return $ext[0];
-        } else
+        } else {
             return $ext;
+        }
+
     }
 
     //通过网络下载一个文件
@@ -151,9 +193,15 @@ class files
     {
         $sExtension = $this->getFileExtName($url);
         $name = time() . rand(1000, 9999);
-        if (!file_exists($updir)) $this->mdir($updir);
+        if (!file_exists($updir)) {
+            $this->mdir($updir);
+        }
+
         $path = $updir . $sExtension . '/' . date("Ymd", TIME) . '/' . $name . '.' . $sExtension;
-        if (file_exists($path)) unlink($path);
+        if (file_exists($path)) {
+            unlink($path);
+        }
+
         $this->writeFile($path, $this->readFile($url));
         if (file_exists($path)) {
             $oldumask = umask(0);
@@ -180,7 +228,10 @@ class files
     {
         if ($fp = @fopen($file, 'w')) {
             fclose($fp);
-            if ($delTestFile) @unlink($file);
+            if ($delTestFile) {
+                @unlink($file);
+            }
+
             $writeable = 1;
         } else {
             $writeable = 0;
@@ -197,31 +248,57 @@ class files
             }
             fclose($fp);
             return $fname;
-        } else
+        } else {
             return false;
+        }
+
     }
 
     //生成缩略图
     public function thumb($source, $target, $width, $height, $isresize = 1, $isstream = false)
     {
         list($swidth, $sheight) = getimagesize($source);
-        if (!$width) $width = $swidth;
-        if (!$height) $height = $sheight;
+        if (!$width) {
+            $width = $swidth;
+        }
+
+        if (!$height) {
+            $height = $sheight;
+        }
+
         if ($isresize) {
             $w = $swidth / $width;
             $h = $sheight / $height;
-            if ($w > $h) $height = $sheight / $w;
-            else $width = $swidth / $h;
+            if ($w > $h) {
+                $height = $sheight / $w;
+            } else {
+                $width = $swidth / $h;
+            }
+
         }
         $tmp_pic = imagecreatetruecolor($width, $height);
         $ext = $this->getFileExtName($source);
         $s_pic = $this->createImage($source, $ext);
-        if (!$s_pic) return false;
-        if (function_exists('imagecopyresampled')) imagecopyresampled($tmp_pic, $s_pic, 0, 0, 0, 0, $width, $height, $swidth, $sheight);
-        else imagecopyresized($tmp_pic, $s_pic, 0, 0, 0, 0, $width, $height, $swidth, $sheight);
-        if ($isstream) $target = null;
-        if ($this->writeImage($tmp_pic, $target, 100, 'png')) return true;
-        else return false;
+        if (!$s_pic) {
+            return false;
+        }
+
+        if (function_exists('imagecopyresampled')) {
+            imagecopyresampled($tmp_pic, $s_pic, 0, 0, 0, 0, $width, $height, $swidth, $sheight);
+        } else {
+            imagecopyresized($tmp_pic, $s_pic, 0, 0, 0, 0, $width, $height, $swidth, $sheight);
+        }
+
+        if ($isstream) {
+            $target = null;
+        }
+
+        if ($this->writeImage($tmp_pic, $target, 100, 'png')) {
+            return true;
+        } else {
+            return false;
+        }
+
     }
 
     //生成水印
@@ -235,8 +312,12 @@ class files
         imagealphablending($s_pic, true);
         $l_pic = $this->createImage($logo, $ext2);
         imagecopymergegray($s_pic, $l_pic, intval($swidth - $width), intval($sheight - $height), 0, 0, $width, $height, $alpha);
-        if ($this->writeImage($s_pic, $source, 100, $ext)) return true;
-        else return false;
+        if ($this->writeImage($s_pic, $source, 100, $ext)) {
+            return true;
+        } else {
+            return false;
+        }
+
     }
 
     //创建一个图片文件
@@ -244,18 +325,30 @@ class files
     {
         switch ($ext) {
             case 'jpg':
-                if (function_exists('imagecreatefromjpeg')) return imagecreatefromjpeg($source);
-                else return false;
+                if (function_exists('imagecreatefromjpeg')) {
+                    return imagecreatefromjpeg($source);
+                } else {
+                    return false;
+                }
+
                 break;
 
             case 'gif':
-                if (function_exists('imagecreatefromgif')) return imagecreatefromgif($source);
-                else return false;
+                if (function_exists('imagecreatefromgif')) {
+                    return imagecreatefromgif($source);
+                } else {
+                    return false;
+                }
+
                 break;
 
             case 'png':
-                if (function_exists('imagecreatefrompng')) return imagecreatefrompng($source);
-                else return false;
+                if (function_exists('imagecreatefrompng')) {
+                    return imagecreatefrompng($source);
+                } else {
+                    return false;
+                }
+
                 break;
 
             default:
@@ -269,18 +362,30 @@ class files
     {
         switch ($ext) {
             case 'jpg':
-                if (imagejpeg($source, $target, $alpha)) return true;
-                else return false;
+                if (imagejpeg($source, $target, $alpha)) {
+                    return true;
+                } else {
+                    return false;
+                }
+
                 break;
 
             case 'gif':
-                if (imagejpeg($source, $target, $alpha)) return true;
-                else return false;
+                if (imagejpeg($source, $target, $alpha)) {
+                    return true;
+                } else {
+                    return false;
+                }
+
                 break;
 
             case 'png':
-                if (imagejpeg($source, $target, $alpha)) return true;
-                else return false;
+                if (imagejpeg($source, $target, $alpha)) {
+                    return true;
+                } else {
+                    return false;
+                }
+
                 break;
 
             default:
@@ -311,7 +416,6 @@ class files
     }
 }
 
-
 function myscandir($pathname, $data = [])
 {
     foreach (glob($pathname) as $filename) {
@@ -330,7 +434,7 @@ function myscandir2($path)
 
     $mydir = dir($path);
     while ($file = $mydir->read()) {
-        if (($file != ".") AND ($file != "..") and ($file != '.DS_Store')) {
+        if (($file != ".") and ($file != "..") and ($file != '.DS_Store')) {
             $data[] = $file;
 
         }
@@ -338,19 +442,17 @@ function myscandir2($path)
     return $data;
 }
 
-
 function dump($arg)
 {
-    // echo '<pre>';
-    // var_dump($arg);
-    // echo '</pre>';
+    echo '<pre>';
+    var_dump($arg);
+    echo '</pre>';
 
     $file = new files();
     $out = './xxxx/log.txt';
-    $file->writeFile($out,'');
+    $file->writeFile($out, '');
     $file->appendFile($out, var_export($arg));
 }
-
 
 function parsHtml($htmlfile, $item = 0)
 {
@@ -358,10 +460,12 @@ function parsHtml($htmlfile, $item = 0)
     global $dir;
     //var_dump($htmlfile);
     //处理所属知识点
-    if (strpos($htmlfile, '章节预测题'))
+    if (strpos($htmlfile, '章节预测题')) {
         $knowledge = false;
-    else
+    } else {
         $knowledge = true;
+    }
+
     $html = file_get_contents($htmlfile);
     $dom = new \HtmlParser\ParserDom($html);
     $exam = $dom->find('div.exam');
@@ -377,18 +481,29 @@ function parsHtml($htmlfile, $item = 0)
 
         //处理题型
         //1单选题2多选题3判断题4问答题5填空题6故障题
-        if (strpos($title, '多选题') > 0)
+        if (strpos($title, '多选题') > 0) {
             $type = 2;
-        if (strpos($title, '单选题') > 0)
+        }
+
+        if (strpos($title, '单选题') > 0) {
             $type = 1;
-        if (strpos($title, '判断题') > 0)
+        }
+
+        if (strpos($title, '判断题') > 0) {
             $type = 3;
-        if (strpos($title, '问答题') > 0)
+        }
+
+        if (strpos($title, '问答题') > 0) {
             $type = 4;
-        if (strpos($title, '填空题') > 0)
+        }
+
+        if (strpos($title, '填空题') > 0) {
             $type = 5;
-        if (strpos($title, '故障题') > 0)
+        }
+
+        if (strpos($title, '故障题') > 0) {
             $type = 6;
+        }
 
         //处理选项
         $body = '';
@@ -400,48 +515,52 @@ function parsHtml($htmlfile, $item = 0)
         }
 
         //处理答案
-        $answer = $e->find('div.exam_option_menu a');
+        $answer = $e->find('div.exam_option_menu a.option_analyze');
+
         if (empty($answer)) {
-            var_dump($e->getPlainText());
             dump($filename);
-//            continue;
-        } else
             $answer = '未获取到答案';
+            //continue;
+        } else {
+            dump('获取答案');
+            dump($answer[0]->getAttr('href'));
+        }
 
         if (is_array($answer)) {
-
             $answer = $answer[0]->getAttr('href');
-//        if (empty($answer)) {
-//            var_dump($e->getPlainText());
-//            dump($filename);
-//            continue;
-//        }
+            if (empty($answer)) {
+                // dump($e->getPlainText());
+                // dump($filename);
+                // exit;
+                //            continue;
+            }
             preg_match('/\'([A-Z0-9]+)\'/', $answer, $matches);
 //        dump($matches);
             if (!empty($matches)) {
                 $answer = $matches[1];
             } else {
-                dump($e->getPlainText());
-                dump($filename);
+                dump($matches);
+                // dump($filename);
 //                continue;//跳过 如果有错题就跳过
                 $answer = '未获取到答案';
+                dump($answer);
             }
         }
-        if ($type == 3 && $answer == 0) {//判断题 B为错误A为正确
+        if ($type == 3 && $answer == 0) { //判断题 B为错误A为正确
             $answer = 'B';
         }
         if ($type == 3 && $answer == 1) {
             $answer = 'A';
         }
 //        不需要进行多项处理
-//        $lenth=strlen($answer);
-//        $preanswer=$answer;
-//        $answer='';
-//        if ($lenth>1){
-//            for($i=0,$i<$lenth,$i++){
-//                $answer=$preanswer[$i].','
-//            }
-//        }
+        //        $lenth=strlen($answer);
+        //        $preanswer=$answer;
+        //        $answer='';
+        //        if ($lenth>1){
+        //            for($i=0,$i<$lenth,$i++){
+        //                $answer=$preanswer[$i].','
+        //            }
+        //        }
 
         //处理答题分析
         $anlyze = $e->find('div.exam_analyze_value pre', 0)->getPlainText();
@@ -449,15 +568,15 @@ function parsHtml($htmlfile, $item = 0)
         //处理所属知识点
 
         $questions[$key] = [
-            'title'   => $title,
-            'type'    => $type,
+            'title' => $title,
+            'type' => $type,
             'options' => $body,
-            'nums'    => $nums,
-            'answer'  => $answer,
-            'anlyze'  => $anlyze,
+            'nums' => $nums,
+            'answer' => $answer,
+            'anlyze' => $anlyze,
         ];
-//       dump($questions[$key]);
-//       exit;
+        // dump($questions[$key][$answer]);
+        //       exit;
     }
 
 //    var_dump($filename);exit;
@@ -489,12 +608,12 @@ foreach ($datas as $key => $data) {
         $content[] = 0;
 
 //    $content = "'" . $questions['type'] . "'" . ',';
-//    $content .= "'" . addslashes($questions['title']) . "'" . ',';
-//    $content .= "'" . $questions['options'] . "'" . ',';
-//    $content .= "'" . $questions['nums'] . "'" . ',';
-//    $content .= "'" . $questions['answer'] . "'" . ',';
-//    $content .= '0,0';
-//    $content .= '\n';
+        //    $content .= "'" . addslashes($questions['title']) . "'" . ',';
+        //    $content .= "'" . $questions['options'] . "'" . ',';
+        //    $content .= "'" . $questions['nums'] . "'" . ',';
+        //    $content .= "'" . $questions['answer'] . "'" . ',';
+        //    $content .= '0,0';
+        //    $content .= '\n';
         fputcsv($filehandler, $content);
     }
     dump('文件写入完成' . $filename);
