@@ -1,462 +1,0 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="title" content="金考必过在线试题系统">
-<meta name="description" content="金考必过在线试题系统">
-<meta name="keywords" content="金考必过在线试题系统">
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<title>金考必过金考必过在线试题系统</title>
-<!-- Le styles -->
-<link href="app/core/styles/css/bootstrap-combined.min.css" rel="stylesheet">
-<link href="app/core/styles/css/layoutit.css" rel="stylesheet">
-<link href="app/core/styles/css/plugin.css" rel="stylesheet">
-<link href="app/core/styles/css/datetimepicker.css" rel="stylesheet">
-<script type="text/javascript" src="app/core/styles/js/jquery-1.9.1.min.js"></script>
-<link rel="stylesheet" href="app/exam/styles/css/mathquill.css" type="text/css">
-<script type="text/javascript" src="app/core/styles/js/jquery-ui.js"></script>
-<script type="text/javascript" src="app/core/styles/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="app/core/styles/js/bootstrap-datetimepicker.js"></script>
-<script type="text/javascript" src="app/core/styles/js/bootstrap-datetimepicker.zh-CN.js"></script>
-<script type="text/javascript" src="app/core/styles/js/ckeditor/ckeditor.js"></script>
-<script type="text/javascript" src="app/core/styles/js/swfu/swfupload.js"></script>
-<script type="text/javascript" src="app/core/styles/js/plugin.js"></script>
-</head><body>
-<div class="navbar navbar-inverse">	<div class="navbar-inner">		<div class="container-fluid">			<button data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar" type="button"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>			<a href="index.php" target="_blank" class="brand"><img src="app/core/styles/images/favicon.png">PHPEMS系统管理平台<span class="label">Version:3.1</span></a>			<div class="nav-collapse navbar-responsive-collapse collapse">				<ul class="nav">					<li>						<a href="index.php?core-master">全局</a>					</li>															<li>						<a href="index.php?user-master">用户模块</a>					</li>																				<li class="active">						<a href="index.php?exam-master">考试模块</a>					</li>																														<li>						<a href="index.php?document-master">文件模块</a>					</li>																				<li>						<a href="index.php?content-master">内容模块</a>					</li>																				<li>						<a href="index.php?bank-master">财务模块</a>					</li>														</ul>				<ul class="nav pull-right">					<li>						<a href="index.php">网站首页</a>					</li>					<li class="divider-vertical">					</li>					<li class="dropdown">						<a data-toggle="dropdown" class="dropdown-toggle" href="#">peadmin<strong class="caret"></strong></a>						<ul class="dropdown-menu">							<!--							<li>								<a href="index.php?user-app-privatement">个人中心</a>							</li>							<li class="divider">							</li>							-->							<li>								<a href="index.php?core-master-logout">退出管理</a>							</li>						</ul>					</li>				</ul>			</div>		</div>	</div></div><div class="container-fluid">
-	<div class="row-fluid">
-		<div class="span2">
-			<div class="accordion" id="accordion-13465">	<div class="accordion-group">		<div class="accordion-heading">			<a class="accordion-toggle" data-parent="#accordion-13465" data-toggle="collapse" href="#accordion-element-707348">考试设计 </a>		</div>		<div class="accordion-body in collapse" id="accordion-element-707348">			<div class="accordion-inner">				<ul class="unstyled">					<li><a href="?exam-master-basic">考场列表</a></li>					<li><a href="?exam-master-basic-type">考场分类</a></li>		    		<li><a href="?exam-master-basic-area">地区设置</a></li>		    		<li><a href="?exam-master-basic-subject">科目管理</a></li>		    		<li><a href="?exam-master-basic-questype">题型管理</a></li>				</ul>			</div>		</div>	</div>	<div class="accordion-group">		<div class="accordion-heading">			<a class="accordion-toggle" data-parent="#accordion-13465" data-toggle="collapse" href="#accordion-element-2120761">课程开通 </a>		</div>		<div class="accordion-body collapse" id="accordion-element-2120761">			<div class="accordion-inner">				<ul class="unstyled">					<li><a href="index.php?exam-master-users">开通课程</a></li>					<li><a href="index.php?exam-master-users-batopen">批量开通</a></li>				</ul>			</div>		</div>	</div>	<div class="accordion-group">		<div class="accordion-heading">			<a class="accordion-toggle" data-parent="#accordion-13465" data-toggle="collapse" href="#accordion-element-212076">试题管理 </a>		</div>		<div class="accordion-body collapse" id="accordion-element-212076">			<div class="accordion-inner">				<ul class="unstyled">					<li><a href="index.php?exam-master-questions">普通试题管理</a></li>					<li><a href="index.php?exam-master-rowsquestions">题帽题管理</a></li>				</ul>			</div>		</div>	</div>	<div class="accordion-group">		<div class="accordion-heading">			<a class="accordion-toggle" data-parent="#accordion-13465" data-toggle="collapse" href="#accordion-element-212096">试卷管理 </a>		</div>		<div class="accordion-body collapse" id="accordion-element-212096">			<div class="accordion-inner">				<ul class="unstyled">					<li><a href="index.php?exam-master-exams">试卷列表</a></li>					<li><a href="index.php?exam-master-exams-autopage">随机组卷</a></li>					<li><a href="index.php?exam-master-exams-selfpage">手工组卷</a></li>					<li><a href="index.php?exam-master-exams-temppage">即时组卷</a></li>				</ul>			</div>		</div>	</div>	<div class="accordion-group">		<div class="accordion-heading">			<a class="accordion-toggle" data-parent="#accordion-13465" data-toggle="collapse" href="#accordion-element-212090">回收站 </a>		</div>		<div class="accordion-body collapse" id="accordion-element-212090">			<div class="accordion-inner">				<ul class="unstyled">					<li><a href="index.php?exam-master-recyle">普通试题</a></li>					<li><a href="index.php?exam-master-recyle-rows">题帽题</a></li>					<li><a href="index.php?exam-master-recyle-knows">知识点</a></li>				</ul>			</div>		</div>	</div>	<div class="accordion-group">		<div class="accordion-heading">			<a class="accordion-toggle" data-parent="#accordion-13465" data-toggle="collapse" href="#accordion-element-2120901">批量工具 </a>		</div>		<div class="accordion-body collapse" id="accordion-element-2120901">			<div class="accordion-inner">				<ul class="unstyled">					<li><a href="index.php?exam-master-tools">删除试题</a></li>					<li><a href="index.php?exam-master-tools-clearhistory">清空考试记录</a></li>					<li><a href="index.php?exam-master-tools-clearsession">清理会话</a></li>				</ul>			</div>		</div>	</div></div>		</div>
-		<div class="span10" id="datacontent">
-			<ul class="breadcrumb">
-				<li><a href="index.php?exam-master">考试模块</a> <span class="divider">/</span></li>
-								<li class="active">考场管理</li>
-							</ul>
-			<ul class="nav nav-tabs">
-				<li class="active">
-					<a href="#">考场管理</a>
-				</li>
-				<li class="pull-right">
-					<a href="index.php?exam-master-basic-add">添加考场</a>
-				</li>
-			</ul>
-			<form action="index.php?exam-master-basic" method="post">
-				<table class="table">
-					<thead>
-		                <tr>
-					        <th colspan="2">搜索</th>
-					        <th></th>
-					        <th></th>
-					        <th></th>
-					        <th></th>
-		                </tr>
-		            </thead>
-					<tr>
-						<td>
-							考场ID：
-						</td>
-						<td>
-							<input name="search[basicid]" class="input-small" type="text" class="number" value=""/>
-						</td>
-						<td>
-							关键字：
-						</td>
-						<td>
-							<input class="input-medium" name="search[keyword]" type="text" value=""/>
-						</td>
-						<td>
-							地区：
-						</td>
-			        	<td>
-			        		<select name="search[basicareaid]" class="input-medium">
-				        		<option value="0">选择地区</option>
-						  								  		<option value="1">全国</option>
-						  								  		<option value="3">河南</option>
-						  								  		<option value="4">北京</option>
-						  								  		<option value="5">陕西</option>
-						  								  		<option value="6">河北</option>
-						  								  		<option value="7">天津</option>
-						  								  		<option value="8">山东</option>
-						  								  		<option value="9">江苏</option>
-						  								  		<option value="10">湖北</option>
-						  								  		<option value="11">辽宁</option>
-						  								  		<option value="12">贵州</option>
-						  								  		<option value="13">北京春雪</option>
-						  								  		<option value="14">云南</option>
-						  								  		<option value="15">四川</option>
-						  								  		<option value="16">安徽</option>
-						  								  		<option value="17">深圳</option>
-						  								  		<option value="18">吉林</option>
-						  								  		<option value="19">广东</option>
-						  								  		<option value="20">新疆</option>
-						  								  		<option value="21">广西</option>
-						  								  		<option value="22">福建</option>
-						  								  		<option value="23">湖南</option>
-						  								  		<option value="24">上海</option>
-						  								  		<option value="25">重庆</option>
-						  								  		<option value="26">江西</option>
-						  								  		<option value="27">浙江</option>
-						  								  		<option value="28">山西</option>
-						  							  		</select>
-			        	</td>
-			        	<td></td>
-			        </tr>
-			        <tr>
-			        	<td>
-							API标识：
-						</td>
-						<td>
-							<input class="input-small" name="search[basicapi]" type="text" value=""/>
-						</td>
-						<td>
-							科目：
-						</td>
-						<td>
-			        		<select name="search[basicsubjectid]" class="input-medium">
-				        		<option value="0">选择科目</option>
-						  								  		<option value="5">法律法规与综合能力</option>
-						  								  		<option value="6">个人理财</option>
-						  								  		<option value="7">个人贷款</option>
-						  								  		<option value="8">公司信贷</option>
-						  								  		<option value="9">风险管理</option>
-						  								  		<option value="10">证券市场基本法律法规</option>
-						  								  		<option value="11">金融市场基础知识</option>
-						  								  		<option value="12">证券投资顾问业务</option>
-						  								  		<option value="13">发布证券研究报告业务</option>
-						  								  		<option value="14">基金法律法规、职业道德与业务规范</option>
-						  								  		<option value="15">证券投资基金基础知识</option>
-						  							  		</select>
-			        	</td>
-			        	<td>
-							状态：
-						</td>
-			        	<td>
-			        		<select name="search[basicclosed]" class="input-medium">
-				        		<option value="0">不限</option>
-				        		<option value="1">仅关闭</option>
-				        		<option value="-1">仅开启</option>
-					  		</select>
-			        	</td>
-						<td>
-							<button class="btn btn-primary" type="submit">提交</button>
-						</td>
-
-					</tr>
-				</table>
-				<div class="input">
-					<input type="hidden" value="1" name="search[argsmodel]" />
-				</div>
-			</form>
-	        <form action="index.php?exam-master-basic-batdelbasic" method="post">
-		        <table class="table table-hover">
-		            <thead>
-		                <tr>
-		                    <th><input type="checkbox" class="checkall"/></th>
-		                    <th>考场ID</th>
-							<th>考场名称</th>
-							<th>考场分类</th>
-					        <th>考场地区</th>
-					        <th>考试科目</th>
-					        <th>开通人数</th>
-					        <th>状态</th>
-					        <th>操作</th>
-		                </tr>
-		            </thead>
-		            <tbody>
-		                				        <tr>
-							<td>
-								<input type="checkbox" name="delids[15]" value="1"/>
-							</td>
-							<td>
-								15							</td>
-							<td>
-								证券投资基金基础知识							</td>
-							<td>
-								基金从业资格考试							</td>
-							<td>
-								全国							</td>
-							<td>
-								证券投资基金基础知识							</td>
-							<td>
-								<span class="autoloaditem" autoload="index.php?exam-master-basic-getbasicmembernumber&basicid=15"></span>
-							</td>
-							<td>
-								开启							</td>
-							<td>
-								<div class="btn-group">
-									<a class="btn" href="index.php?exam-master-basic-offpaper&page=&basicid=15" title="考试调度"><em class="icon-wrench"></em></a>
-									<a class="btn" href="index.php?exam-master-basic-setexamrange&page=&basicid=15" title="考试范围"><em class="icon-cog"></em></a>
-									<a class="btn" href="index.php?exam-master-basic-modifybasic&page=&basicid=15" title="修改"><em class="icon-edit"></em></a>
-									<a class="btn confirm" href="index.php?exam-master-basic-delbasic&basicid=15&page=" title="删除"><em class="icon-remove"></em></a>
-								</div>
-							</td>
-				        </tr>
-				        				        <tr>
-							<td>
-								<input type="checkbox" name="delids[13]" value="1"/>
-							</td>
-							<td>
-								13							</td>
-							<td>
-								基金法律法规、职业道德与业务规范							</td>
-							<td>
-								基金从业资格考试							</td>
-							<td>
-								全国							</td>
-							<td>
-								基金法律法规、职业道德与业务规范							</td>
-							<td>
-								<span class="autoloaditem" autoload="index.php?exam-master-basic-getbasicmembernumber&basicid=13"></span>
-							</td>
-							<td>
-								开启							</td>
-							<td>
-								<div class="btn-group">
-									<a class="btn" href="index.php?exam-master-basic-offpaper&page=&basicid=13" title="考试调度"><em class="icon-wrench"></em></a>
-									<a class="btn" href="index.php?exam-master-basic-setexamrange&page=&basicid=13" title="考试范围"><em class="icon-cog"></em></a>
-									<a class="btn" href="index.php?exam-master-basic-modifybasic&page=&basicid=13" title="修改"><em class="icon-edit"></em></a>
-									<a class="btn confirm" href="index.php?exam-master-basic-delbasic&basicid=13&page=" title="删除"><em class="icon-remove"></em></a>
-								</div>
-							</td>
-				        </tr>
-				        				        <tr>
-							<td>
-								<input type="checkbox" name="delids[12]" value="1"/>
-							</td>
-							<td>
-								12							</td>
-							<td>
-								发布证券研究报告业务							</td>
-							<td>
-								证券从业资格考试							</td>
-							<td>
-								全国							</td>
-							<td>
-								发布证券研究报告业务							</td>
-							<td>
-								<span class="autoloaditem" autoload="index.php?exam-master-basic-getbasicmembernumber&basicid=12"></span>
-							</td>
-							<td>
-								开启							</td>
-							<td>
-								<div class="btn-group">
-									<a class="btn" href="index.php?exam-master-basic-offpaper&page=&basicid=12" title="考试调度"><em class="icon-wrench"></em></a>
-									<a class="btn" href="index.php?exam-master-basic-setexamrange&page=&basicid=12" title="考试范围"><em class="icon-cog"></em></a>
-									<a class="btn" href="index.php?exam-master-basic-modifybasic&page=&basicid=12" title="修改"><em class="icon-edit"></em></a>
-									<a class="btn confirm" href="index.php?exam-master-basic-delbasic&basicid=12&page=" title="删除"><em class="icon-remove"></em></a>
-								</div>
-							</td>
-				        </tr>
-				        				        <tr>
-							<td>
-								<input type="checkbox" name="delids[11]" value="1"/>
-							</td>
-							<td>
-								11							</td>
-							<td>
-								证券投资顾问业务							</td>
-							<td>
-								证券从业资格考试							</td>
-							<td>
-								全国							</td>
-							<td>
-								证券投资顾问业务							</td>
-							<td>
-								<span class="autoloaditem" autoload="index.php?exam-master-basic-getbasicmembernumber&basicid=11"></span>
-							</td>
-							<td>
-								开启							</td>
-							<td>
-								<div class="btn-group">
-									<a class="btn" href="index.php?exam-master-basic-offpaper&page=&basicid=11" title="考试调度"><em class="icon-wrench"></em></a>
-									<a class="btn" href="index.php?exam-master-basic-setexamrange&page=&basicid=11" title="考试范围"><em class="icon-cog"></em></a>
-									<a class="btn" href="index.php?exam-master-basic-modifybasic&page=&basicid=11" title="修改"><em class="icon-edit"></em></a>
-									<a class="btn confirm" href="index.php?exam-master-basic-delbasic&basicid=11&page=" title="删除"><em class="icon-remove"></em></a>
-								</div>
-							</td>
-				        </tr>
-				        				        <tr>
-							<td>
-								<input type="checkbox" name="delids[10]" value="1"/>
-							</td>
-							<td>
-								10							</td>
-							<td>
-								金融市场基础知识							</td>
-							<td>
-								证券从业资格考试							</td>
-							<td>
-								全国							</td>
-							<td>
-								金融市场基础知识							</td>
-							<td>
-								<span class="autoloaditem" autoload="index.php?exam-master-basic-getbasicmembernumber&basicid=10"></span>
-							</td>
-							<td>
-								开启							</td>
-							<td>
-								<div class="btn-group">
-									<a class="btn" href="index.php?exam-master-basic-offpaper&page=&basicid=10" title="考试调度"><em class="icon-wrench"></em></a>
-									<a class="btn" href="index.php?exam-master-basic-setexamrange&page=&basicid=10" title="考试范围"><em class="icon-cog"></em></a>
-									<a class="btn" href="index.php?exam-master-basic-modifybasic&page=&basicid=10" title="修改"><em class="icon-edit"></em></a>
-									<a class="btn confirm" href="index.php?exam-master-basic-delbasic&basicid=10&page=" title="删除"><em class="icon-remove"></em></a>
-								</div>
-							</td>
-				        </tr>
-				        				        <tr>
-							<td>
-								<input type="checkbox" name="delids[9]" value="1"/>
-							</td>
-							<td>
-								9							</td>
-							<td>
-								证券市场基本法律法规							</td>
-							<td>
-								证券从业资格考试							</td>
-							<td>
-								全国							</td>
-							<td>
-								证券市场基本法律法规							</td>
-							<td>
-								<span class="autoloaditem" autoload="index.php?exam-master-basic-getbasicmembernumber&basicid=9"></span>
-							</td>
-							<td>
-								开启							</td>
-							<td>
-								<div class="btn-group">
-									<a class="btn" href="index.php?exam-master-basic-offpaper&page=&basicid=9" title="考试调度"><em class="icon-wrench"></em></a>
-									<a class="btn" href="index.php?exam-master-basic-setexamrange&page=&basicid=9" title="考试范围"><em class="icon-cog"></em></a>
-									<a class="btn" href="index.php?exam-master-basic-modifybasic&page=&basicid=9" title="修改"><em class="icon-edit"></em></a>
-									<a class="btn confirm" href="index.php?exam-master-basic-delbasic&basicid=9&page=" title="删除"><em class="icon-remove"></em></a>
-								</div>
-							</td>
-				        </tr>
-				        				        <tr>
-							<td>
-								<input type="checkbox" name="delids[8]" value="1"/>
-							</td>
-							<td>
-								8							</td>
-							<td>
-								风险管理							</td>
-							<td>
-								银行从业资格考试							</td>
-							<td>
-								全国							</td>
-							<td>
-								风险管理							</td>
-							<td>
-								<span class="autoloaditem" autoload="index.php?exam-master-basic-getbasicmembernumber&basicid=8"></span>
-							</td>
-							<td>
-								开启							</td>
-							<td>
-								<div class="btn-group">
-									<a class="btn" href="index.php?exam-master-basic-offpaper&page=&basicid=8" title="考试调度"><em class="icon-wrench"></em></a>
-									<a class="btn" href="index.php?exam-master-basic-setexamrange&page=&basicid=8" title="考试范围"><em class="icon-cog"></em></a>
-									<a class="btn" href="index.php?exam-master-basic-modifybasic&page=&basicid=8" title="修改"><em class="icon-edit"></em></a>
-									<a class="btn confirm" href="index.php?exam-master-basic-delbasic&basicid=8&page=" title="删除"><em class="icon-remove"></em></a>
-								</div>
-							</td>
-				        </tr>
-				        				        <tr>
-							<td>
-								<input type="checkbox" name="delids[7]" value="1"/>
-							</td>
-							<td>
-								7							</td>
-							<td>
-								公司信贷							</td>
-							<td>
-								银行从业资格考试							</td>
-							<td>
-								全国							</td>
-							<td>
-								公司信贷							</td>
-							<td>
-								<span class="autoloaditem" autoload="index.php?exam-master-basic-getbasicmembernumber&basicid=7"></span>
-							</td>
-							<td>
-								开启							</td>
-							<td>
-								<div class="btn-group">
-									<a class="btn" href="index.php?exam-master-basic-offpaper&page=&basicid=7" title="考试调度"><em class="icon-wrench"></em></a>
-									<a class="btn" href="index.php?exam-master-basic-setexamrange&page=&basicid=7" title="考试范围"><em class="icon-cog"></em></a>
-									<a class="btn" href="index.php?exam-master-basic-modifybasic&page=&basicid=7" title="修改"><em class="icon-edit"></em></a>
-									<a class="btn confirm" href="index.php?exam-master-basic-delbasic&basicid=7&page=" title="删除"><em class="icon-remove"></em></a>
-								</div>
-							</td>
-				        </tr>
-				        				        <tr>
-							<td>
-								<input type="checkbox" name="delids[6]" value="1"/>
-							</td>
-							<td>
-								6							</td>
-							<td>
-								个人贷款							</td>
-							<td>
-								银行从业资格考试							</td>
-							<td>
-								全国							</td>
-							<td>
-								个人贷款							</td>
-							<td>
-								<span class="autoloaditem" autoload="index.php?exam-master-basic-getbasicmembernumber&basicid=6"></span>
-							</td>
-							<td>
-								开启							</td>
-							<td>
-								<div class="btn-group">
-									<a class="btn" href="index.php?exam-master-basic-offpaper&page=&basicid=6" title="考试调度"><em class="icon-wrench"></em></a>
-									<a class="btn" href="index.php?exam-master-basic-setexamrange&page=&basicid=6" title="考试范围"><em class="icon-cog"></em></a>
-									<a class="btn" href="index.php?exam-master-basic-modifybasic&page=&basicid=6" title="修改"><em class="icon-edit"></em></a>
-									<a class="btn confirm" href="index.php?exam-master-basic-delbasic&basicid=6&page=" title="删除"><em class="icon-remove"></em></a>
-								</div>
-							</td>
-				        </tr>
-				        				        <tr>
-							<td>
-								<input type="checkbox" name="delids[5]" value="1"/>
-							</td>
-							<td>
-								5							</td>
-							<td>
-								个人理财							</td>
-							<td>
-								银行从业资格考试							</td>
-							<td>
-								全国							</td>
-							<td>
-								个人理财							</td>
-							<td>
-								<span class="autoloaditem" autoload="index.php?exam-master-basic-getbasicmembernumber&basicid=5"></span>
-							</td>
-							<td>
-								开启							</td>
-							<td>
-								<div class="btn-group">
-									<a class="btn" href="index.php?exam-master-basic-offpaper&page=&basicid=5" title="考试调度"><em class="icon-wrench"></em></a>
-									<a class="btn" href="index.php?exam-master-basic-setexamrange&page=&basicid=5" title="考试范围"><em class="icon-cog"></em></a>
-									<a class="btn" href="index.php?exam-master-basic-modifybasic&page=&basicid=5" title="修改"><em class="icon-edit"></em></a>
-									<a class="btn confirm" href="index.php?exam-master-basic-delbasic&basicid=5&page=" title="删除"><em class="icon-remove"></em></a>
-								</div>
-							</td>
-				        </tr>
-				        		        	</tbody>
-		        </table>
-		        <div class="control-group">
-		            <div class="controls">
-		            	<button class="btn btn-primary" type="submit">删除</button>
-		            </div>
-				</div>
-			</form>
-	        <div class="pagination pagination-right">
-				<ul><li><a href="#" class="current">1</a></li><li><a target="" href="index.php?exam-master-basic&page=2">2</a></li><li><a>共11条数据</a></li></ul>
-	        </div>
-		</div>
-	</div>
-</div>
-</body>
-</html>

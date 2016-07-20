@@ -1,339 +1,0 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="title" content="金考必过在线试题系统">
-<meta name="description" content="金考必过在线试题系统">
-<meta name="keywords" content="金考必过在线试题系统">
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<title>金考必过金考必过在线试题系统</title>
-<!-- Le styles -->
-<link href="app/core/styles/css/bootstrap-combined.min.css" rel="stylesheet">
-<link href="app/core/styles/css/layoutit.css" rel="stylesheet">
-<link href="app/core/styles/css/plugin.css" rel="stylesheet">
-<link href="app/core/styles/css/datetimepicker.css" rel="stylesheet">
-<script type="text/javascript" src="app/core/styles/js/jquery-1.9.1.min.js"></script>
-<link rel="stylesheet" href="app/exam/styles/css/mathquill.css" type="text/css">
-<script type="text/javascript" src="app/core/styles/js/jquery-ui.js"></script>
-<script type="text/javascript" src="app/core/styles/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="app/core/styles/js/bootstrap-datetimepicker.js"></script>
-<script type="text/javascript" src="app/core/styles/js/bootstrap-datetimepicker.zh-CN.js"></script>
-<script type="text/javascript" src="app/core/styles/js/ckeditor/ckeditor.js"></script>
-<script type="text/javascript" src="app/core/styles/js/swfu/swfupload.js"></script>
-<script type="text/javascript" src="app/core/styles/js/plugin.js"></script>
-</head><body>
-<div class="navbar navbar-inverse">	<div class="navbar-inner">		<div class="container-fluid">			<button data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar" type="button"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>			<a href="index.php" target="_blank" class="brand"><img src="app/core/styles/images/favicon.png">PHPEMS系统管理平台<span class="label">Version:3.1</span></a>			<div class="nav-collapse navbar-responsive-collapse collapse">				<ul class="nav">					<li>						<a href="index.php?core-master">全局</a>					</li>															<li>						<a href="index.php?user-master">用户模块</a>					</li>																				<li class="active">						<a href="index.php?exam-master">考试模块</a>					</li>																														<li>						<a href="index.php?document-master">文件模块</a>					</li>																				<li>						<a href="index.php?content-master">内容模块</a>					</li>																				<li>						<a href="index.php?bank-master">财务模块</a>					</li>														</ul>				<ul class="nav pull-right">					<li>						<a href="index.php">网站首页</a>					</li>					<li class="divider-vertical">					</li>					<li class="dropdown">						<a data-toggle="dropdown" class="dropdown-toggle" href="#">peadmin<strong class="caret"></strong></a>						<ul class="dropdown-menu">							<!--							<li>								<a href="index.php?user-app-privatement">个人中心</a>							</li>							<li class="divider">							</li>							-->							<li>								<a href="index.php?core-master-logout">退出管理</a>							</li>						</ul>					</li>				</ul>			</div>		</div>	</div></div><div class="container-fluid">
-	<div class="row-fluid">
-		<div class="span2">
-			<div class="accordion" id="accordion-13465">	<div class="accordion-group">		<div class="accordion-heading">			<a class="accordion-toggle" data-parent="#accordion-13465" data-toggle="collapse" href="#accordion-element-707348">考试设计 </a>		</div>		<div class="accordion-body collapse" id="accordion-element-707348">			<div class="accordion-inner">				<ul class="unstyled">					<li><a href="?exam-master-basic">考场列表</a></li>					<li><a href="?exam-master-basic-type">考场分类</a></li>		    		<li><a href="?exam-master-basic-area">地区设置</a></li>		    		<li><a href="?exam-master-basic-subject">科目管理</a></li>		    		<li><a href="?exam-master-basic-questype">题型管理</a></li>				</ul>			</div>		</div>	</div>	<div class="accordion-group">		<div class="accordion-heading">			<a class="accordion-toggle" data-parent="#accordion-13465" data-toggle="collapse" href="#accordion-element-2120761">课程开通 </a>		</div>		<div class="accordion-body collapse" id="accordion-element-2120761">			<div class="accordion-inner">				<ul class="unstyled">					<li><a href="index.php?exam-master-users">开通课程</a></li>					<li><a href="index.php?exam-master-users-batopen">批量开通</a></li>				</ul>			</div>		</div>	</div>	<div class="accordion-group">		<div class="accordion-heading">			<a class="accordion-toggle" data-parent="#accordion-13465" data-toggle="collapse" href="#accordion-element-212076">试题管理 </a>		</div>		<div class="accordion-body collapse" id="accordion-element-212076">			<div class="accordion-inner">				<ul class="unstyled">					<li><a href="index.php?exam-master-questions">普通试题管理</a></li>					<li><a href="index.php?exam-master-rowsquestions">题帽题管理</a></li>				</ul>			</div>		</div>	</div>	<div class="accordion-group">		<div class="accordion-heading">			<a class="accordion-toggle" data-parent="#accordion-13465" data-toggle="collapse" href="#accordion-element-212096">试卷管理 </a>		</div>		<div class="accordion-body in collapse" id="accordion-element-212096">			<div class="accordion-inner">				<ul class="unstyled">					<li><a href="index.php?exam-master-exams">试卷列表</a></li>					<li><a href="index.php?exam-master-exams-autopage">随机组卷</a></li>					<li><a href="index.php?exam-master-exams-selfpage">手工组卷</a></li>					<li><a href="index.php?exam-master-exams-temppage">即时组卷</a></li>				</ul>			</div>		</div>	</div>	<div class="accordion-group">		<div class="accordion-heading">			<a class="accordion-toggle" data-parent="#accordion-13465" data-toggle="collapse" href="#accordion-element-212090">回收站 </a>		</div>		<div class="accordion-body collapse" id="accordion-element-212090">			<div class="accordion-inner">				<ul class="unstyled">					<li><a href="index.php?exam-master-recyle">普通试题</a></li>					<li><a href="index.php?exam-master-recyle-rows">题帽题</a></li>					<li><a href="index.php?exam-master-recyle-knows">知识点</a></li>				</ul>			</div>		</div>	</div>	<div class="accordion-group">		<div class="accordion-heading">			<a class="accordion-toggle" data-parent="#accordion-13465" data-toggle="collapse" href="#accordion-element-2120901">批量工具 </a>		</div>		<div class="accordion-body collapse" id="accordion-element-2120901">			<div class="accordion-inner">				<ul class="unstyled">					<li><a href="index.php?exam-master-tools">删除试题</a></li>					<li><a href="index.php?exam-master-tools-clearhistory">清空考试记录</a></li>					<li><a href="index.php?exam-master-tools-clearsession">清理会话</a></li>				</ul>			</div>		</div>	</div></div>		</div>
-		<div class="span10" id="datacontent">
-			<ul class="breadcrumb">
-				<li><a href="index.php?exam-master">考试模块</a> <span class="divider">/</span></li>
-				<li class="active">试卷管理</li>
-			</ul>
-			<ul class="nav nav-tabs">
-				<li class="active">
-					<a href="#">试卷管理</a>
-				</li>
-				<li class="dropdown pull-right">
-					<a data-toggle="dropdown" class="dropdown-toggle" href="#">添加试卷<strong class="caret"></strong></a>
-					<ul class="dropdown-menu">
-						<li><a href="index.php?exam-master-exams-autopage&page=">随机组卷</a></li>
-						<li><a href="index.php?exam-master-exams-selfpage&page=">手动组卷</a></li>
-					</ul>
-				</li>
-			</ul>
-	        <form action="index.php?exam-master-exams" method="post">
-				<table class="table">
-					<thead>
-		                <tr>
-					        <th colspan="2">搜索</th>
-					        <th></th>
-					        <th></th>
-					        <th></th>
-					        <th></th>
-		                </tr>
-		            </thead>
-					<tr>
-						<td>
-							选择类型：
-						</td>
-						<td>
-							<select name="search[examtype]">
-								<option value="0">不限</option>
-								<option value="1">随机抽题</option>
-								<option value="2">手动抽题</option>
-								<option value="3">即时组卷</option>
-							</select>
-						</td>
-						<td>
-							选择科目：
-						</td>
-						<td>
-							<select name="search[examsubject]">
-								<option value="0">不限</option>
-														  		<option value="5">法律法规与综合能力</option>
-						  								  		<option value="6">个人理财</option>
-						  								  		<option value="7">个人贷款</option>
-						  								  		<option value="8">公司信贷</option>
-						  								  		<option value="9">风险管理</option>
-						  								  		<option value="10">证券市场基本法律法规</option>
-						  								  		<option value="11">金融市场基础知识</option>
-						  								  		<option value="12">证券投资顾问业务</option>
-						  								  		<option value="13">发布证券研究报告业务</option>
-						  								  		<option value="14">基金法律法规、职业道德与业务规范</option>
-						  								  		<option value="15">证券投资基金基础知识</option>
-						  									</select>
-						</td>
-						<td>
-							<button class="btn btn-primary" type="submit">搜索</button>
-							<input type="hidden" value="1" name="search[argsmodel]" />
-						</td>
-					</tr>
-				</table>
-			</form>
-	        <table class="table table-hover">
-	            <thead>
-	                <tr>
-	                    <th>ID</th>
-				        <th>考试名称</th>
-				        <th>组卷人</th>
-				        <th>组卷类型</th>
-				        <th>组卷时间</th>
-				        <th>考试科目</th>
-				        <th>操作</th>
-	                </tr>
-	            </thead>
-	            <tbody>
-                    			        <tr>
-						<td>
-							113						</td>
-						<td>
-							2016年发布证券研究报告押题1						</td>
-						<td>
-							peadmin						</td>
-						<td>
-							即时组卷						</td>
-						<td>
-							2016-06-23						</td>
-						<td>
-							发布证券研究报告业务						</td>
-						<td>
-							<div class="btn-group">
-	                    			                    		<a class="btn" target="_blank" href="index.php?exam-master-exams-preview&examid=113" title="查看试卷"><em class="icon-list-alt"></em></a>
-	                    			                    			                    		<a class="btn ajax" href="index.php?exam-master-exams-outcsv&page=&examid=113" title="下载csv"><em class="icon-download-alt"></em></a>
-	                    			                    		<a class="btn" href="index.php?exam-master-exams-modify&page=&examid=113" title="修改"><em class="icon-edit"></em></a>
-								<a class="btn confirm" href="index.php?exam-master-exams-del&page=&examid=113" title="删除"><em class="icon-remove"></em></a>
-	                    	</div>
-						</td>
-			        </tr>
-			        			        <tr>
-						<td>
-							111						</td>
-						<td>
-							2016年5月基础法律法规绝密押题七						</td>
-						<td>
-							peadmin						</td>
-						<td>
-							即时组卷						</td>
-						<td>
-							2016-06-19						</td>
-						<td>
-							证券市场基本法律法规						</td>
-						<td>
-							<div class="btn-group">
-	                    			                    		<a class="btn" target="_blank" href="index.php?exam-master-exams-preview&examid=111" title="查看试卷"><em class="icon-list-alt"></em></a>
-	                    			                    			                    		<a class="btn ajax" href="index.php?exam-master-exams-outcsv&page=&examid=111" title="下载csv"><em class="icon-download-alt"></em></a>
-	                    			                    		<a class="btn" href="index.php?exam-master-exams-modify&page=&examid=111" title="修改"><em class="icon-edit"></em></a>
-								<a class="btn confirm" href="index.php?exam-master-exams-del&page=&examid=111" title="删除"><em class="icon-remove"></em></a>
-	                    	</div>
-						</td>
-			        </tr>
-			        			        <tr>
-						<td>
-							110						</td>
-						<td>
-							2016年5月基础法律法规绝密押题六						</td>
-						<td>
-							peadmin						</td>
-						<td>
-							即时组卷						</td>
-						<td>
-							2016-06-19						</td>
-						<td>
-							证券市场基本法律法规						</td>
-						<td>
-							<div class="btn-group">
-	                    			                    		<a class="btn" target="_blank" href="index.php?exam-master-exams-preview&examid=110" title="查看试卷"><em class="icon-list-alt"></em></a>
-	                    			                    			                    		<a class="btn ajax" href="index.php?exam-master-exams-outcsv&page=&examid=110" title="下载csv"><em class="icon-download-alt"></em></a>
-	                    			                    		<a class="btn" href="index.php?exam-master-exams-modify&page=&examid=110" title="修改"><em class="icon-edit"></em></a>
-								<a class="btn confirm" href="index.php?exam-master-exams-del&page=&examid=110" title="删除"><em class="icon-remove"></em></a>
-	                    	</div>
-						</td>
-			        </tr>
-			        			        <tr>
-						<td>
-							109						</td>
-						<td>
-							2016年5月基础法律法规绝密押题五						</td>
-						<td>
-							peadmin						</td>
-						<td>
-							即时组卷						</td>
-						<td>
-							2016-06-19						</td>
-						<td>
-							证券市场基本法律法规						</td>
-						<td>
-							<div class="btn-group">
-	                    			                    		<a class="btn" target="_blank" href="index.php?exam-master-exams-preview&examid=109" title="查看试卷"><em class="icon-list-alt"></em></a>
-	                    			                    			                    		<a class="btn ajax" href="index.php?exam-master-exams-outcsv&page=&examid=109" title="下载csv"><em class="icon-download-alt"></em></a>
-	                    			                    		<a class="btn" href="index.php?exam-master-exams-modify&page=&examid=109" title="修改"><em class="icon-edit"></em></a>
-								<a class="btn confirm" href="index.php?exam-master-exams-del&page=&examid=109" title="删除"><em class="icon-remove"></em></a>
-	                    	</div>
-						</td>
-			        </tr>
-			        			        <tr>
-						<td>
-							108						</td>
-						<td>
-							2016年5月基础法律法规绝密押题四						</td>
-						<td>
-							peadmin						</td>
-						<td>
-							即时组卷						</td>
-						<td>
-							2016-06-19						</td>
-						<td>
-							证券市场基本法律法规						</td>
-						<td>
-							<div class="btn-group">
-	                    			                    		<a class="btn" target="_blank" href="index.php?exam-master-exams-preview&examid=108" title="查看试卷"><em class="icon-list-alt"></em></a>
-	                    			                    			                    		<a class="btn ajax" href="index.php?exam-master-exams-outcsv&page=&examid=108" title="下载csv"><em class="icon-download-alt"></em></a>
-	                    			                    		<a class="btn" href="index.php?exam-master-exams-modify&page=&examid=108" title="修改"><em class="icon-edit"></em></a>
-								<a class="btn confirm" href="index.php?exam-master-exams-del&page=&examid=108" title="删除"><em class="icon-remove"></em></a>
-	                    	</div>
-						</td>
-			        </tr>
-			        			        <tr>
-						<td>
-							107						</td>
-						<td>
-							2016年5月基础法律法规绝密押题三						</td>
-						<td>
-							peadmin						</td>
-						<td>
-							即时组卷						</td>
-						<td>
-							2016-06-19						</td>
-						<td>
-							证券市场基本法律法规						</td>
-						<td>
-							<div class="btn-group">
-	                    			                    		<a class="btn" target="_blank" href="index.php?exam-master-exams-preview&examid=107" title="查看试卷"><em class="icon-list-alt"></em></a>
-	                    			                    			                    		<a class="btn ajax" href="index.php?exam-master-exams-outcsv&page=&examid=107" title="下载csv"><em class="icon-download-alt"></em></a>
-	                    			                    		<a class="btn" href="index.php?exam-master-exams-modify&page=&examid=107" title="修改"><em class="icon-edit"></em></a>
-								<a class="btn confirm" href="index.php?exam-master-exams-del&page=&examid=107" title="删除"><em class="icon-remove"></em></a>
-	                    	</div>
-						</td>
-			        </tr>
-			        			        <tr>
-						<td>
-							106						</td>
-						<td>
-							2016年5月基础法律法规绝密押题二						</td>
-						<td>
-							peadmin						</td>
-						<td>
-							即时组卷						</td>
-						<td>
-							2016-06-19						</td>
-						<td>
-							证券市场基本法律法规						</td>
-						<td>
-							<div class="btn-group">
-	                    			                    		<a class="btn" target="_blank" href="index.php?exam-master-exams-preview&examid=106" title="查看试卷"><em class="icon-list-alt"></em></a>
-	                    			                    			                    		<a class="btn ajax" href="index.php?exam-master-exams-outcsv&page=&examid=106" title="下载csv"><em class="icon-download-alt"></em></a>
-	                    			                    		<a class="btn" href="index.php?exam-master-exams-modify&page=&examid=106" title="修改"><em class="icon-edit"></em></a>
-								<a class="btn confirm" href="index.php?exam-master-exams-del&page=&examid=106" title="删除"><em class="icon-remove"></em></a>
-	                    	</div>
-						</td>
-			        </tr>
-			        			        <tr>
-						<td>
-							105						</td>
-						<td>
-							2016年5月基础法律法规绝密押题一						</td>
-						<td>
-							peadmin						</td>
-						<td>
-							即时组卷						</td>
-						<td>
-							2016-06-19						</td>
-						<td>
-							证券市场基本法律法规						</td>
-						<td>
-							<div class="btn-group">
-	                    			                    		<a class="btn" target="_blank" href="index.php?exam-master-exams-preview&examid=105" title="查看试卷"><em class="icon-list-alt"></em></a>
-	                    			                    			                    		<a class="btn ajax" href="index.php?exam-master-exams-outcsv&page=&examid=105" title="下载csv"><em class="icon-download-alt"></em></a>
-	                    			                    		<a class="btn" href="index.php?exam-master-exams-modify&page=&examid=105" title="修改"><em class="icon-edit"></em></a>
-								<a class="btn confirm" href="index.php?exam-master-exams-del&page=&examid=105" title="删除"><em class="icon-remove"></em></a>
-	                    	</div>
-						</td>
-			        </tr>
-			        			        <tr>
-						<td>
-							104						</td>
-						<td>
-							2016年4月证券法律法规绝密押题7						</td>
-						<td>
-							peadmin						</td>
-						<td>
-							即时组卷						</td>
-						<td>
-							2016-06-19						</td>
-						<td>
-							证券市场基本法律法规						</td>
-						<td>
-							<div class="btn-group">
-	                    			                    		<a class="btn" target="_blank" href="index.php?exam-master-exams-preview&examid=104" title="查看试卷"><em class="icon-list-alt"></em></a>
-	                    			                    			                    		<a class="btn ajax" href="index.php?exam-master-exams-outcsv&page=&examid=104" title="下载csv"><em class="icon-download-alt"></em></a>
-	                    			                    		<a class="btn" href="index.php?exam-master-exams-modify&page=&examid=104" title="修改"><em class="icon-edit"></em></a>
-								<a class="btn confirm" href="index.php?exam-master-exams-del&page=&examid=104" title="删除"><em class="icon-remove"></em></a>
-	                    	</div>
-						</td>
-			        </tr>
-			        			        <tr>
-						<td>
-							103						</td>
-						<td>
-							2016年4月证券法律法规绝密押题6						</td>
-						<td>
-							peadmin						</td>
-						<td>
-							即时组卷						</td>
-						<td>
-							2016-06-19						</td>
-						<td>
-							证券市场基本法律法规						</td>
-						<td>
-							<div class="btn-group">
-	                    			                    		<a class="btn" target="_blank" href="index.php?exam-master-exams-preview&examid=103" title="查看试卷"><em class="icon-list-alt"></em></a>
-	                    			                    			                    		<a class="btn ajax" href="index.php?exam-master-exams-outcsv&page=&examid=103" title="下载csv"><em class="icon-download-alt"></em></a>
-	                    			                    		<a class="btn" href="index.php?exam-master-exams-modify&page=&examid=103" title="修改"><em class="icon-edit"></em></a>
-								<a class="btn confirm" href="index.php?exam-master-exams-del&page=&examid=103" title="删除"><em class="icon-remove"></em></a>
-	                    	</div>
-						</td>
-			        </tr>
-			        	        	</tbody>
-	        </table>
-	        <div class="pagination pagination-right">
-	            <ul><li><a href="#" class="current">1</a></li><li><a target="" href="index.php?exam-master-exams&page=2">2</a></li><li><a target="" href="index.php?exam-master-exams&page=3">3</a></li><li><a target="" href="index.php?exam-master-exams&page=4">4</a></li><li><a target="" href="index.php?exam-master-exams&page=5">5</a></li><li><a target="" href="index.php?exam-master-exams&page=6">6</a></li><li><a target="" href="index.php?exam-master-exams&page=7">7</a></li><li><a target="" href="index.php?exam-master-exams&page=8">8</a></li><li><a target="" href="index.php?exam-master-exams&page=9">9</a></li><li><a target="" href="index.php?exam-master-exams&page=10">10</a></li><li><a>共99条数据</a></li></ul>
-	        </div>
-		</div>
-	</div>
-</div>
-</body>
-</html>
