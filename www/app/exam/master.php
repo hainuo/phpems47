@@ -2663,7 +2663,7 @@ class app
                         "message"    => "您已经开通了本考场",
                     ];
                 } else {
-                    $this->basic->openBasic(['obuserid' => $userid, 'obbasicid' => $basicid, 'obendtime' => TIME + 30 * 24 * 3600]);
+                    $this->basic->openBasic(['obuserid' => $userid, 'obbasicid' => $basicid, 'obendtime' => TIME + 365 * 24 * 3600]);
                     $message = [
                         'statusCode'   => 200,
                         "message"      => "操作成功",

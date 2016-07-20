@@ -242,7 +242,15 @@ class tpl
     {
         $limit = '/{x2;date:([^,]+),([^}]+)}/';
         $replace = "<?php echo date(\${2},\${1}); ?>";
-        $content = preg_replace($limit, $replace, $content);
+        preg_match_all($limit,$content,$matches);
+        var_dump($matches);
+        $replace = [];
+        foreach ($matches[0] as $kM => $strM) {
+            $replace[$kM] = '<?php echo date('. $matches[2][$kM]. ','.$this->_compileArray($matches[1][$kM]).'); ?>';
+//            var_dump($strM,$replace[$kM]);
+            $content = str_replace($strM,$replace[$kM],$content);
+        }
+        unset($matches);
     }
 
     public function compileSubstring(&$content)
