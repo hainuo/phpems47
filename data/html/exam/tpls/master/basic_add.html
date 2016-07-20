@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="title" content="金考必过在线试题系统">
+<meta name="description" content="金考必过在线试题系统">
+<meta name="keywords" content="金考必过在线试题系统">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<title>金考必过金考必过在线试题系统</title>
+<!-- Le styles -->
+<link href="app/core/styles/css/bootstrap-combined.min.css" rel="stylesheet">
+<link href="app/core/styles/css/layoutit.css" rel="stylesheet">
+<link href="app/core/styles/css/plugin.css" rel="stylesheet">
+<link href="app/core/styles/css/datetimepicker.css" rel="stylesheet">
+<script type="text/javascript" src="app/core/styles/js/jquery-1.9.1.min.js"></script>
+<link rel="stylesheet" href="app/exam/styles/css/mathquill.css" type="text/css">
+<script type="text/javascript" src="app/core/styles/js/jquery-ui.js"></script>
+<script type="text/javascript" src="app/core/styles/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="app/core/styles/js/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript" src="app/core/styles/js/bootstrap-datetimepicker.zh-CN.js"></script>
+<script type="text/javascript" src="app/core/styles/js/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="app/core/styles/js/swfu/swfupload.js"></script>
+<script type="text/javascript" src="app/core/styles/js/plugin.js"></script>
+</head><body>
+<div class="navbar navbar-inverse">	<div class="navbar-inner">		<div class="container-fluid">			<button data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar" type="button"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>			<a href="index.php" target="_blank" class="brand"><img src="app/core/styles/images/favicon.png">PHPEMS系统管理平台<span class="label">Version:3.1</span></a>			<div class="nav-collapse navbar-responsive-collapse collapse">				<ul class="nav">					<li>						<a href="index.php?core-master">全局</a>					</li>															<li>						<a href="index.php?user-master">用户模块</a>					</li>																				<li class="active">						<a href="index.php?exam-master">考试模块</a>					</li>																														<li>						<a href="index.php?document-master">文件模块</a>					</li>																				<li>						<a href="index.php?content-master">内容模块</a>					</li>																				<li>						<a href="index.php?bank-master">财务模块</a>					</li>														</ul>				<ul class="nav pull-right">					<li>						<a href="index.php">网站首页</a>					</li>					<li class="divider-vertical">					</li>					<li class="dropdown">						<a data-toggle="dropdown" class="dropdown-toggle" href="#">peadmin<strong class="caret"></strong></a>						<ul class="dropdown-menu">							<!--							<li>								<a href="index.php?user-app-privatement">个人中心</a>							</li>							<li class="divider">							</li>							-->							<li>								<a href="index.php?core-master-logout">退出管理</a>							</li>						</ul>					</li>				</ul>			</div>		</div>	</div></div><div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span2">
+            <div class="accordion" id="accordion-13465">	<div class="accordion-group">		<div class="accordion-heading">			<a class="accordion-toggle" data-parent="#accordion-13465" data-toggle="collapse" href="#accordion-element-707348">考试设计 </a>		</div>		<div class="accordion-body in collapse" id="accordion-element-707348">			<div class="accordion-inner">				<ul class="unstyled">					<li><a href="?exam-master-basic">考场列表</a></li>					<li><a href="?exam-master-basic-type">考场分类</a></li>		    		<li><a href="?exam-master-basic-area">地区设置</a></li>		    		<li><a href="?exam-master-basic-subject">科目管理</a></li>		    		<li><a href="?exam-master-basic-questype">题型管理</a></li>				</ul>			</div>		</div>	</div>	<div class="accordion-group">		<div class="accordion-heading">			<a class="accordion-toggle" data-parent="#accordion-13465" data-toggle="collapse" href="#accordion-element-2120761">课程开通 </a>		</div>		<div class="accordion-body collapse" id="accordion-element-2120761">			<div class="accordion-inner">				<ul class="unstyled">					<li><a href="index.php?exam-master-users">开通课程</a></li>					<li><a href="index.php?exam-master-users-batopen">批量开通</a></li>				</ul>			</div>		</div>	</div>	<div class="accordion-group">		<div class="accordion-heading">			<a class="accordion-toggle" data-parent="#accordion-13465" data-toggle="collapse" href="#accordion-element-212076">试题管理 </a>		</div>		<div class="accordion-body collapse" id="accordion-element-212076">			<div class="accordion-inner">				<ul class="unstyled">					<li><a href="index.php?exam-master-questions">普通试题管理</a></li>					<li><a href="index.php?exam-master-rowsquestions">题帽题管理</a></li>				</ul>			</div>		</div>	</div>	<div class="accordion-group">		<div class="accordion-heading">			<a class="accordion-toggle" data-parent="#accordion-13465" data-toggle="collapse" href="#accordion-element-212096">试卷管理 </a>		</div>		<div class="accordion-body collapse" id="accordion-element-212096">			<div class="accordion-inner">				<ul class="unstyled">					<li><a href="index.php?exam-master-exams">试卷列表</a></li>					<li><a href="index.php?exam-master-exams-autopage">随机组卷</a></li>					<li><a href="index.php?exam-master-exams-selfpage">手工组卷</a></li>					<li><a href="index.php?exam-master-exams-temppage">即时组卷</a></li>				</ul>			</div>		</div>	</div>	<div class="accordion-group">		<div class="accordion-heading">			<a class="accordion-toggle" data-parent="#accordion-13465" data-toggle="collapse" href="#accordion-element-212090">回收站 </a>		</div>		<div class="accordion-body collapse" id="accordion-element-212090">			<div class="accordion-inner">				<ul class="unstyled">					<li><a href="index.php?exam-master-recyle">普通试题</a></li>					<li><a href="index.php?exam-master-recyle-rows">题帽题</a></li>					<li><a href="index.php?exam-master-recyle-knows">知识点</a></li>				</ul>			</div>		</div>	</div>	<div class="accordion-group">		<div class="accordion-heading">			<a class="accordion-toggle" data-parent="#accordion-13465" data-toggle="collapse" href="#accordion-element-2120901">批量工具 </a>		</div>		<div class="accordion-body collapse" id="accordion-element-2120901">			<div class="accordion-inner">				<ul class="unstyled">					<li><a href="index.php?exam-master-tools">删除试题</a></li>					<li><a href="index.php?exam-master-tools-clearhistory">清空考试记录</a></li>					<li><a href="index.php?exam-master-tools-clearsession">清理会话</a></li>				</ul>			</div>		</div>	</div></div>        </div>
+        <div class="span10" id="datacontent">
+                        <ul class="breadcrumb">
+                <li><a href="index.php?exam-master">考试模块</a> <span
+                            class="divider">/</span></li>
+                <li><a href="index.php?exam-master-basic">考场管理</a> <span class="divider">/</span></li>
+                <li class="active">添加考场</li>
+            </ul>
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a href="#">添加考场</a>
+                </li>
+                <li class="dropdown pull-right">
+                    <a href="index.php?exam-master-basic">考场管理</a>
+                </li>
+            </ul>
+            <form action="index.php?exam-master-basic-add" method="post" class="form-horizontal">
+                <fieldset>
+                    <div class="control-group">
+                        <label for="basic" class="control-label">考场名称</label>
+                        <div class="controls">
+                            <input id="basic" name="args[basic]" type="text" value=""
+                                   needle="needle" msg="您必须输入考场名称"/>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label for="basicsubjectid" class="control-label">考试科目</label>
+                        <div class="controls">
+                            <select id="basictypeid" name="args[basictypeid]" needle="needle" msg="您必须选择考场分类">
+                                <option value="">选择考场分类</option>
+                                                                <option value="1">银行从业资格考试</option>
+                                                                <option value="2">基金从业资格考试</option>
+                                                                <option value="3">证券从业资格考试</option>
+                                                            </select>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">考场状态</label>
+                        <div class="controls">
+                            <label class="radio inline">
+                                <input name="args[basicclosed]" type="radio" value="0"
+                                       checked/>开启
+                            </label>
+                            <label class="radio inline">
+                                <input name="args[basicclosed]" type="radio" value="1"
+                                       />关闭
+                            </label>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label for="basicthumb" class="control-label">考场缩略图</label>
+                        <div class="controls">
+                            <div class="thumbuper pull-left">
+                                <div class="thumbnail">
+                                    <a href="javascript:;" class="second label""><em class="uploadbutton" id="catimg"
+                                                                                     exectype="thumb"></em></a>
+                                    <div class="first" id="catimg_percent"></div>
+                                    <div class="boot"><img src="app/core/styles/images/noimage.gif"
+                                                           id="catimg_view"/><input type="hidden"
+                                                                                    name="args[basicthumb]" value=""
+                                                                                    id="catimg_value"/></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label for="basicapi" class="control-label">API标识</label>
+                        <div class="controls">
+                            <input id="basicapi" name="args[basicapi]" type="text" value=""
+                                   datatype="datatable" max="12" msg="API标识为不超过12字符的英文或数字"/>
+                            <span class="help-block">API标识用于对外提供接口信息，如果单独使用本系统无须填写</span>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label for="basicsubjectid" class="control-label">考试科目</label>
+                        <div class="controls">
+                            <select id="basicsubjectid" name="args[basicsubjectid]" needle="needle" msg="您必须选择考试科目">
+                                <option value="">选择科目</option>
+                                                                <option value="5">法律法规与综合能力</option>
+                                                                <option value="6">个人理财</option>
+                                                                <option value="7">个人贷款</option>
+                                                                <option value="8">公司信贷</option>
+                                                                <option value="9">风险管理</option>
+                                                                <option value="10">证券市场基本法律法规</option>
+                                                                <option value="11">金融市场基础知识</option>
+                                                                <option value="12">证券投资顾问业务</option>
+                                                                <option value="13">发布证券研究报告业务</option>
+                                                                <option value="14">基金法律法规、职业道德与业务规范</option>
+                                                                <option value="15">证券投资基金基础知识</option>
+                                                            </select>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label for="basicareaid" class="control-label">考试地区</label>
+                        <div class="controls">
+                            <select id="basicareaid" name="args[basicareaid]" needle="needle" msg="您必须选择考试地区">
+                                <option value="">选择地区</option>
+                                                                <option value="1">全国</option>
+                                                                <option value="3">河南</option>
+                                                                <option value="4">北京</option>
+                                                                <option value="5">陕西</option>
+                                                                <option value="6">河北</option>
+                                                                <option value="7">天津</option>
+                                                                <option value="8">山东</option>
+                                                                <option value="9">江苏</option>
+                                                                <option value="10">湖北</option>
+                                                                <option value="11">辽宁</option>
+                                                                <option value="12">贵州</option>
+                                                                <option value="13">北京春雪</option>
+                                                                <option value="14">云南</option>
+                                                                <option value="15">四川</option>
+                                                                <option value="16">安徽</option>
+                                                                <option value="17">深圳</option>
+                                                                <option value="18">吉林</option>
+                                                                <option value="19">广东</option>
+                                                                <option value="20">新疆</option>
+                                                                <option value="21">广西</option>
+                                                                <option value="22">福建</option>
+                                                                <option value="23">湖南</option>
+                                                                <option value="24">上海</option>
+                                                                <option value="25">重庆</option>
+                                                                <option value="26">江西</option>
+                                                                <option value="27">浙江</option>
+                                                                <option value="28">山西</option>
+                                                            </select>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">做为免费考场</label>
+                        <div class="controls">
+                            <label class="radio inline">
+                                <input name="args[basicdemo]" type="radio" value="1"
+                                       />是
+                            </label>
+                            <label class="radio inline">
+                                <input name="args[basicdemo]" type="radio" value="0"
+                                       checked/>否
+                            </label>
+                            <span class="help-block">免费考场用户开通考场时不扣除积分</span>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label for="basicprice" class="control-label">价格设置</label>
+                        <div class="controls">
+                            <textarea class="input-xlarge" rows="4" name="args[basicprice]"
+                                      id="basicprice"></textarea>
+                            <span class="help-block">请按照“时长:开通所需积分”格式填写，每行一个，时长以天为单位，免费考场此设置无效。</span>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="controls">
+                            <button class="btn btn-primary" type="submit">提交</button>
+                            <input type="hidden" name="page" value=""/>
+                            <input type="hidden" name="insertbasic" value="1"/>
+                                                    </div>
+                    </div>
+                </fieldset>
+            </form>
+                    </div>
+    </div>
+</div>
+</body>
+</html>

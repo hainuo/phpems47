@@ -1,0 +1,309 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="title" content="金考必过在线试题系统">
+<meta name="description" content="金考必过在线试题系统">
+<meta name="keywords" content="金考必过在线试题系统">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<title>金考必过金考必过在线试题系统</title>
+<!-- Le styles -->
+<link href="app/core/styles/css/bootstrap-combined.min.css" rel="stylesheet">
+<link href="app/core/styles/css/layoutit.css" rel="stylesheet">
+<link href="app/core/styles/css/plugin.css" rel="stylesheet">
+<link href="app/core/styles/css/datetimepicker.css" rel="stylesheet">
+<script type="text/javascript" src="app/core/styles/js/jquery-1.9.1.min.js"></script>
+<link rel="stylesheet" href="app/exam/styles/css/mathquill.css" type="text/css">
+<script type="text/javascript" src="app/core/styles/js/jquery-ui.js"></script>
+<script type="text/javascript" src="app/core/styles/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="app/core/styles/js/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript" src="app/core/styles/js/bootstrap-datetimepicker.zh-CN.js"></script>
+<script type="text/javascript" src="app/core/styles/js/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="app/core/styles/js/swfu/swfupload.js"></script>
+<script type="text/javascript" src="app/core/styles/js/plugin.js"></script>
+</head><body>
+<div class="navbar navbar-inverse">	<div class="navbar-inner">		<div class="container-fluid">			<button data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar" type="button"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>			<a href="index.php" target="_blank" class="brand"><img src="app/core/styles/images/favicon.png">PHPEMS系统管理平台<span class="label">Version:3.1</span></a>			<div class="nav-collapse navbar-responsive-collapse collapse">				<ul class="nav">					<li>						<a href="index.php?core-master">全局</a>					</li>															<li>						<a href="index.php?user-master">用户模块</a>					</li>																				<li class="active">						<a href="index.php?exam-master">考试模块</a>					</li>																														<li>						<a href="index.php?document-master">文件模块</a>					</li>																				<li>						<a href="index.php?content-master">内容模块</a>					</li>																				<li>						<a href="index.php?bank-master">财务模块</a>					</li>														</ul>				<ul class="nav pull-right">					<li>						<a href="index.php">网站首页</a>					</li>					<li class="divider-vertical">					</li>					<li class="dropdown">						<a data-toggle="dropdown" class="dropdown-toggle" href="#">peadmin<strong class="caret"></strong></a>						<ul class="dropdown-menu">							<!--							<li>								<a href="index.php?user-app-privatement">个人中心</a>							</li>							<li class="divider">							</li>							-->							<li>								<a href="index.php?core-master-logout">退出管理</a>							</li>						</ul>					</li>				</ul>			</div>		</div>	</div></div><div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span2">
+			<div class="accordion" id="accordion-13465">	<div class="accordion-group">		<div class="accordion-heading">			<a class="accordion-toggle" data-parent="#accordion-13465" data-toggle="collapse" href="#accordion-element-707348">考试设计 </a>		</div>		<div class="accordion-body in collapse" id="accordion-element-707348">			<div class="accordion-inner">				<ul class="unstyled">					<li><a href="?exam-master-basic">考场列表</a></li>					<li><a href="?exam-master-basic-type">考场分类</a></li>		    		<li><a href="?exam-master-basic-area">地区设置</a></li>		    		<li><a href="?exam-master-basic-subject">科目管理</a></li>		    		<li><a href="?exam-master-basic-questype">题型管理</a></li>				</ul>			</div>		</div>	</div>	<div class="accordion-group">		<div class="accordion-heading">			<a class="accordion-toggle" data-parent="#accordion-13465" data-toggle="collapse" href="#accordion-element-2120761">课程开通 </a>		</div>		<div class="accordion-body collapse" id="accordion-element-2120761">			<div class="accordion-inner">				<ul class="unstyled">					<li><a href="index.php?exam-master-users">开通课程</a></li>					<li><a href="index.php?exam-master-users-batopen">批量开通</a></li>				</ul>			</div>		</div>	</div>	<div class="accordion-group">		<div class="accordion-heading">			<a class="accordion-toggle" data-parent="#accordion-13465" data-toggle="collapse" href="#accordion-element-212076">试题管理 </a>		</div>		<div class="accordion-body collapse" id="accordion-element-212076">			<div class="accordion-inner">				<ul class="unstyled">					<li><a href="index.php?exam-master-questions">普通试题管理</a></li>					<li><a href="index.php?exam-master-rowsquestions">题帽题管理</a></li>				</ul>			</div>		</div>	</div>	<div class="accordion-group">		<div class="accordion-heading">			<a class="accordion-toggle" data-parent="#accordion-13465" data-toggle="collapse" href="#accordion-element-212096">试卷管理 </a>		</div>		<div class="accordion-body collapse" id="accordion-element-212096">			<div class="accordion-inner">				<ul class="unstyled">					<li><a href="index.php?exam-master-exams">试卷列表</a></li>					<li><a href="index.php?exam-master-exams-autopage">随机组卷</a></li>					<li><a href="index.php?exam-master-exams-selfpage">手工组卷</a></li>					<li><a href="index.php?exam-master-exams-temppage">即时组卷</a></li>				</ul>			</div>		</div>	</div>	<div class="accordion-group">		<div class="accordion-heading">			<a class="accordion-toggle" data-parent="#accordion-13465" data-toggle="collapse" href="#accordion-element-212090">回收站 </a>		</div>		<div class="accordion-body collapse" id="accordion-element-212090">			<div class="accordion-inner">				<ul class="unstyled">					<li><a href="index.php?exam-master-recyle">普通试题</a></li>					<li><a href="index.php?exam-master-recyle-rows">题帽题</a></li>					<li><a href="index.php?exam-master-recyle-knows">知识点</a></li>				</ul>			</div>		</div>	</div>	<div class="accordion-group">		<div class="accordion-heading">			<a class="accordion-toggle" data-parent="#accordion-13465" data-toggle="collapse" href="#accordion-element-2120901">批量工具 </a>		</div>		<div class="accordion-body collapse" id="accordion-element-2120901">			<div class="accordion-inner">				<ul class="unstyled">					<li><a href="index.php?exam-master-tools">删除试题</a></li>					<li><a href="index.php?exam-master-tools-clearhistory">清空考试记录</a></li>					<li><a href="index.php?exam-master-tools-clearsession">清理会话</a></li>				</ul>			</div>		</div>	</div></div>		</div>
+		<div class="span10" id="datacontent">
+			<ul class="breadcrumb">
+				<li><a href="index.php?exam-master">考试模块</a> <span class="divider">/</span></li>
+				<li><a href="index.php?exam-master-basic&page=">考场管理</a> <span class="divider">/</span></li>
+				<li class="active">考试范围</li>
+			</ul>
+			<ul class="nav nav-tabs">
+				<li class="active">
+					<a href="#">考试范围</a>
+				</li>
+				<li class="dropdown pull-right">
+					<a href="index.php?exam-master-basic&page=">考场管理</a>
+				</li>
+			</ul>
+	        <form action="?exam-master-basic-setexamrange" method="post" class="form-horizontal">
+				<table class="table">
+					<thead>
+					<tr>
+						<th colspan="8">证券投资基金基础知识</th>
+					</tr>
+					</thead>
+					<tr>
+						<td>
+							考场ID：
+						</td>
+						<td>
+							15						</td>
+						<td>
+							科目：
+						</td>
+						<td>
+							证券投资基金基础知识						</td>
+						<td>
+							地区：
+						</td>
+			        	<td>
+			        		全国			        	</td>
+			        	<td>
+							API标识：
+						</td>
+						<td>
+													</td>
+					</tr>
+				</table>
+				<div class="control-group">
+					<label class="control-label">章节选择：<input type="checkbox" onclick="javascript:$('.section:checkbox').prop('checked',$(this).is(':checked'));"> </label>
+				</div>
+								<div class="control-group">
+					<label class="control-label">
+				        <label class="checkbox inline"><input type="checkbox" onclick="javascript:$('.sec_112:checkbox').prop('checked',$(this).is(':checked'));"> 第六章 投资管理基础</label>
+				    </label>
+				    <div class="controls" style="text-indent:10px;">
+				    					    	<label class="checkbox inline"><input type="checkbox" value="119" name="args[basicknows][112][119]" class="section sec_112" checked/>章节重点练习题</label>
+				    					    </div>
+				</div>
+								<div class="control-group">
+					<label class="control-label">
+				        <label class="checkbox inline"><input type="checkbox" onclick="javascript:$('.sec_113:checkbox').prop('checked',$(this).is(':checked'));"> 第七章 权益投资</label>
+				    </label>
+				    <div class="controls" style="text-indent:10px;">
+				    					    	<label class="checkbox inline"><input type="checkbox" value="120" name="args[basicknows][113][120]" class="section sec_113" checked/>章节重点练习题</label>
+				    					    </div>
+				</div>
+								<div class="control-group">
+					<label class="control-label">
+				        <label class="checkbox inline"><input type="checkbox" onclick="javascript:$('.sec_114:checkbox').prop('checked',$(this).is(':checked'));"> 第八章 固定收益投资</label>
+				    </label>
+				    <div class="controls" style="text-indent:10px;">
+				    					    	<label class="checkbox inline"><input type="checkbox" value="121" name="args[basicknows][114][121]" class="section sec_114" checked/>章节重点练习题</label>
+				    					    </div>
+				</div>
+								<div class="control-group">
+					<label class="control-label">
+				        <label class="checkbox inline"><input type="checkbox" onclick="javascript:$('.sec_115:checkbox').prop('checked',$(this).is(':checked'));"> 第九章 衍生工具</label>
+				    </label>
+				    <div class="controls" style="text-indent:10px;">
+				    					    	<label class="checkbox inline"><input type="checkbox" value="122" name="args[basicknows][115][122]" class="section sec_115" checked/>章节重点练习题</label>
+				    					    </div>
+				</div>
+								<div class="control-group">
+					<label class="control-label">
+				        <label class="checkbox inline"><input type="checkbox" onclick="javascript:$('.sec_116:checkbox').prop('checked',$(this).is(':checked'));"> 第十章 另类投资</label>
+				    </label>
+				    <div class="controls" style="text-indent:10px;">
+				    					    	<label class="checkbox inline"><input type="checkbox" value="123" name="args[basicknows][116][123]" class="section sec_116" checked/>章节重点练习题</label>
+				    					    </div>
+				</div>
+								<div class="control-group">
+					<label class="control-label">
+				        <label class="checkbox inline"><input type="checkbox" onclick="javascript:$('.sec_117:checkbox').prop('checked',$(this).is(':checked'));"> 第十一章 投资者需求与资产配置</label>
+				    </label>
+				    <div class="controls" style="text-indent:10px;">
+				    					    	<label class="checkbox inline"><input type="checkbox" value="124" name="args[basicknows][117][124]" class="section sec_117" checked/>章节重点练习题</label>
+				    					    </div>
+				</div>
+								<div class="control-group">
+					<label class="control-label">
+				        <label class="checkbox inline"><input type="checkbox" onclick="javascript:$('.sec_118:checkbox').prop('checked',$(this).is(':checked'));"> 第十二章 投资组合管理</label>
+				    </label>
+				    <div class="controls" style="text-indent:10px;">
+				    					    	<label class="checkbox inline"><input type="checkbox" value="125" name="args[basicknows][118][125]" class="section sec_118" checked/>章节重点练习题</label>
+				    					    </div>
+				</div>
+								<div class="control-group">
+					<label class="control-label">
+				        <label class="checkbox inline"><input type="checkbox" onclick="javascript:$('.sec_119:checkbox').prop('checked',$(this).is(':checked'));"> 第十三章 投资交易管理</label>
+				    </label>
+				    <div class="controls" style="text-indent:10px;">
+				    					    	<label class="checkbox inline"><input type="checkbox" value="126" name="args[basicknows][119][126]" class="section sec_119" checked/>章节重点练习题</label>
+				    					    </div>
+				</div>
+								<div class="control-group">
+					<label class="control-label">
+				        <label class="checkbox inline"><input type="checkbox" onclick="javascript:$('.sec_122:checkbox').prop('checked',$(this).is(':checked'));"> 第十七章  基金的投资交易与清算</label>
+				    </label>
+				    <div class="controls" style="text-indent:10px;">
+				    					    	<label class="checkbox inline"><input type="checkbox" value="129" name="args[basicknows][122][129]" class="section sec_122" checked/>章节重点练习题</label>
+				    					    </div>
+				</div>
+								<div class="control-group">
+					<label class="control-label">
+				        <label class="checkbox inline"><input type="checkbox" onclick="javascript:$('.sec_120:checkbox').prop('checked',$(this).is(':checked'));"> 第十四章 投资风险的管理与控制</label>
+				    </label>
+				    <div class="controls" style="text-indent:10px;">
+				    					    	<label class="checkbox inline"><input type="checkbox" value="127" name="args[basicknows][120][127]" class="section sec_120" checked/>章节重点练习题</label>
+				    					    </div>
+				</div>
+								<div class="control-group">
+					<label class="control-label">
+				        <label class="checkbox inline"><input type="checkbox" onclick="javascript:$('.sec_121:checkbox').prop('checked',$(this).is(':checked'));"> 第十五章  基金业绩评价</label>
+				    </label>
+				    <div class="controls" style="text-indent:10px;">
+				    					    	<label class="checkbox inline"><input type="checkbox" value="128" name="args[basicknows][121][128]" class="section sec_121" checked/>章节重点练习题</label>
+				    					    </div>
+				</div>
+								<div class="control-group">
+					<label class="control-label">
+				        <label class="checkbox inline"><input type="checkbox" onclick="javascript:$('.sec_123:checkbox').prop('checked',$(this).is(':checked'));"> 第十八章  基金的估值、费用与会计核算</label>
+				    </label>
+				    <div class="controls" style="text-indent:10px;">
+				    					    	<label class="checkbox inline"><input type="checkbox" value="130" name="args[basicknows][123][130]" class="section sec_123" checked/>章节重点练习题</label>
+				    					    </div>
+				</div>
+								<div class="control-group">
+					<label class="control-label">
+				        <label class="checkbox inline"><input type="checkbox" onclick="javascript:$('.sec_124:checkbox').prop('checked',$(this).is(':checked'));"> 第十九章  基金的利润分配与税收</label>
+				    </label>
+				    <div class="controls" style="text-indent:10px;">
+				    					    	<label class="checkbox inline"><input type="checkbox" value="131" name="args[basicknows][124][131]" class="section sec_124" checked/>章节重点练习题</label>
+				    					    </div>
+				</div>
+								<div class="control-group">
+					<label class="control-label">
+				        <label class="checkbox inline"><input type="checkbox" onclick="javascript:$('.sec_125:checkbox').prop('checked',$(this).is(':checked'));"> 第二十六章  基金国际化的发展概况</label>
+				    </label>
+				    <div class="controls" style="text-indent:10px;">
+				    					    	<label class="checkbox inline"><input type="checkbox" value="132" name="args[basicknows][125][132]" class="section sec_125" checked/>章节重点练习题</label>
+				    					    </div>
+				</div>
+								<div class="control-group">
+					<label for="basicexam_auto" class="control-label">考场模式：</label>
+					<div class="controls">
+						<label class="radio inline">
+				          		<input type="radio" class="input-text" name="args[basicexam][model]" value="0" checked/> 全功能模式（练习和考前押题均开放）
+			          	</label>
+			          	<label class="radio inline">
+			          		<input type="radio" class="input-text" name="args[basicexam][model]" value="1"/> 练习模式（仅练习功能开放）
+			          	</label>
+			          	<label class="radio inline">
+			          		<input type="radio" class="input-text" name="args[basicexam][model]" value="2"/> 考试模式（仅考前押题开放）
+			          	</label>
+					</div>
+				</div>
+				<div class="control-group">
+					<label for="basicexam_auto" class="control-label">考前押题试题排序：</label>
+					<div class="controls">
+						<label class="radio inline">
+				          	<input type="radio" class="input-text" name="args[basicexam][changesequence]" value="0" checked/> 不打乱试题排序
+			          	</label>
+			          	<label class="radio inline">
+			          		<input type="radio" class="input-text" name="args[basicexam][changesequence]" value="1"/> 打乱试题排序
+			          	</label>
+					</div>
+				</div>
+				<div class="control-group">
+					<label for="basicexam_auto" class="control-label">绑定历年真题及模拟试卷：</label>
+					<div class="controls">
+						<input type="text" id="basicexam_auto" name="args[basicexam][auto]" needle="needle" msg="您必须填写至少一个试卷" value="86,87" /> <a class="selfmodal btn" href="javascript:;" data-target="#modal" url="index.php?exam-master-exams-selectexams&search[subjectid]=15&exams={basicexam_auto}&useframe=1&target=basicexam_auto" valuefrom="basicexam_auto">选卷</a>
+						<span class="help-block">请在试卷管理处查看试卷ID，将数字ID填写在这里，多个请用英文逗号（,）隔开。留空或填0时将无法进行该项考试。</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label for="basicexam_autotemplate" class="control-label">历年真题及模拟模板：</label>
+					<div class="controls">
+						<select id="basicexam_autotemplate" name="args[basicexam][autotemplate]">
+										            	<option value="exampaper_paper" selected>exampaper_paper</option>
+			            				            	<option value="exampaper_paper_question">exampaper_paper_question</option>
+			            			            	</select>
+					</div>
+				</div>
+				<div class="control-group">
+					<label for="basicexam_self" class="control-label">绑定考前押题试卷：</label>
+					<div class="controls">
+						<input type="text" id="basicexam_self" name="args[basicexam][self]" needle="needle" msg="您必须填写至少一个试卷" value="85,84,83,82,81,80,79,78" /> <a class="selfmodal btn" href="javascript:;" data-target="#modal" url="index.php?exam-master-exams-selectexams&search[subjectid]=15&exams={basicexam_self}&useframe=1&target=basicexam_self" valuefrom="basicexam_self">选卷</a>
+						<span class="help-block">请在试卷管理处查看试卷ID，将数字ID填写在这里，多个请用英文逗号（,）隔开。留空或填0时将无法进行该项考试。</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label for="basicexam_selftemplate" class="control-label">考前押题试卷模板：</label>
+					<div class="controls">
+						<select id="basicexam_selftemplate" name="args[basicexam][selftemplate]">
+			            				            	<option value="exam_paper" selected>exam_paper</option>
+			            				            	<option value="exam_paper_question">exam_paper_question</option>
+			            				            </select>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">考前押题开启时间：</label>
+					<div class="controls">
+						<input name="args[basicexam][opentime][start]" type="text" value="0" needle="needle" msg="您必须输入一个开启时间起点" /> - <input name="args[basicexam][opentime][end]" type="text" value="0" needle="needle" msg="您必须输入一个开启时间终点" />
+						<span class="help-block">开始结束时间均需填写，格式为2014-05-01 08:00:00，不限制开启时间请任意一项填写0。如果设置的结束时间减去5分钟比考生交卷时间要早，则系统按照结束时间减去5分钟收卷。</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">考前押题抽卷规则：</label>
+					<div class="controls">
+						<label class="radio inline">
+			          		<input type="radio" class="input-text" name="args[basicexam][selectrule]" value="1"/> 系统随机抽卷
+			          	</label>
+			          	<label class="checkbox inline">
+			          		<input type="radio" class="input-text" name="args[basicexam][selectrule]" value="0" checked/> 用户手动选卷
+			          	</label>
+						<span class="help-block">系统随机抽卷时，用户无法看到试卷列表，系统会随机挑选试卷供用户考试。手选试卷时，系统列出试卷列表供用户选择进行考试。</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">考前押题限考次数：</label>
+					<div class="controls">
+						<input name="args[basicexam][examnumber]" type="text" value="0" needle="needle" msg="您必须输入考试次数" />
+						<span class="help-block">不限制次数请填写0，当您选择抽卷规则为系统随机抽卷时，限考次数为所有试卷限考次数，当您选择抽卷规则为用户自选时，限考次数为每套试卷限考次数。即如果设置限考次数为x，当随机抽卷时，用户一共可以考试x次；手选试卷时，用户每套试卷可考试x次。</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label for="basicexam_auto" class="control-label">交卷后：</label>
+					<div class="controls">
+						<label class="radio inline">
+				          		<input type="radio" class="input-text" name="args[basicexam][notviewscore]" value="0" checked/> 直接显示分数
+			          	</label>
+			          	<label class="radio inline">
+			          		<input type="radio" class="input-text" name="args[basicexam][notviewscore]" value="1"/> 暂不显示分数
+			          	</label>
+					</div>
+				</div>
+				<div class="submit">
+					<div class="controls">
+						<button class="btn btn-primary" type="submit">提交</button>
+						<input type="hidden" name="page" value=""/>
+						<input type="hidden" name="setexamrange" value="1"/>
+						<input type="hidden" name="basicid" value="15"/>
+											</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<div aria-hidden="true" id="modal" class="modal hide fade" role="dialog" aria-labelledby="#myModalLabel">
+	<div class="modal-header">
+		<button aria-hidden="true" class="close" type="button" data-dismiss="modal">×</button>
+		<h3 id="myModalLabel">
+			试卷列表
+		</h3>
+	</div>
+	<div class="modal-body" id="modal-body">asdasdasdasdsa</div>
+	<div class="modal-footer">
+		 <button aria-hidden="true" class="btn" data-dismiss="modal">完成</button>
+	</div>
+</div>
+</body>
+</html>
