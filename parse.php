@@ -3,7 +3,7 @@ ini_set("auto_detect_line_endings", true);
 require 'vendor/autoload.php';
 
 //首先循环目录 读出所有的html
-$dir = '/Users/fengliu/Downloads/更新整理题目';
+$dir = '/Users/hainuo/Downloads/2016.8.3更新';
 
 class files
 {
@@ -563,7 +563,14 @@ function parsHtml($htmlfile, $item = 0)
         //        }
 
         //处理答题分析
-        $anlyze = $e->find('div.exam_analyze_value pre', 0)->getPlainText();
+        $anlyze = $e->find('div.exam_analyze_value pre', 0);
+        if (method_exists ($anlyze,'getPlainText'))
+            $anlyze = $anlyze->getPlainText();
+        else{
+            $anlyze='';
+            dump($anlyze);
+            dump('anlyze 有问题');
+        }
 
         //处理所属知识点
 
