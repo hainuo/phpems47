@@ -243,7 +243,7 @@ class tpl
         $limit = '/{x2;date:([^,]+),([^}]+)}/';
         $replace = "<?php echo date(\${2},\${1}); ?>";
         preg_match_all($limit,$content,$matches);
-        var_dump($matches);
+//        var_dump($matches);
         $replace = [];
         foreach ($matches[0] as $kM => $strM) {
             $replace[$kM] = '<?php echo date('. $matches[2][$kM]. ','.$this->_compileArray($matches[1][$kM]).'); ?>';
