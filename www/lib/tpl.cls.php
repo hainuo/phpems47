@@ -239,7 +239,7 @@ class tpl
         $limit = '/{x2;date:([^,]+),([^}]+)}/';
         $replace = "'<?php echo date(\${2},'.\$this->_compileArray('\${1}').'); ?>'";
         $content = preg_replace_callback($limit,function($matches){
-            return '<?php echo date($'.$matches[2].','.$this->_compileArray($matches[1]).');?>';
+            return '<?php echo date('.$matches[2].','.$this->_compileArray($matches[1]).');?>';
         },$content);
     }
 
