@@ -153,7 +153,7 @@ class tpl
         $limit = '/{x2;include:(\w+)}/';
         $replace = "'<?php \$this->_compileInclude(\'\${1}\'); ?>'";
         $content = preg_replace_callback($limit,function($matches){
-          return  $this->_compileInclude($matches[1]);
+          return '<?php  $this->_compileInclude('.$matches[1].');?>';
         },$content);
     }
 
