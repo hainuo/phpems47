@@ -309,6 +309,25 @@ class app
                     echo '<option value="' . $actor['groupid'] . '">' . $actor['groupname'] . '</option>';
                 }
                 break;
+            case 'getUserId':
+                $uuid = trim($_POST['uuid']);
+                $uuid = str_replace(';', '', $uuid);
+                $uuid = str_replace(' ', '', $uuid);
+
+                $data = $this->user->getUsersByArgs([
+                    ['AND', 'createUUID = :createUUID', 'createUUID', $uuid],
+                    ['AND', 'user.usergroupid = user_group.groupid'],
+                ]);
+
+                if (!empty($data)) {
+                    foreach ($data as $value) {
+                        $return[] = $value['userid'];
+                    }
+                } else
+                    $return = [];
+                header('content-type:application/json;charset=utf-8');
+                exit(json_encode(['data'=>$return,'code'=>200,'info'=>'操作成功！']));
+                break;
             case 'creatRandomUsers'://随机生成用户
                 //生成逻辑说明
                 //1. 先生成用户100个，给这100个用户做个标签 createUUID
@@ -322,7 +341,7 @@ class app
                 }
                 for ($i = 0; $i < 100; $i++) {
                     $users[$i]['username'] = $createUUID . '-' . ($i + 1) . random_int(10, 99);
-                    $users[$i]['useremail'] = ($i + 1) . '@jinkaobiguo.com';
+                    $users[$i]['useremail'] = $createUUID . ($i + 1) . '@jinkaobiguo.com';
                     $users[$i]['userpassword'] = bin2hex(random_bytes(3));
                 }
 
@@ -333,14 +352,15 @@ class app
                 $defaultgroup = $this->user->getDefaultGroup();
 
                 $filehandler = fopen($path, "w");
-                fputcsv($filehandler, ['用户名', '邮箱', '密码']);
+//                fputcsv($filehandler, ['用户名', '邮箱', '密码']);
+                //中文需要转吗
                 //todo insert into db for  download
                 foreach ($users as $user) {
 
                     fputcsv($filehandler, $user);
-                    $user['userpassword']=md5($user['userpassword']);
-                    $user['usergroupid']=$defaultgroup['groupid'];
-                    $user['createUUID']=$createUUID;
+                    $user['userpassword'] = md5($user['userpassword']);
+                    $user['usergroupid'] = $defaultgroup['groupid'];
+                    $user['createUUID'] = $createUUID;
                     $this->user->insertUser($user);
 
                 }
@@ -356,7 +376,7 @@ class app
                  */
 
 
-                $return = ['url' => '/' . $path , code => 200, 'msg' => '操作成功！'];
+                $return = ['url' => '/' . $path, code => 200, 'msg' => '操作成功！'];
                 header('content-type:application/json;charset=utf-8');
                 exit(json_encode($return));
                 break;

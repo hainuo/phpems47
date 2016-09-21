@@ -58,7 +58,9 @@
 						</form>
 					</div>
 					<div id="panel-880294" class="tab-pane">
-						<form action="index.php?exam-master-users-batopen" method="post" class="form-horizontal">
+                        <button onclick="createUser(this)"  dataUrl="/index.php?user-master-ajax-creatRandomUsers">批量生成默认用户组用户</button>
+
+                        <form action="index.php?exam-master-users-batopen" method="post" class="form-horizontal">
 							<div class="control-group">
 								<label class="control-label">用户ID：</label>
 							  	<div class="controls">
@@ -66,6 +68,18 @@
 							  		<span class="help-block">每个ID请使用英文逗号隔开</span>
 								</div>
 							</div>
+                            <div class="control-group">
+                                <label class="control-label">获取UUID下用户id</label>
+                                <div class="control">
+                                    <select class="controls" onchange="getUserId(this)">
+                                        <option>请选择</option>
+                                        {x2;tree:$uuids,uuid,k}
+                                            <option value="{x2;v:uuid}">{x2;v:uuid}</option>
+                                        {x2;endtree}
+                                    </select>
+
+                                </div>
+                            </div>
 							<div class="control-group">
 								<label class="control-label">考场ID：</label>
 							  	<div class="controls">
@@ -76,7 +90,7 @@
 							<div class="control-group">
 								<label class="control-label">时长：</label>
 							  	<div class="controls">
-								  	<input name="days" class="inline" type="text" needle="needle" msg="您最少需要填写一天" value="1"/> 天
+								  	<input name="days" class="inline" type="text" needle="needle" msg="您最少需要填写一天" value="365"/> 天
 								</div>
 							</div>
 							<div class="control-group">
@@ -125,6 +139,66 @@
 		</div>
 	</div>
 </div>
+<script>
+    var click = false;
+    var x;
+    function createUser(e) {
+        if (click === false) {
+            click = true;
+        } else {
+            alert('为防止服务器假死，需刷新页面后重试！\n 即将自动刷新页面！');
+            setTimeout(function () {
+                window.location.reload();
+            }, 1500);
+            return false;
+        }
+        x = e;
+        var url = $(e).attr('dataurl');
+        $.ajax({url:url}).done(function (message) {
+//            console.log(message);
+            if (message.code == 200) {
+                window.location.href = message.url;
+                setTimeout(function () {
+                    window.location.reload();
+                },4000);
+            }
+            return false;
+        }).fail(function (message) {
+            alert('操作失败，未知网络错误！');
+        })
+    }
+    function getUserId(e) {
+        var UUID = $(e).val();
+        var url='/index.php?user-master-ajax-getUserId';
+//        console.log(UUID);
+        if (UUID!='请选择' && UUID.length > 0) {
+            $.ajax({
+                url: url,
+                type: 'POST',
+                data: {
+                    uuid: UUID,
+                }
+            }).done(function (message) {
+//                console.log(message);
+                var userids='';
+                if(message.data!=null){
+                    for (i in message.data) {
+                        if(userids!='')
+                            userids+=',';
+                        userids += message.data[i];
+                    }
+//                    console.log(userids);
+                    $('textarea[name=userids]').val(userids);
+                }else{
+                    return true;
+                }
+
+            }).fail(function (message) {
+                alert('网络异常！请稍后再试！');
+            })
+        }
+    }
+</script>
 </body>
 </html>
 {x2;endif}

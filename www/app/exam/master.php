@@ -2740,8 +2740,12 @@ class app
                         ];
                     }
                     $this->G->R($message);
-                } else
+                } else {
+                    //获取uuid
+                    $uuids=$this->user->getUUID();
+                    $this->tpl->assign('uuids', $uuids);
                     $this->tpl->display('user_batopen');
+                }
                 break;
 
             default:

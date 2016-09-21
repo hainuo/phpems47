@@ -59,9 +59,9 @@ class pepdo
         if (!$this->linkid) $this->connect();
         $query = $this->linkid->prepare($sql['sql']);
         $rs = $query->execute($sql['v']);
-//    	$fp = fopen('data/error.log','a');
-//		fputs($fp,print_r($sql,true).print_r($query->errorInfo(),true));
-//		fclose($fp);
+    	$fp = fopen('data/error.log','a');
+		fputs($fp,print_r($sql,true).print_r($query->errorInfo(),true));
+		fclose($fp);
         if ($rs) {
             $query->setFetchMode(PDO::FETCH_ASSOC);
             //return $query->fetchAll();
@@ -174,6 +174,7 @@ class pepdo
         $r['data'] = $this->fetchAll($sql, $args['index'], $args['serial']);
         $data = ['count(*) AS number', $args['table'], $args['query']];
         $sql = $this->sql->makeSelect($data, $tablepre);
+//        var_dump($sql);
         $t = $this->fetch($sql);
         $pages = $pg->outPage($pg->getPagesNumber($t['number'], $number), $page);
         $r['pages'] = $pages;

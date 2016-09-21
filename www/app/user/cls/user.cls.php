@@ -149,6 +149,42 @@ class user_user
         return $result['num'];
     }
 
+    /**
+     * getUUID
+     * 获取生成机制的createUUID
+     *
+     */
+    public function getUUID()
+    {
+        $data = [
+            'distinct createUUID as UUID ',
+            ['user'],
+            [
+                [
+                    'AND',
+                    'createUUID != \'\'',
+                ],
+            ],
+            false, false, false,
+        ];
+        $sql = $this->pdosql->makeSelect($data);
+//        dump($sql);
+        $result = $this->db->fetchAll($sql);
+        $lenth = count($result);
+        switch ($lenth) {
+            case 0:
+                $return = [];
+                break;
+            case 1:
+            default:
+                foreach ($result as $value) {
+                    $return[] = $value['UUID'];
+                }
+                break;
+        }
+        return $return;
+    }
+
     public function getUserListByArgs($page, $args, $number = 10)
     {
         $args = [
