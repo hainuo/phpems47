@@ -155,6 +155,7 @@ class tpl
         $content = preg_replace_callback($limit,function($matches){
           return '<?php  $this->_compileInclude('.$matches[1].');?>';
         },$content);
+        return $content;
     }
 
     public function _compileInclude($file)
@@ -170,14 +171,16 @@ class tpl
         $content = preg_replace_callback($limit,function($matches){
             return '<?php echo html_entity_decode($this->ev->stripSlashes('.$this->_compileArray($matches[1]).'))?>';
         },$content);
+        return $content;
     }
 
     public function compileVar(&$content)
     {
         $limit = '/{x2;\$(\w+)}/';
-        $content = preg_replace_replace($limit,function($matches){
+        $content = preg_replace_callback($limit,function($matches){
             return '<?php echo $this->tpl_var['.$matches[1].'];?>';
         },$content);
+        return $content;
     }
 
     public function _compileVar($str)
@@ -185,7 +188,7 @@ class tpl
         $limit = '/\$([\w|\']+)/';
         $replace = "'\$this->tpl_var[\'\${1}\']'";
         $str = preg_replace_callback($limit,function($matches){
-            return '$this->tpl_var['.$matches[1].']';
+            return '$this->tpl_var["'.$matches[1].'"]';
         },$str);
         return $str;
     }
@@ -197,6 +200,7 @@ class tpl
         $content = preg_replace_callback($limit,function($matches){
             return '<?php echo $'.$matches[1].';?>';
         },$content);
+        return $content;
     }
 
     public function _compileTvar($str)
@@ -216,6 +220,7 @@ class tpl
         $content = preg_replace_callback($limit,function($matches){
             return '<?php echo $'.$matches[1].';?>';
         },$content);
+        return $content;
     }
 
     public function compileArray(&$content)
@@ -225,6 +230,7 @@ class tpl
         $content = preg_replace_callback($limit,function($matches){
             return '<?php echo '.$this->_compileArray($matches[1]).';?>';
         },$content);
+        return $content;
     }
 
     public function _compileArray($str)
@@ -241,6 +247,7 @@ class tpl
         $content = preg_replace_callback($limit,function($matches){
             return '<?php echo date('.$matches[2].','.$this->_compileArray($matches[1]).');?>';
         },$content);
+        return $content;
     }
 
     public function compileSubstring(&$content)
@@ -250,6 +257,7 @@ class tpl
         $content = preg_replace_callback($limit,function($matches){
             return '<?php echo $this->G->make(\'strings\')->subString('.$this->_compileArray($matches[1]).','.$matches[2].'); ?>';
         },$content);
+        return $content;
     }
 
     public function compileRealSubstring(&$content)
@@ -259,6 +267,7 @@ class tpl
         $content = preg_replace_callback($limit,function($matches){
             return '<?php echo $this->G->make(\'strings\')->subString(strip_tags(html_entity_decode($this->ev->stripSlashes('.$this->_compileArray($matches[1]).'))),'.$matches[2].'); ?>';
         },$content);
+        return $content;
     }
 
     public function compileEval(&$content)
@@ -268,6 +277,7 @@ class tpl
         $content = preg_replace_callback($limit,function($matches){
             return '<?php '.$this->_compileArray($this->ev->stripSlashes($matches[1])).'; ?>';
         },$content);
+        return $content;
     }
 
     public function compileSql(&$content)
@@ -276,8 +286,8 @@ class tpl
         $replace = "'<?php \$\${2}=\\\$this->G->make(\'pepdo\')->fetchAll(array(\"sql\"=>\"'.\$this->_compileArray('\${1}').'\")); ?>'";
         $content = preg_replace_callback($limit,function($matches){
             return '<?php $'.$matches[2].'=$this->G->make(\'pepdo\')->fetchAll(array("sql"=>"'.$this->_compileArray($matches[1]).'")); ?>';
-
         },$content);
+        return $content;
     }
 
     public function compileIf(&$content)
@@ -301,6 +311,7 @@ class tpl
         $limit = '/{x2;endif}/';
         $replace = "<?php } ?>";
         $content = preg_replace($limit,$replace,$content);
+        return $content;
     }
 
     public function compileLoop(&$content)
@@ -320,6 +331,7 @@ class tpl
         $limit = '/{x2;endloop}/';
         $replace = "<?php } ?>";
         $content = preg_replace($limit,$replace,$content);
+        return $content;
     }
 
     public function compileTree(&$content)
@@ -333,6 +345,7 @@ class tpl
         $limit = '/{x2;endtree}/';
         $replace = "<?php } ?>";
         $content = preg_replace($limit,$replace,$content);
+        return $content;
     }
 
     public function compileBlock(&$content)
@@ -342,6 +355,7 @@ class tpl
         $content = preg_replace_callback($limit,function($matches){
             return '<?php echo $this->exeBlock('.$matches[1].'); ?>';
         },$content);
+        return $content;
     }
 
     public function compileEnter(&$content)
@@ -351,6 +365,7 @@ class tpl
         $content = preg_replace_callback($limit,function($matches){
             return '<?php echo " "; ?> ';
         },$content);
+        return $content;
     }
 
     public function compileCode(&$content)
@@ -360,6 +375,7 @@ class tpl
         $content = preg_replace_callback($limit,function($matches){
             return '<?php '.$this->_compileArray($matches[1]).'; ?> ';
         },$content);
+        return $content;
     }
 
     //解析模板
