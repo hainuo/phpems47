@@ -53,7 +53,7 @@ class pepdo
      * @param $unserialize   数组需要反序列化的字段 只允许一个
      * @return array|bool
      */
-    public function fetchAll($sql, $index, $unserialize)
+    public function fetchAll($sql, $index = false,$unserialize = false)
     {
         if (!is_array($sql)) return false;
         if (!$this->linkid) $this->connect();

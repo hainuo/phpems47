@@ -77,7 +77,7 @@ class pdosql
 		return $newargs;
 	}
 
-	private function _setDefaultInsetValue($type,$def)
+	private function _setDefaultInsetValue($type,$def = false)
 	{
 		$type = explode('(',$type);
 		$type = $type[0];
