@@ -1,2 +1,5 @@
 vendor/
 www/files/attach/users
+www/data/
+www/lib/config.inc.php
+.idea/
